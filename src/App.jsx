@@ -79,7 +79,7 @@ function App() {
             </InterfaceUser>
           }
         />
-        <Route path="/admin" element={<Admin />}></Route>
+        <Route path="/admin" element={<Admin />} />
         <Route
           path="/admin/manage-team"
           element={
