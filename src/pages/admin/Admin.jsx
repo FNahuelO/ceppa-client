@@ -20,7 +20,7 @@ export default function Admin({ children }) {
       link: 'manage-magazine',
       icon: <ManageMagazine />,
     },
-    { title: 'Estadisticas', link: 'statistics', icon: <VectorEstadisticas /> },
+    { title: 'Estadisticas', link: 'stadistics', icon: <VectorEstadisticas /> },
   ]
 
   const userStorage = localStorage.getItem('user')
@@ -56,7 +56,7 @@ export default function Admin({ children }) {
           </Container>
           <Container flexDirection="column" padding="2rem 0" gap=".25rem">
             {links.map((item, idx) => (
-              <Link key={idx} to={'/' + item.link}>
+              <Link key={idx} to={'/admin/' + item.link}>
                 <Button
                   type="button"
                   bg="white"

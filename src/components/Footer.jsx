@@ -16,7 +16,17 @@ export default function Footer() {
     { label: 'Nuestra revista', link: 'revistas' },
   ]
 
-  const icons = [<img src={whatapp} />, <Instagram />, <Facebook />]
+  const icons = [
+    { icon: <img src={whatapp} /> },
+    {
+      icon: <Instagram />,
+      link: 'https://www.instagram.com/ceppa.comunidad/?hl=es',
+    },
+    {
+      icon: <Facebook />,
+      link: 'https://www.facebook.com/profile.php?id=61551746807277',
+    },
+  ]
 
   const handleClick = () => {
     const div = document.getElementById('scroll')
@@ -56,18 +66,30 @@ export default function Footer() {
         ))}
       </Container>
       <Container position="absolute" bottom="5%" margin="0 auto">
-        {icons.map(
-          (
-            item,
-            idx, // Corregir el mapeo aquí
-          ) => (
+        {icons.map((item, idx) =>
+          item.link ? (
+            <Link
+              key={idx}
+              to={item.link}
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              <Button
+                bg="none"
+                border="none"
+                hover={{ transform: 'scale(1.2)' }}
+              >
+                {item.icon}
+              </Button>
+            </Link>
+          ) : (
             <Button
               key={idx}
               bg="none"
               border="none"
               hover={{ transform: 'scale(1.2)' }}
             >
-              {item}
+              {item.icon}
             </Button>
           ),
         )}

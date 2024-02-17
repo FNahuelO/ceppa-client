@@ -11,6 +11,9 @@ import ManageTeam from './pages/admin/ManageTeam'
 import ManageMagazine from './pages/admin/ManageMagazine'
 import Revistas from './pages/Revistas'
 import Login from './pages/admin/Login'
+import { useEffect } from 'react'
+import ReactGA from 'react-ga'
+import Stadistics from './pages/admin/Stadistics'
 
 function InterfaceUser({ children }) {
   return (
@@ -29,27 +32,13 @@ function InterfaceUser({ children }) {
 }
 
 function App() {
+  useEffect(() => {
+    ReactGA.pageview(window.location.pathname + window.location.search)
+  }, [])
+
   return (
     <Router>
       <Routes>
-        <Route path="/admin" element={<Admin />}></Route>
-        <Route
-          path="manage-team"
-          element={
-            <Admin>
-              <ManageTeam />
-            </Admin>
-          }
-        />
-        <Route path="/login" element={<Login />} />
-        <Route
-          path="manage-magazine"
-          element={
-            <Admin>
-              <ManageMagazine />
-            </Admin>
-          }
-        />
         <Route
           path="/"
           element={
@@ -88,6 +77,31 @@ function App() {
             <InterfaceUser>
               <Revistas />
             </InterfaceUser>
+          }
+        />
+        <Route path="/admin" element={<Admin />}></Route>
+        <Route
+          path="/admin/manage-team"
+          element={
+            <Admin>
+              <ManageTeam />
+            </Admin>
+          }
+        />
+        <Route
+          path="/admin/manage-magazine"
+          element={
+            <Admin>
+              <ManageMagazine />
+            </Admin>
+          }
+        />
+        <Route
+          path="/admin/stadistics"
+          element={
+            <Admin>
+              <Stadistics />
+            </Admin>
           }
         />
       </Routes>

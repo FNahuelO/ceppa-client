@@ -80,6 +80,7 @@ export default function Revistas() {
                   display="flex"
                   align="center"
                   gap=".5rem"
+                  //onClick={}
                 >
                   Descargar <Download />
                 </Button>
