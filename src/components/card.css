@@ -1,0 +1,12 @@
+/* Estilos para el efecto de slider */
+.card-slider {
+  overflow: hidden;
+}
+
+.card-slider > * {
+  transition: transform 0.5s ease-in-out;
+}
+
+.card-slider.moving-up > * {
+  transform: translateY(-100%);
+}

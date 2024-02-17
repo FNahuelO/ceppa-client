@@ -1,0 +1,68 @@
+import baseUrl from '../config/axios'
+import { staff, revistas } from './reducer'
+
+export const login = async (values) => {
+  try {
+    const { data } = await baseUrl.post('login', values)
+    return data
+  } catch ({ response }) {
+    return response.data
+  }
+}
+
+export const addStaff = async (values) => {
+  const { data } = await baseUrl.post('add-staff', values)
+  return data
+}
+
+export const editStaff = async (id, values) => {
+  const { data } = await baseUrl.put(`staff/${id}`, values)
+  return data
+}
+export const deleteStaff = async (id) => {
+  const { data } = await baseUrl.delete(`staff/${id}`)
+  return data
+}
+
+export const addMagazine = async (values) => {
+  const { data } = await baseUrl.post('add-magazine', values)
+  return data
+}
+
+export const getStaff = () => {
+  return async (dispatch) => {
+    const { data } = await baseUrl.get('get-staff')
+    dispatch(staff(data.data))
+  }
+}
+export const getMagazines = () => {
+  return async (dispatch) => {
+    const { data } = await baseUrl.get('get-magazines')
+    dispatch(revistas(data.data))
+  }
+}
+
+export const editMagazine = async (id, values) => {
+  const { data } = await baseUrl.put(`magazine/${id}`, values)
+  return data
+}
+
+export const deleteMagazine = async (id) => {
+  const { data } = await baseUrl.delete(`magazine/${id}`)
+  return data
+}
+
+export const filter = (type) => {
+  return (dispatch) => {
+    baseUrl.get(`${type}.json`).then(
+      ({
+        data: {
+          data: { children },
+        },
+      }) => {
+        console.log(children)
+        dispatch(revistas(children))
+      },
+    )
+  }
+}
