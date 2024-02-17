@@ -72,7 +72,7 @@ export default function Contact() {
       justify="center"
       align="center"
       bgImg={fondo}
-      height="100vh"
+      height="105vh"
       width="100%"
       bgSize="cover"
       bgPosition="center"
@@ -84,6 +84,7 @@ export default function Contact() {
           height="40rem"
           radius="1rem"
           flexDirection="column"
+          responsive={{ width: '40rem', height: '30rem' }}
         >
           <Container
             flexDirection="column"
@@ -94,9 +95,17 @@ export default function Contact() {
             padding="2rem 4rem"
             radius="1rem 1rem 0 0"
             position="relative"
+            responsive={{ padding: '1rem 2rem' }}
           >
-            <Text weight="700">Contactanos!</Text>
-            <Text align="start" size=".8rem" width="90%">
+            <Text weight="700" responsive={{ fontSize: '.9rem' }}>
+              Contactanos!
+            </Text>
+            <Text
+              align="start"
+              size=".8rem"
+              width="90%"
+              responsive={{ fontSize: '.75rem' }}
+            >
               Nos esforzamos por proporcionarte un espacio seguro para que
               puedas expresarte libremente. Estamos acá para ayudarte en tu
               viaje hacia el bienestar emocional. ¡Envíanos tu consulta y
@@ -168,7 +177,7 @@ export default function Contact() {
                         style={{
                           ...inputStyles,
                           width: '95%',
-                          height: '8rem',
+                          height: '4rem',
                           padding: '0 .5rem',
                           background: 'none',
                           resize: 'none',
@@ -193,6 +202,8 @@ export default function Contact() {
                   width="100%"
                   weight="700"
                   radius=".5rem"
+                  color="white"
+                  responsive={{ margin: '1rem 0 0 0' }}
                   hover={{
                     background: 'white',
                     color: '#2F4A71',
@@ -204,7 +215,12 @@ export default function Contact() {
                 </Button>
               </Form>
             </Container>
-            <Container position="absolute" right="4rem" bottom="3rem">
+            <Container
+              position="absolute"
+              right="4rem"
+              bottom="3rem"
+              responsive={{ bottom: '1rem', right: '1rem' }}
+            >
               <Logo />
             </Container>
           </Container>

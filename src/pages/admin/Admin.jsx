@@ -11,6 +11,7 @@ import ManageMagazine from '../../assets/ManageMagazine'
 import VectorEstadisticas from '../../assets/VectorEstadisticas'
 import ChevronRight from '../../assets/ChevronRight'
 import Login from './Login'
+import Logout from '../../assets/Logout'
 
 export default function Admin({ children }) {
   const links = [
@@ -36,7 +37,13 @@ export default function Admin({ children }) {
     >
       <Nav admin={true} />
       <Container width="100%" height="95vh" overflow="hidden">
-        <Container flexDirection="column" height="100%" width="20%" bg="white">
+        <Container
+          flexDirection="column"
+          height="100%"
+          width="20%"
+          bg="white"
+          position="relative"
+        >
           <Container
             bgImg={fondo}
             bgSize="cover"
@@ -80,6 +87,22 @@ export default function Admin({ children }) {
               </Link>
             ))}
           </Container>
+          <Button
+            position="absolute"
+            bg="none"
+            border="none"
+            outline="none"
+            bottom="1rem"
+            right="1rem"
+            color="#213E6E"
+            weight="600"
+            onClick={() => {
+              localStorage.clear()
+              window.location.href = '/admin'
+            }}
+          >
+            Cerrar sesión <Logout />
+          </Button>
         </Container>
         <Container width="80%" borderLeft=".5px solid #D8D0D0" bg="white">
           {children ? (

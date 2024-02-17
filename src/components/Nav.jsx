@@ -64,13 +64,14 @@ export default function Nav({ admin }) {
         <Logo />
       </Link>
       {!admin && (
-        <Container gap="5rem">
+        <Container gap="5rem" responsive={{ gap: '3.5rem' }}>
           {labels.map((item, idx) => (
             <Link key={idx} to={'/' + item.link} onClick={handleClick}>
               <Text
                 weight="500"
                 color="rgba(47, 74, 113, 1)"
                 onClick={handleClick}
+                responsive={{ fontSize: '.8rem' }}
               >
                 {item.label}
               </Text>

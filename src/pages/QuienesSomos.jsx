@@ -1,8 +1,8 @@
 import React, { useEffect, useRef, useState } from 'react'
 import { Container } from '../style/Container'
 import fondo from '../assets/fondo-home.png'
-import { Text } from '../style/Text'
-import { Button } from '../style/Buttons'
+import { Text, Ul } from '../style/Text'
+import { Image } from '../style/Input'
 import pic from '../assets/pic-1.png'
 import psilocibina from '../assets/psilocibina.png'
 import logo from '../assets/logo-azul.png'
@@ -36,7 +36,7 @@ export default function QuienesSomos() {
     <Container width="100vw" flexDirection="column" bg="#1D2F4D" align="center">
       <Container width="98vw" flexDirection="column">
         <Container
-          height="100vh"
+          height="105vh"
           width="100%"
           bg="white"
           justify="center"
@@ -50,19 +50,25 @@ export default function QuienesSomos() {
             justify="center"
             align="center"
           >
-            <Container position="absolute" top="-2rem" left="-1rem">
-              <Esquina />
-            </Container>
             <img
               src={pic}
-              style={{ zIndex: '2', borderRadius: '1rem', height: '80%' }}
+              style={{
+                zIndex: '2',
+                borderRadius: '1rem',
+                height: '90%',
+              }}
             />
           </Container>
-          <Container flexDirection="column" width="25%" gap="1rem">
+          <Container flexDirection="column" width="30%" gap="1rem">
             <Text color="#6D6868" size="2rem" weight="600" align="start">
               ¿Quienes somos?
             </Text>
-            <Text color="#6D6868" align="start" size="1.25rem">
+            <Text
+              color="#6D6868"
+              align="start"
+              size="1.25rem"
+              responsive={{ fontSize: '1rem' }}
+            >
               CEPPA es un centro creado por profesionales de la salud mental,
               con el objetivo de acercar las psicoterapias con psicodélic0s de
               una forma responsable, con experiencia y mucha amorosidad. Tenemos
@@ -96,11 +102,23 @@ export default function QuienesSomos() {
             color="#2F4A71"
             position="relative"
           >
-            <Text color="#545151" size="2rem" weight="700" align="start">
+            <Text
+              color="#545151"
+              size="2rem"
+              weight="700"
+              align="start"
+              responsive={{ fontSize: '1.25rem' }}
+            >
               ¿Que ofrecemos?
             </Text>
 
-            <Text color="#545151" size="1.5rem" weight="600" align="start">
+            <Text
+              color="#545151"
+              size="1.5rem"
+              weight="600"
+              align="start"
+              responsive={{ fontSize: '1rem' }}
+            >
               En CEPPA contamos con 2 aréas principales:
             </Text>
             <Container flexDirection="column" gap="1rem" padding="1rem 0">
@@ -111,11 +129,12 @@ export default function QuienesSomos() {
                 align="start"
                 width="max-content"
                 color="#545151"
+                responsive={{ fontSize: '1rem' }}
               >
                 Área asistencial
               </Text>
 
-              <ul
+              <Ul
                 style={{
                   display: 'flex',
                   flexDirection: 'column',
@@ -126,11 +145,14 @@ export default function QuienesSomos() {
                   fontWeight: '500',
                   color: '#545151',
                 }}
+                responsive={{ fontSize: '1rem !important' }}
               >
                 {listAsistencial.map((item, idx) => (
-                  <li key={idx}>{item}</li>
+                  <li key={idx} style={{ textAlign: 'start' }}>
+                    {item}
+                  </li>
                 ))}
-              </ul>
+              </Ul>
             </Container>
             <Container flexDirection="column" gap="1rem">
               <Text
@@ -140,11 +162,12 @@ export default function QuienesSomos() {
                 align="start"
                 width="max-content"
                 color="#545151"
+                responsive={{ fontSize: '1rem' }}
               >
                 Área formativa
               </Text>
 
-              <ul
+              <Ul
                 style={{
                   display: 'flex',
                   flexDirection: 'column',
@@ -155,11 +178,12 @@ export default function QuienesSomos() {
                   fontWeight: '500',
                   color: '#545151',
                 }}
+                responsive={{ fontSize: '1rem !important' }}
               >
                 {listFormativa.map((item, idx) => (
                   <li key={idx}>{item}</li>
                 ))}
-              </ul>
+              </Ul>
             </Container>
           </Container>
           <Container>
@@ -177,31 +201,64 @@ export default function QuienesSomos() {
           gap="2rem"
           beforeLeft={true}
         >
-          <Container position="absolute" left="-6.6%" bottom="5%">
-            <img src={psilocibina} style={{ height: '80%', width: '80%' }} />
+          <Container
+            position="absolute"
+            left="-6.6%"
+            bottom="5%"
+            responsive={{ left: '-7%' }}
+          >
+            <Image
+              src={psilocibina}
+              width="80%"
+              height="80%"
+              responsive={{ width: '60%', height: '60%' }}
+            />
           </Container>
           <Container
             flexDirection="column"
             width="35%"
             align="flex-start"
             gap="2rem"
+            responsive={{ gap: '1rem', width: '45%' }}
           >
-            <Text color="#545151" weight="500" size="1.75rem">
+            <Text
+              color="#545151"
+              weight="500"
+              size="1.75rem"
+              responsive={{ fontSize: '1.25rem' }}
+            >
               Psicoterapia asistida con microdosis
             </Text>
-            <Text color="#8473B4" weight="700" size="2rem">
+            <Text
+              color="#8473B4"
+              weight="700"
+              size="2rem"
+              responsive={{ fontSize: '1.5rem' }}
+            >
               Psilocibina
             </Text>
-            <Text color="#2F4A71" weight="500" size="1rem" align="start">
+            <Text
+              color="#2F4A71"
+              weight="500"
+              size="1rem"
+              align="start"
+              responsive={{ fontSize: '.8rem' }}
+            >
               Nuestro protocolo de micro consta de 1 sesion de admision/
               evalucaion y luego de 10 a 12 sesiones más (depende el caso)
             </Text>
-            <Text color="#2F4A71" weight="500" size="1rem" align="start">
+            <Text
+              color="#2F4A71"
+              weight="500"
+              size="1rem"
+              align="start"
+              responsive={{ fontSize: '.8rem' }}
+            >
               En las mismas se trabajará tanto la mejor forma posible de la
               toma, como sus objetivos en distintas áreas de tu vida, que van a
               estar potenciados por el honguito.
             </Text>
-            <ul
+            <Ul
               style={{
                 display: 'flex',
                 flexDirection: 'column',
@@ -212,11 +269,12 @@ export default function QuienesSomos() {
                 color: '#2F4A71',
                 textAlign: 'start',
               }}
+              responsive={{ fontSize: '.8rem !important' }}
             >
               {listPsilocibina.map((item, idx) => (
                 <li key={idx}>{item}</li>
               ))}
-            </ul>
+            </Ul>
             <Text color="#2F4A71" weight="500" size="1rem" align="start">
               No es necesario tener Microdosis desde la primera sesión, por lo
               que podes empezar cuando quieras.

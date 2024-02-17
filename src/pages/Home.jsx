@@ -22,9 +22,14 @@ export default function Home() {
         justify="space-evenly"
         align="center"
       >
-        <img src={logo} alt="Logo ceppa" style={{ transform: 'scale(1.3)' }} />
+        <img src={logo} alt="Logo ceppa" style={{ transform: 'scale(1.1)' }} />
         <Container flexDirection="column" width="20%" gap="1rem">
-          <Text color="white" size="1.5rem" align="start">
+          <Text
+            color="white"
+            size="1.5rem"
+            align="start"
+            responsive={{ fontSize: '1.25rem' }}
+          >
             ¿Estas buscando acompañamiento con micro?
           </Text>
           <Link to="/contacto">

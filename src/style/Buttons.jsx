@@ -53,6 +53,14 @@ export const Button = styled.button`
       `};
   }
 
+  ${({ responsive }) =>
+    responsive &&
+    css`
+      @media screen and (max-width: 1400px) {
+        ${responsive}
+      }
+    `}
+
   ${({ chevron }) =>
     chevron &&
     ` > :last-child {

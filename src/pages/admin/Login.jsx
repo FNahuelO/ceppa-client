@@ -72,6 +72,7 @@ export default function Login() {
         justify="center"
         align="center"
         radius="1rem"
+        responsive={{ width: '50%', height: '80%' }}
       >
         <Container
           width="80%"
@@ -169,7 +170,12 @@ export default function Login() {
               Ingresar
             </Button>
           </Form>
-          <Container position="absolute" right="4rem" bottom="3rem">
+          <Container
+            position="absolute"
+            right="4rem"
+            bottom="3rem"
+            responsive={{ rigth: '2rem', bottom: '1rem' }}
+          >
             <Logo />
           </Container>
         </Container>

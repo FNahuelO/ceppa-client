@@ -78,6 +78,14 @@ export const Container = styled.div`
       `};
   }
 
+  ${({ responsive }) =>
+    responsive &&
+    css`
+      @media screen and (max-width: 1400px) {
+        ${responsive}
+      }
+    `}
+
   ${({ beforeLeft }) =>
     beforeLeft &&
     `

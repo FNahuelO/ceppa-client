@@ -57,16 +57,33 @@ export default function Team() {
         width="20%"
         align="flex-start"
       >
-        <Text size="2rem" weight="600" color="#8473B4">
+        <Text
+          size="2rem"
+          weight="600"
+          color="#8473B4"
+          responsive={{ fontSize: '1.5rem' }}
+        >
           Equipo
         </Text>
         <Container flexDirection="column" gap="3rem">
-          <Text size="1.2rem" color="#626262" weight="500" align="start">
+          <Text
+            size="1.2rem"
+            color="#626262"
+            responsive={{ fontSize: '1rem' }}
+            weight="500"
+            align="start"
+          >
             Tenemos formación en psicoterapias basadas en la evidencia y de la
             misma forma llevamos a cabo nuestros acompañamientos con
             psicodélicos.
           </Text>
-          <Text size="1.2rem" color="#626262" weight="500" align="start">
+          <Text
+            size="1.2rem"
+            color="#626262"
+            responsive={{ fontSize: '1rem' }}
+            weight="500"
+            align="start"
+          >
             Nuestro objetivo es crear una comunidad para quienes buscan
             embarcarse en sus procesos psicológicos y espirituales acompañados
             por estas maravillosas medicinas.
