@@ -21,9 +21,9 @@ export default function Team() {
   }, [currentStaff])
 
   const middleIndex =
-    cards.length % 2 === 0
-      ? [cards.length / 2 - 1, cards.length / 2]
-      : [Math.floor(cards.length / 2)]
+    cards?.length % 2 === 0
+      ? [cards?.length / 2 - 1, cards?.length / 2]
+      : [Math.floor(cards?.length / 2)]
   return (
     <Container
       justify="center"
@@ -58,7 +58,7 @@ export default function Team() {
           gap="2rem"
           align="center"
         >
-          {cards.map((item, index) => (
+          {cards?.map((item, index) => (
             <Card
               key={index}
               name={item.name}
