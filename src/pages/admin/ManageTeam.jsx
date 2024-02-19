@@ -116,7 +116,7 @@ const List = ({ cards, setTypes, handleClick }) => {
             >
               <Container flexDirection="column" gap="1rem" align="center">
                 <img
-                  src={item.image || foto}
+                  src={item.imageUrl || foto}
                   alt=""
                   style={{ width: '80px', height: '80px', borderRadius: '50%' }}
                 />
@@ -216,16 +216,16 @@ export default function ManageTeam() {
 
   useEffect(() => {
     if (edit.view && edit.payload) {
-      const { name, description, speciality, image, type } = cards.find(
+      const { name, description, speciality, imageUrl, type } = cards.find(
         (item) => item.id === edit.payload,
       )
 
       // Llama a la función urlToBuffer para convertir la URL de la imagen en un ArrayBuffer
-      urlToImageFile(image, 'foto de perfil')
+      urlToImageFile(imageUrl, 'foto de perfil')
         .then((data) => {
           // Cuando se complete la conversión, establece los valores en el estado
           setValues({ name, description, speciality, image: data, type })
-          setImagen(image)
+          setImagen(imageUrl)
         })
         .catch((error) => {
           console.error('Error al convertir la URL en ArrayBuffer:', error)

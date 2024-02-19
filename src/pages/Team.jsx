@@ -64,7 +64,7 @@ export default function Team() {
               name={item.name}
               title={item.title}
               description={item.description}
-              image={item.image}
+              image={item.imageUrl}
               index={true}
               hover={true}
               admin={true}

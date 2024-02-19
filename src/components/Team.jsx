@@ -117,7 +117,7 @@ export default function Team() {
             <Card
               key={index}
               name={item.name}
-              image={item.image}
+              image={item.imageUrl}
               title={item.title}
               index={middleIndex.includes(index)}
             />
