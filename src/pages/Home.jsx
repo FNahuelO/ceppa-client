@@ -9,8 +9,10 @@ import Page3 from '../components/Page3'
 import Team from '../components/Team'
 import ArrowRight from '../assets/ArrowRight'
 import { Link } from 'react-router-dom'
+import ChevronRigth2 from '../assets/ChevronRigth2'
 
 export default function Home() {
+  const [isHovered, setIsHovered] = useState(false)
   return (
     <Container width="100vw" flexDirection="column">
       <Container
@@ -43,14 +45,20 @@ export default function Home() {
               radius=".5rem"
               color="white"
               weight="600"
-              after={true}
+              display="flex"
+              align="center"
+              justify="space-between"
+              gap="2rem"
               hover={{
                 boxShadow: '0 4px 4px 0 #00000040',
                 color: '#213E6E',
                 background: 'white',
               }}
+              onMouseEnter={() => setIsHovered(true)}
+              onMouseLeave={() => setIsHovered(false)}
             >
-              Contactanos
+              Contactanos{' '}
+              <ChevronRigth2 color={isHovered ? '#213E6E' : 'white'} />
             </Button>
           </Link>
         </Container>

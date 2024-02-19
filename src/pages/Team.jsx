@@ -29,7 +29,7 @@ export default function Team() {
       justify="center"
       align="center"
       bgImg={fondo}
-      height="100vh"
+      height="105vh"
       width="100%"
       bgSize="cover"
       bgPosition="center"
@@ -51,7 +51,7 @@ export default function Team() {
         <Container
           flexDirection="column"
           width="80%"
-          height="90%"
+          height="100%"
           scrollStyles={true}
           overflowY="auto"
           padding="1rem 0"

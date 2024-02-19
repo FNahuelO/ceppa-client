@@ -90,12 +90,13 @@ const List = ({ cards, setTypes, handleClick }) => {
         flexDirection="column"
         gap="1rem"
         width="90%"
-        height="70%"
+        height="90%"
         padding="1rem 2rem"
         overflowY="auto"
         overflowX="hidden"
         scrollStyles={true}
         ref={containerRef}
+        responsive={{ padding: '.5rem', width: '100%' }}
       >
         {cards.map((item, idx) => {
           // eslint-disable-next-line react-hooks/rules-of-hooks
@@ -111,6 +112,7 @@ const List = ({ cards, setTypes, handleClick }) => {
               shadow="0 4px 10px 0 #00000040"
               position="relative"
               key={idx}
+              responsive={{ width: '80%' }}
             >
               <Container flexDirection="column" gap="1rem" align="center">
                 <img
@@ -204,13 +206,13 @@ export default function ManageTeam() {
   useEffect(() => {
     setCards(currentStaff)
     setTimeout(() => {
-      if (setCards.length) {
+      if (cards.length) {
         setTypes('list')
       } else {
         setTypes('add')
       }
     }, 500)
-  }, [currentStaff, setCards])
+  }, [currentStaff, cards])
 
   useEffect(() => {
     if (edit.view && edit.payload) {
@@ -400,6 +402,7 @@ export default function ManageTeam() {
           width="90%"
           height="80%"
           gap="3rem"
+          responsive={{ height: 'initial', gap: '1rem' }}
         >
           <Text weight="600" size="1.75rem" color="#353535" align="start">
             Gestionar equipo
@@ -413,7 +416,11 @@ export default function ManageTeam() {
               margin="0 2rem"
               onSubmit={handleSubmit}
             >
-              <Container gap="1rem" flexDirection="column">
+              <Container
+                gap="1rem"
+                flexDirection="column"
+                responsive={{ gap: '.5rem' }}
+              >
                 {fields.map((field, index) => (
                   <Container
                     flexDirection="column"
@@ -424,6 +431,7 @@ export default function ManageTeam() {
                     <Text
                       color="#353535"
                       size="1.2rem"
+                      responsive={{ fontSize: '1rem' }}
                       textShadow="0 2px 2px rgba(0, 0, 0, 0.5)"
                     >
                       {field.label}
@@ -490,6 +498,7 @@ export default function ManageTeam() {
                 radius="2rem"
                 margin="1rem 0"
                 type="submit"
+                color="white"
               >
                 Confirmar
               </Button>
@@ -506,6 +515,7 @@ export default function ManageTeam() {
         width="60%"
         bgImg={fondo}
         bgSize="cover"
+        responsive={{ width: '50%' }}
       >
         {type === 'form' ? (
           <Card

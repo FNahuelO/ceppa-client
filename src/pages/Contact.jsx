@@ -84,7 +84,11 @@ export default function Contact() {
           height="40rem"
           radius="1rem"
           flexDirection="column"
-          responsive={{ width: '40rem', height: '30rem' }}
+          responsive={{
+            width: '40rem',
+            height: '30rem',
+            transform: 'translateY(1rem)',
+          }}
         >
           <Container
             flexDirection="column"
@@ -95,7 +99,7 @@ export default function Contact() {
             padding="2rem 4rem"
             radius="1rem 1rem 0 0"
             position="relative"
-            responsive={{ padding: '1rem 2rem' }}
+            responsive={{ padding: '1rem 2rem', gap: '0' }}
           >
             <Text weight="700" responsive={{ fontSize: '.9rem' }}>
               Contactanos!
@@ -136,6 +140,7 @@ export default function Contact() {
                 flex="column"
                 justify="space-around"
                 align="center"
+                gap=".5rem"
               >
                 {fields.map((field) => (
                   <Container

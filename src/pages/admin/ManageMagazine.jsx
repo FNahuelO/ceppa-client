@@ -210,13 +210,13 @@ export default function ManageMagazine() {
   useEffect(() => {
     setCards(currentArray)
     setTimeout(() => {
-      if (setCards.length) {
+      if (cards.length) {
         setTypes('list')
       } else {
         setTypes('add')
       }
     }, 500)
-  }, [currentArray, setCards])
+  }, [currentArray, cards])
 
   useEffect(() => {
     if (edit.view && edit.payload) {
@@ -353,10 +353,6 @@ export default function ManageMagazine() {
     }
   }
 
-  /* const handleEdit = async (id) => {
-
-  } */
-
   const handleClose = () => {
     setModal({ view: false, payload: null })
   }
@@ -469,6 +465,7 @@ export default function ManageMagazine() {
         width="60%"
         bgImg={fondo}
         bgSize="cover"
+        responsive={{ width: '50%' }}
       >
         {type === 'form' && values.image ? (
           <Container width="15rem" height="25rem" flexDirection="column">

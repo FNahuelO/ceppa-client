@@ -31,6 +31,24 @@ export default function Revistas() {
     setArray(currentArray)
   }, [currentArray])
 
+  const handleDownload = (url) => {
+    const newTab = window.open(url, '_blank')
+
+    if (newTab) {
+      setTimeout(() => {
+        newTab.location.href = url // Cambia la ubicación de la nueva pestaña al enlace
+      }, 500)
+    } else {
+      const link = document.createElement('a')
+      link.href = url
+      link.setAttribute('download', '')
+      link.style.display = 'none'
+      document.body.appendChild(link)
+      link.click()
+      document.body.removeChild(link)
+    }
+  }
+
   const extraItemCount = Math.ceil(array.length / 8) * 8 - array.length
   // Creamos un nuevo array con los elementos del array proporcionado más los elementos adicionales necesarios
   const filledArray = [...array, ...Array(extraItemCount).fill(null)]
@@ -80,7 +98,7 @@ export default function Revistas() {
                   display="flex"
                   align="center"
                   gap=".5rem"
-                  //onClick={}
+                  onClick={() => handleDownload(item.archive)}
                 >
                   Descargar <Download />
                 </Button>

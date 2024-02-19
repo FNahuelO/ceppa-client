@@ -2,6 +2,7 @@ import React from 'react'
 import { Container } from '../style/Container'
 import { Text } from '../style/Text'
 import avatar from '../assets/avatar.svg'
+import { Image } from '../style/Input'
 
 export default function Card({
   name,
@@ -29,18 +30,20 @@ export default function Card({
           border: '3px solid #213E6EB5',
         }
       }
+      responsive={{ padding: '1rem' }}
     >
       <Container flexDirection="column" align="center" height="100%">
         <Container>
-          <img
+          <Image
             src={image || avatar}
             alt=""
+            width="8rem"
+            height="8rem"
             style={{
-              width: '8rem',
-              height: '8rem',
               borderRadius: '50%',
               objectFit: 'cover',
             }}
+            responsive={{ width: '6rem', height: '6rem' }}
           />
         </Container>
         {admin && (
@@ -54,6 +57,7 @@ export default function Card({
               weight="700"
               size=".8rem"
               padding=".25rem 0"
+              color="white"
             >
               {type === 'online' ? 'ONLINE' : 'PRESENCIAL'}
             </Text>
@@ -71,13 +75,23 @@ export default function Card({
       />
 
       <Container flexDirection="column" align="flex-start">
-        <Text size="1.5rem" color="#213E6E" weight={admin ? '700' : '500'}>
+        <Text
+          size="1.5rem"
+          color="#213E6E"
+          weight={admin ? '700' : '500'}
+          responsive={{ fontSize: '1rem' }}
+        >
           {name || 'Lic. Maximiliano Lofredo'}
         </Text>
-        <Text color="black" weight="600">
+        <Text color="black" weight="600" responsive={{ fontSize: '.8rem' }}>
           {title || 'co-director de CEPPA'}
         </Text>
-        <Text color="#4E4E4E" align="start" size=".8rem">
+        <Text
+          color="#4E4E4E"
+          align="start"
+          size=".8rem"
+          responsive={{ fontSize: '.6rem' }}
+        >
           {description || 'co-director de CEPPA'}
         </Text>
       </Container>

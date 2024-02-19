@@ -55,7 +55,11 @@ export default function Admin({ children }) {
           >
             <Container gap="1rem" align="center">
               <img src={logo} style={{ width: '40px', height: '40px' }} />
-              <Container flexDirection="column" align="flex-start">
+              <Container
+                flexDirection="column"
+                align="flex-start"
+                color="white"
+              >
                 <Text weight="700">CEPPA</Text>
                 <Text size=".75rem">Administrador</Text>
               </Container>

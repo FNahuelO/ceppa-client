@@ -174,7 +174,7 @@ export default function Login() {
             position="absolute"
             right="4rem"
             bottom="3rem"
-            responsive={{ rigth: '2rem', bottom: '1rem' }}
+            responsive={{ right: '1rem', bottom: '1rem' }}
           >
             <Logo />
           </Container>

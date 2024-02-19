@@ -1,4 +1,4 @@
-import styled from 'styled-components';
+import styled, { css } from 'styled-components'
 
 export const Form = styled.form`
   position: ${({ position }) => position || null};
@@ -27,6 +27,15 @@ export const Form = styled.form`
   ${({ scrollbar }) =>
     scrollbar &&
     `
+
+
+  ${({ responsive }) =>
+    responsive &&
+    css`
+      @media screen and (max-width: 1400px) {
+        ${responsive}
+      }
+    `}
 &::-webkit-scrollbar {
   width: 5px;
   height: 100px;
@@ -59,4 +68,4 @@ export const Form = styled.form`
       isolation: isolate;
     } 
     `}
-`;
+`

@@ -47,7 +47,7 @@ export default function Team() {
     <Container
       justify="space-evenly"
       align="center"
-      height="100vh"
+      height="105vh"
       bg="white"
       maxHeight="40rem"
     >
@@ -90,7 +90,18 @@ export default function Team() {
           </Text>
         </Container>
       </Container>
-      <Container flexDirection="column" gap="2rem" align="center" width="40%">
+      <Container
+        flexDirection="column"
+        gap="2rem"
+        align="center"
+        width="40%"
+        responsive={{
+          width: '50%',
+          height: '75%',
+          gap: '1rem',
+          overflow: 'hidden',
+        }}
+      >
         <Text color="#213E6E" weight="500" borderBottom=".5px solid #213E6E66">
           Conoce nuestro equipo de profecionales
         </Text>
@@ -100,6 +111,7 @@ export default function Team() {
           position="relative"
           padding="0 3rem"
           width="80%"
+          responsive={{ gap: '1rem', height: '100%', padding: '0 2rem' }}
         >
           {cards.map((item, index) => (
             <Card
@@ -116,13 +128,14 @@ export default function Team() {
             position="absolute"
             right="0"
             top="50%"
+            transform="translateY(-50%)"
           >
             <Button
               border="none"
               outline="none"
               bg="none"
               padding="0"
-              onClick={() => handleArrowClick('up')}
+              onClick={() => handleArrowClick('down')}
             >
               <Arrow />
             </Button>
@@ -131,7 +144,7 @@ export default function Team() {
               outline="none"
               bg="none"
               padding="0"
-              onClick={() => handleArrowClick('down')}
+              onClick={() => handleArrowClick('up')}
             >
               <Arrow direction={'bottom'} />
             </Button>
