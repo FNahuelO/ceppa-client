@@ -16,7 +16,7 @@ export default function Home() {
   return (
     <>
       <Container
-        minHeight="100lvh"
+        minHeight="100svh"
         bgImg={fondo}
         bgSize="cover"
         bgRepeat="no-repeat"
@@ -63,7 +63,7 @@ export default function Home() {
         flexDirection="column"
         justify="center"
         align="center"
-        minHeight="100lvh"
+        minHeight="100svh"
         radius="2rem 2rem 0 0"
         bg="linear-gradient(to bottom, #2F4A71, #6F5F9D)"
       >

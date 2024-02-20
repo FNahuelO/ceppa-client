@@ -43,7 +43,7 @@ export default function Footer() {
       align="center"
       bg="white"
       flexDirection="column"
-      minHeight="100lvh"
+      minHeight="100svh"
     >
       <Container flexDirection="column" gap="1rem">
         <img src={image} alt="ceppa_footer" />

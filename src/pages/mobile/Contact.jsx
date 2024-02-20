@@ -66,7 +66,7 @@ export default function Contact() {
   }
   return (
     <Container
-      minHeight="110lvh"
+      minHeight="110svh"
       bgImg={fondo}
       bgSize="cover"
       bgRepeat="no-repeat"

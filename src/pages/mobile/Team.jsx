@@ -32,7 +32,7 @@ export default function Team() {
 
   return (
     <Container
-      minHeight="100lvh" // Use vh instead of lvh
+      minHeight="100svh" // Use vh instead of lvh
       bgImg={fondo}
       bgSize="cover"
       bgRepeat="no-repeat"
@@ -54,7 +54,7 @@ export default function Team() {
           flexDirection="column"
           justify="center"
           align="center"
-          minHeight="85lvh" // Occupy the full height of the viewport
+          minHeight="85svh" // Occupy the full height of the viewport
           radius="2rem 2rem 0 0"
           bg="white"
         >
@@ -74,7 +74,7 @@ export default function Team() {
           <Container height="80vh" width="100vw">
             <Slider cards={cards} type="team" />
           </Container>
-          <Container minHeight="5lvh" width="100vw" bg="#213E6E"></Container>
+          <Container minHeight="5svh" width="100vw" bg="#213E6E"></Container>
         </Container>
       )}
     </Container>

@@ -39,7 +39,7 @@ export default function Nosotros() {
 
   return (
     <Container
-      minHeight="100lvh"
+      minHeight="100svh"
       bgImg={fondo}
       bgSize="cover"
       bgRepeat="no-repeat"
