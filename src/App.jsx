@@ -12,7 +12,7 @@ import Revistas from './pages/mobile/Revistas'
 function InterfaceUser({ children }) {
   return (
     <Container
-      height="100svh"
+      height="100lvh"
       width="100vw"
       flexDirection="column"
       overflowY="auto"
