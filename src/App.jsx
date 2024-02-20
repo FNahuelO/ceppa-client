@@ -1,40 +1,32 @@
+import React from 'react'
 import { BrowserRouter as Router, Route, Routes } from 'react-router-dom'
-import Nav from './components/Nav'
+import Home from './pages/mobile/Home'
 import { Container } from './style/Container'
-import Home from './pages/Home'
-import Footer from './components/Footer'
-import Contact from './pages/Contact'
-import QuienesSomos from './pages/QuienesSomos'
-import Team from './pages/Team'
-import Admin from './pages/admin/Admin'
-import ManageTeam from './pages/admin/ManageTeam'
-import ManageMagazine from './pages/admin/ManageMagazine'
-import Revistas from './pages/Revistas'
-import { useEffect } from 'react'
-import ReactGA from 'react-ga'
-import Stadistics from './pages/admin/Stadistics'
+import Nav from './components/mobile/Nav'
+import Team from './pages/mobile/Team'
+import Nosotros from './pages/mobile/Nosotros'
+import SimpleSlider from './components/mobile/Carousel'
+import Contact from './pages/mobile/Contact'
+import Revistas from './pages/mobile/Revistas'
 
 function InterfaceUser({ children }) {
   return (
     <Container
+      height="100lvh"
       width="100vw"
-      height="100vh"
       flexDirection="column"
-      overflow="auto"
-      id="scroll"
+      overflowY="auto"
+      position="relative"
     >
       <Nav />
-      <Container flex="1">{children}</Container>
-      <Footer />
+      <Container flex="1" flexDirection="column">
+        {children}
+      </Container>
     </Container>
   )
 }
 
-function App() {
-  useEffect(() => {
-    ReactGA.pageview(window.location.pathname + window.location.search)
-  }, [])
-
+export default function App() {
   return (
     <Router>
       <Routes>
@@ -47,26 +39,26 @@ function App() {
           }
         />
         <Route
-          path="/contacto"
-          element={
-            <InterfaceUser>
-              <Contact />
-            </InterfaceUser>
-          }
-        />
-        <Route
-          path="/quienes-somos"
-          element={
-            <InterfaceUser>
-              <QuienesSomos />
-            </InterfaceUser>
-          }
-        />
-        <Route
           path="/equipo"
           element={
             <InterfaceUser>
               <Team />
+            </InterfaceUser>
+          }
+        />
+        <Route
+          path="/nosotros"
+          element={
+            <InterfaceUser>
+              <Nosotros />
+            </InterfaceUser>
+          }
+        />
+        <Route
+          path="/contacto"
+          element={
+            <InterfaceUser>
+              <Contact />
             </InterfaceUser>
           }
         />
@@ -78,34 +70,7 @@ function App() {
             </InterfaceUser>
           }
         />
-        <Route path="/admin" element={<Admin />} />
-        <Route
-          path="/admin/manage-team"
-          element={
-            <Admin>
-              <ManageTeam />
-            </Admin>
-          }
-        />
-        <Route
-          path="/admin/manage-magazine"
-          element={
-            <Admin>
-              <ManageMagazine />
-            </Admin>
-          }
-        />
-        <Route
-          path="/admin/stadistics"
-          element={
-            <Admin>
-              <Stadistics />
-            </Admin>
-          }
-        />
       </Routes>
     </Router>
   )
 }
-
-export default App

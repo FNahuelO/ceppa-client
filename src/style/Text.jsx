@@ -106,5 +106,10 @@ export const Hr = styled.hr`
   font-size: ${({ size }) => size || null};
   border: ${({ border }) => border || null};
   margin: ${({ margin }) => margin || null};
+  position: ${({ position }) => position || null};
+  top: ${({ top }) => top || null};
+  bottom: ${({ bottom }) => bottom || null};
+  right: ${({ right }) => right || null};
+  left: ${({ left }) => left || null};
   transform: ${({ transform }) => transform || null};
 `

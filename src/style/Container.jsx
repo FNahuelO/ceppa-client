@@ -1,4 +1,4 @@
-import styled, { css } from 'styled-components'
+import styled, { css, keyframes } from 'styled-components'
 
 const ScrollbarStyle = css`
   &::-webkit-scrollbar {
@@ -21,6 +21,15 @@ const ScrollbarStyle = css`
   }
 `
 
+const slideIn = keyframes`
+  from {
+    transform: translateY(100%);
+  }
+  to {
+    transform: translateY(0);
+  }
+`
+
 export const Container = styled.div`
   position: ${({ position }) => position || null};
   top: ${({ top }) => top || null};
@@ -32,7 +41,7 @@ export const Container = styled.div`
   max-width: ${({ maxWidth }) => maxWidth || null};
   height: ${({ height }) => height || null};
   min-height: ${({ minHeight }) => minHeight || null};
-  min-height: ${({ maxHeight }) => maxHeight || null};
+  max-height: ${({ maxHeight }) => maxHeight || null};
   display: ${({ display }) => display || 'flex'};
   flex-direction: ${({ flexDirection }) => flexDirection || null};
   justify-content: ${({ justify }) => justify || null};
@@ -67,6 +76,11 @@ export const Container = styled.div`
   margin: ${({ margin }) => margin || null};
   z-index: ${({ index }) => index || null};
   font-size: ${({ size }) => size || null};
+  animation: ${({ animation }) =>
+    animation &&
+    css`
+      ${slideIn} 0.5s ease-in-out;
+    `};
 
   ${({ scrollStyles }) => scrollStyles && ScrollbarStyle}
 
@@ -109,5 +123,6 @@ export const Container = styled.div`
       width: 100%; /* Ancho del borde inferior - ajusta según sea necesario */
       height: 2px; /* Grosor del borde inferior */
     }
+  
   }`}
 `
