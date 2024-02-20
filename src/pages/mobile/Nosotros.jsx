@@ -39,7 +39,7 @@ export default function Nosotros() {
 
   return (
     <Container
-      minHeight="100svh"
+      minHeight="100lvh"
       bgImg={fondo}
       bgSize="cover"
       bgRepeat="no-repeat"
@@ -63,6 +63,7 @@ export default function Nosotros() {
           minHeight="80vh"
           radius="2rem 2rem 0 0"
           bg="white"
+          index="99"
         >
           <Link to="/">
             <Button

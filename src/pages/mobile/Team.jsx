@@ -32,7 +32,7 @@ export default function Team() {
 
   return (
     <Container
-      minHeight="100svh" // Use vh instead of lvh
+      minHeight="100lvh" // Use vh instead of lvh
       bgImg={fondo}
       bgSize="cover"
       bgRepeat="no-repeat"
@@ -54,9 +54,10 @@ export default function Team() {
           flexDirection="column"
           justify="center"
           align="center"
-          minHeight="85svh" // Occupy the full height of the viewport
+          minHeight="80svh" // Occupy the full height of the viewport
           radius="2rem 2rem 0 0"
           bg="white"
+          index="99"
         >
           <Link to="/">
             <Button

@@ -66,7 +66,7 @@ export default function Contact() {
   }
   return (
     <Container
-      minHeight="110svh"
+      minHeight="110lvh"
       bgImg={fondo}
       bgSize="cover"
       bgRepeat="no-repeat"
@@ -79,7 +79,7 @@ export default function Contact() {
       {modal.form && (
         <Container
           width="90%"
-          height="40rem"
+          height="70%"
           radius="1rem"
           flexDirection="column"
         >

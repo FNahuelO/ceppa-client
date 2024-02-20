@@ -16,7 +16,7 @@ export default function Home() {
   return (
     <>
       <Container
-        minHeight="100svh"
+        minHeight="100lvh"
         bgImg={fondo}
         bgSize="cover"
         bgRepeat="no-repeat"
