@@ -1,4 +1,4 @@
-import React, { useState } from 'react'
+import React, { useEffect, useState } from 'react'
 import * as Yup from 'yup'
 import { Container } from '../style/Container'
 import { Form } from '../style/Forms'
@@ -11,7 +11,8 @@ import { Input } from '../style/Input'
 import { Button } from '../style/Buttons'
 import VectorCheck from '../assets/VectorCheck'
 import VectorX from '../assets/VectorX'
-import axios from 'axios'
+import ReactGA from 'react-ga'
+import baseUrl from '../config/axios'
 
 const fields = [
   { name: 'nombre', label: 'Nombre', type: 'text' },
@@ -55,13 +56,14 @@ export default function Contact() {
       mensaje: Yup.string().required('Este campo es obligatorio'),
     }),
     onSubmit: async (values) => {
-      const { data } = await axios.post(
-        'http://localhost:3001/send-email',
-        values,
-      )
+      const { data } = await baseUrl.post('send-email', values)
       data.success && setModal({ form: false, confirm: true })
     },
   })
+
+  useEffect(() => {
+    ReactGA.pageview(window.location.pathname + window.location.search)
+  }, [])
 
   const handleClose = () => {
     setModal({ form: true, confirm: false })

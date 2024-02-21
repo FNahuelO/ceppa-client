@@ -1,11 +1,11 @@
 import React, { useEffect, useState } from 'react'
 import { Container } from '../style/Container'
-import { Form } from '../style/Forms'
 import fondo from '../assets/fondo-home.png'
 import { Text } from '../style/Text'
 import Card from '../components/Card'
 import { useDispatch, useSelector } from 'react-redux'
 import { getStaff } from '../redux/actions'
+import ReactGA from 'react-ga'
 
 export default function Team() {
   const [cards, setCards] = useState([])
@@ -19,6 +19,10 @@ export default function Team() {
   useEffect(() => {
     setCards(currentStaff)
   }, [currentStaff])
+
+  useEffect(() => {
+    ReactGA.pageview(window.location.pathname + window.location.search)
+  }, [])
 
   const middleIndex =
     cards?.length % 2 === 0

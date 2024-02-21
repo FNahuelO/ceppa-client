@@ -1,10 +1,9 @@
-import React, { useState } from 'react'
+import React, { useEffect, useState } from 'react'
 import * as Yup from 'yup'
 import { Container } from '../../style/Container'
 import { Form } from '../../style/Forms'
 import fondo from '../../assets/fondo-home.png'
 import { Text } from '../../style/Text'
-import Logo from '../../assets/Logo'
 import Hojas from '../../assets/Hojas'
 import { useFormik } from 'formik'
 import { Input } from '../../style/Input'
@@ -13,6 +12,7 @@ import VectorCheck from '../../assets/VectorCheck'
 import VectorX from '../../assets/VectorX'
 import baseUrl from '../../config/axios'
 import { Link } from 'react-router-dom'
+import ReactGA from 'react-ga'
 
 const fields = [
   { name: 'nombre', label: 'Nombre', type: 'text' },
@@ -60,6 +60,10 @@ export default function Contact() {
       data.success && setModal({ form: false, confirm: true })
     },
   })
+
+  useEffect(() => {
+    ReactGA.pageview(window.location.pathname + window.location.search)
+  }, [])
 
   const handleClose = () => {
     setModal({ form: true, confirm: false })

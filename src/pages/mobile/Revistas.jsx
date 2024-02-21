@@ -6,6 +6,7 @@ import { getMagazines } from '../../redux/actions'
 import Slider from '../../components/mobile/Carousel'
 import { useSwipeable } from 'react-swipeable'
 import { Text } from '../../style/Text'
+import ReactGA from 'react-ga'
 
 export default function Revistas() {
   const [array, setArray] = useState([])
@@ -27,6 +28,10 @@ export default function Revistas() {
       setIsVisible(true)
     }, 100)
     return () => clearTimeout(timer)
+  }, [])
+
+  useEffect(() => {
+    ReactGA.pageview(window.location.pathname + window.location.search)
   }, [])
 
   const handlers = useSwipeable({

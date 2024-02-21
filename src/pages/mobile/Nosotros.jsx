@@ -7,8 +7,13 @@ import { Hr, Text, Ul } from '../../style/Text'
 import { Button } from '../../style/Buttons'
 import { Link } from 'react-router-dom'
 import VectorX from '../../assets/VectorX'
+import ReactGA from 'react-ga'
 
 export default function Nosotros() {
+  useEffect(() => {
+    ReactGA.pageview(window.location.pathname + window.location.search)
+  }, [])
+
   const listAsistencial = [
     'Tratamiento individual con micro',
     'Tratamiento grupal con micro',

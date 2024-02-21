@@ -7,6 +7,8 @@ import { store } from './redux/store.js'
 import App from './App.jsx'
 import ReactGA from 'react-ga'
 
+ReactGA.initialize('G-2PSRN0KE2P')
+
 const ConditionalApp = () => {
   const [isWideScreen, setIsWideScreen] = useState(window.innerWidth > 600)
 
@@ -21,8 +23,6 @@ const ConditionalApp = () => {
       window.removeEventListener('resize', handleResize)
     }
   }, [])
-
-  ReactGA.initialize('G-2PSRN0KE2P')
 
   return (
     <Provider store={store}>

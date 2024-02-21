@@ -1,22 +1,15 @@
 import React, { useEffect, useState } from 'react'
-import * as Yup from 'yup'
 import { Container } from '../style/Container'
-import { Form } from '../style/Forms'
 import fondo from '../assets/fondo-home.png'
 import { Text } from '../style/Text'
-import Logo from '../assets/Logo'
-import Hojas from '../assets/Hojas'
-import { useFormik } from 'formik'
-import { Input } from '../style/Input'
 import { Button } from '../style/Buttons'
-import VectorCheck from '../assets/VectorCheck'
-import VectorX from '../assets/VectorX'
-import axios from 'axios'
+
 import revista from '../assets/revista.png'
 import Error from '../assets/Error'
 import Download from '../assets/Download'
 import { useDispatch, useSelector } from 'react-redux'
 import { getMagazines } from '../redux/actions'
+import ReactGA from 'react-ga'
 
 export default function Revistas() {
   const [array, setArray] = useState([])
@@ -30,6 +23,10 @@ export default function Revistas() {
   useEffect(() => {
     setArray(currentArray)
   }, [currentArray])
+
+  useEffect(() => {
+    ReactGA.pageview(window.location.pathname + window.location.search)
+  }, [])
 
   const handleDownload = (url) => {
     const newTab = window.open(url, '_blank')

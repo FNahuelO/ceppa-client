@@ -6,6 +6,7 @@ import { getStaff } from '../../redux/actions'
 import Slider from '../../components/mobile/Carousel'
 import { useSwipeable } from 'react-swipeable'
 import { Text } from '../../style/Text'
+import ReactGA from 'react-ga'
 
 export default function Team() {
   const [cards, setCards] = useState([])
@@ -20,6 +21,10 @@ export default function Team() {
   useEffect(() => {
     setCards(currentStaff)
   }, [currentStaff])
+
+  useEffect(() => {
+    ReactGA.pageview(window.location.pathname + window.location.search)
+  }, [])
 
   useEffect(() => {
     // Show the container after a short delay to allow the page to render first

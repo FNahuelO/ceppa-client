@@ -1,19 +1,17 @@
-import React, { useEffect, useRef, useState } from 'react'
+import React, { useEffect } from 'react'
 import { Container } from '../style/Container'
-import fondo from '../assets/fondo-home.png'
 import { Text, Ul } from '../style/Text'
 import { Image } from '../style/Input'
 import pic from '../assets/pic-1.png'
 import psilocibina from '../assets/psilocibina.png'
-import logo from '../assets/logo-azul.png'
-import Page2 from '../components/Page2'
-import Page3 from '../components/Page3'
-import Team from '../components/Team'
-import RectanguloGris from '../assets/RectanguloGris'
-import Esquina from '../assets/Esquina'
 import Esquina2 from '../assets/Esquina2'
+import ReactGA from 'react-ga'
 
 export default function Nosotros() {
+  useEffect(() => {
+    ReactGA.pageview(window.location.pathname + window.location.search)
+  }, [])
+
   const listAsistencial = [
     'Tratamiento individual con micro',
     'Tratamiento grupal con micro',

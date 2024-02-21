@@ -1,6 +1,5 @@
 import React, { useEffect, useState } from 'react'
 import { Container } from '../../style/Container'
-import Nav from '../../components/mobile/Nav'
 import fondo from '../../assets/fondo-home.png'
 import logo from '../../assets/logo-blanco.svg'
 import { Text } from '../../style/Text'
@@ -10,11 +9,16 @@ import ChevronRigth2 from '../../assets/ChevronRigth2'
 import frame from '../../assets/sol-mobile.svg'
 import Footer from '../../components/mobile/Footer'
 import Loading from '../../components/Loading'
+import ReactGA from 'react-ga'
 
 export default function Home() {
   const [isHovered, setIsHovered] = useState(false)
 
   const [loading, setLoading] = useState(false)
+
+  useEffect(() => {
+    ReactGA.pageview(window.location.pathname + window.location.search)
+  }, [])
 
   const saveWithExpiration = (key, value, expirationTimeInHours) => {
     const now = new Date()
