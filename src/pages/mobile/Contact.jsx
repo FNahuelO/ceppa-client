@@ -11,9 +11,10 @@ import { Button } from '../../style/Buttons'
 import VectorCheck from '../../assets/VectorCheck'
 import VectorX from '../../assets/VectorX'
 import baseUrl from '../../config/axios'
-import { Link } from 'react-router-dom'
 import ReactGA from 'react-ga'
 import { useSwipeable } from 'react-swipeable'
+import { MainModal } from '../../style/Main'
+import { ClipLoader } from 'react-spinners'
 
 const fields = [
   { name: 'nombre', label: 'Nombre', type: 'text' },
@@ -34,6 +35,7 @@ const inputStyles = {
 export default function Contact() {
   const [modal, setModal] = useState({ form: true, confirm: false })
   const [isVisible, setIsVisible] = useState(false)
+  const [buttonLabel, setButtonLabel] = useState('Enviar')
 
   const {
     handleSubmit,
@@ -59,8 +61,12 @@ export default function Contact() {
       mensaje: Yup.string().required('Este campo es obligatorio'),
     }),
     onSubmit: async (values) => {
+      setButtonLabel(<ClipLoader size={18} color="white" />)
       const { data } = await baseUrl.post('send-email', values)
-      data.success && setModal({ form: false, confirm: true })
+      if (data.success) {
+        setModal({ form: false, confirm: true })
+        setButtonLabel('Enviar')
+      }
     },
   })
 
@@ -111,7 +117,7 @@ export default function Contact() {
           minHeight="80lvh"
           radius="2rem 2rem 0 0"
           bg="white"
-          index="99"
+          index="49"
           {...handlers} // Spread the swipe handlers to the Container component
         >
           <Container height="80vh" width="100vw" position="relative">
@@ -243,9 +249,10 @@ export default function Contact() {
                       weight="700"
                       radius="3rem"
                       color="white"
+                      disabled={buttonLabel !== 'Enviar'}
                       responsive={{ margin: '1rem 0 0 0' }}
                     >
-                      Enviar
+                      {buttonLabel}
                     </Button>
                   </Form>
                 </Container>
@@ -257,34 +264,41 @@ export default function Contact() {
       )}
 
       {modal.confirm && (
-        <Container width="80%" height="20rem" flexDirection="column">
+        <MainModal>
           <Container
-            bg="#2F4A71"
-            justify="flex-end"
-            padding="1rem 2rem"
-            radius="1rem 1rem 0 0"
-            position="relative"
-          >
-            <Button border="none" bg="none" padding="0" onClick={handleClose}>
-              <VectorX />
-            </Button>
-          </Container>
-          <Container
-            bg="white"
-            height="80%"
-            radius="0 0 1rem 1rem"
-            position="relative"
-            justify="center"
-            align="center"
-            gap="1rem"
+            width="80%"
+            height="20rem"
             flexDirection="column"
+            index="88"
           >
-            <VectorCheck />
-            <Text color="#514C4C" weight="700">
-              Mensaje enviado
-            </Text>
+            <Container
+              bg="#2F4A71"
+              justify="flex-end"
+              padding="1rem 2rem"
+              radius="1rem 1rem 0 0"
+              position="relative"
+            >
+              <Button border="none" bg="none" padding="0" onClick={handleClose}>
+                <VectorX />
+              </Button>
+            </Container>
+            <Container
+              bg="white"
+              height="80%"
+              radius="0 0 1rem 1rem"
+              position="relative"
+              justify="center"
+              align="center"
+              gap="1rem"
+              flexDirection="column"
+            >
+              <VectorCheck />
+              <Text color="#514C4C" weight="700">
+                Mensaje enviado
+              </Text>
+            </Container>
           </Container>
-        </Container>
+        </MainModal>
       )}
     </Container>
   )

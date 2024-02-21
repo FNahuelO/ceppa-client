@@ -13,6 +13,7 @@ import VectorCheck from '../assets/VectorCheck'
 import VectorX from '../assets/VectorX'
 import ReactGA from 'react-ga'
 import baseUrl from '../config/axios'
+import { ClipLoader } from 'react-spinners'
 
 const fields = [
   { name: 'nombre', label: 'Nombre', type: 'text' },
@@ -32,6 +33,8 @@ const inputStyles = {
 }
 export default function Contact() {
   const [modal, setModal] = useState({ form: true, confirm: false })
+  const [buttonLabel, setButtonLabel] = useState('Enviar')
+
   const {
     handleSubmit,
     handleChange,
@@ -56,8 +59,12 @@ export default function Contact() {
       mensaje: Yup.string().required('Este campo es obligatorio'),
     }),
     onSubmit: async (values) => {
+      setButtonLabel(<ClipLoader size={20} color="white" />)
       const { data } = await baseUrl.post('send-email', values)
-      data.success && setModal({ form: false, confirm: true })
+      if (data.success) {
+        setModal({ form: false, confirm: true })
+        setButtonLabel('Enviar')
+      }
     },
   })
 
@@ -209,6 +216,7 @@ export default function Contact() {
                   radius=".5rem"
                   color="white"
                   responsive={{ margin: '1rem 0 0 0', fontSize: '.8rem' }}
+                  disabled={buttonLabel !== 'Enviar'}
                   hover={{
                     background: 'white',
                     color: '#2F4A71',
@@ -216,7 +224,7 @@ export default function Contact() {
                     border: 'none',
                   }}
                 >
-                  Enviar
+                  {buttonLabel}
                 </Button>
               </Form>
             </Container>
