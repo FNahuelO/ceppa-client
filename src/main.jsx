@@ -1,12 +1,13 @@
 import React, { useEffect, useState } from 'react'
 import ReactDOM from 'react-dom'
-import Desktop from './Desktop.jsx'
 import { Provider } from 'react-redux'
-import './index.css'
 import { store } from './redux/store.js'
 import App from './App.jsx'
 import ReactGA from 'react-ga'
+import Desktop from './Desktop.jsx'
+import './index.css'
 
+// Configurar ReactGA con tu ID de seguimiento de Google Analytics
 ReactGA.initialize('G-2PSRN0KE2P')
 
 const ConditionalApp = () => {
@@ -32,5 +33,8 @@ const ConditionalApp = () => {
     </Provider>
   )
 }
+
+// Enviar datos de página vista a Google Analytics
+ReactGA.pageview(window.location.pathname + window.location.search)
 
 ReactDOM.createRoot(document.getElementById('root')).render(<ConditionalApp />)

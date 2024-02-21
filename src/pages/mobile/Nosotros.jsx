@@ -4,10 +4,9 @@ import fondo from '../../assets/fondo-home.png'
 import logo from '../../assets/logo-color.svg'
 import hojas from '../../assets/hojas-mobile.svg'
 import { Hr, Text, Ul } from '../../style/Text'
-import { Button } from '../../style/Buttons'
 import { Link } from 'react-router-dom'
-import VectorX from '../../assets/VectorX'
 import ReactGA from 'react-ga'
+import { useSwipeable } from 'react-swipeable'
 
 export default function Nosotros() {
   useEffect(() => {
@@ -42,6 +41,15 @@ export default function Nosotros() {
     return () => clearTimeout(timer)
   }, [])
 
+  const handlers = useSwipeable({
+    onSwipedDown: () => handleSwipeUp(), // Add onSwipedUp handler
+  })
+
+  const handleSwipeUp = () => {
+    console.log('entre')
+    window.location.href = '/'
+  }
+
   return (
     <Container
       minHeight="100lvh"
@@ -69,19 +77,17 @@ export default function Nosotros() {
           radius="2rem 2rem 0 0"
           bg="white"
           index="99"
+          {...handlers}
         >
           <Link to="/">
-            <Button
+            <Text
               position="absolute"
-              top="2rem"
-              right="2rem"
-              border="none"
-              bg="none"
-              padding="0"
-              index="15"
-            >
-              <VectorX color="#7A7676" />
-            </Button>
+              top="1.5rem"
+              width="15%"
+              left="50%"
+              transform="translateX(-50%)"
+              border="2px solid #6D6868"
+            ></Text>
           </Link>
           <Container
             flexDirection="column"

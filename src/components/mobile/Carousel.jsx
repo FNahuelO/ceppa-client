@@ -5,6 +5,7 @@ import VectorRadio from '../../assets/VectorRadio'
 import { useSwipeable } from 'react-swipeable'
 import { Text } from '../../style/Text'
 import Download from '../../assets/Download'
+import ReactGA from 'react-ga'
 
 export default function Slider({ cards, type }) {
   const [currentIndex, setCurrentIndex] = useState(0)
@@ -59,22 +60,27 @@ export default function Slider({ cards, type }) {
     }
   }, [currentIndex, type])
 
-  const handleDownload = (url) => {
-    const newTab = window.open(url, '_blank')
+  const handleDownload = (item) => {
+    const newTab = window.open(item.archive, '_blank')
 
     if (newTab) {
       setTimeout(() => {
-        newTab.location.href = url // Cambia la ubicación de la nueva pestaña al enlace
+        newTab.location.href = item.archive // Cambia la ubicación de la nueva pestaña al enlace
       }, 500)
     } else {
       const link = document.createElement('a')
-      link.href = url
+      link.href = item.archive
       link.setAttribute('download', '')
       link.style.display = 'none'
       document.body.appendChild(link)
       link.click()
       document.body.removeChild(link)
     }
+    ReactGA.event({
+      category: item.name,
+      action: 'Descarga',
+      value: item.name,
+    })
   }
 
   const renderCard = (item, idx) => {
@@ -144,7 +150,7 @@ export default function Slider({ cards, type }) {
                 align="center"
                 gap=".5rem"
                 color="white"
-                onClick={() => handleDownload(item.archive)}
+                onClick={() => handleDownload(item)}
               >
                 Descargar <Download />
               </Button>

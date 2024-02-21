@@ -22,6 +22,7 @@ export default function Revistas() {
   useEffect(() => {
     setArray(currentArray)
   }, [currentArray])
+
   useEffect(() => {
     // Show the container after a short delay to allow the page to render first
     const timer = setTimeout(() => {
@@ -35,7 +36,8 @@ export default function Revistas() {
   }, [])
 
   const handlers = useSwipeable({
-    onSwipedDown: () => handleSwipeUp(), // Add onSwipedUp handler
+    onSwipedDown: () => handleSwipeUp(),
+    trackMouse: true, // Add trackMouse option
   })
 
   const handleSwipeUp = () => {
@@ -44,7 +46,7 @@ export default function Revistas() {
 
   return (
     <Container
-      minHeight="100lvh" // Use vh instead of lvh
+      minHeight="100vh" // Fix typo in minHeight
       bgImg={fondo}
       bgSize="cover"
       bgRepeat="no-repeat"
@@ -54,24 +56,23 @@ export default function Revistas() {
       flexDirection="column"
       gap="1rem"
       position="relative"
+      {...handlers}
     >
-      {/* Use conditional rendering to show the container */}
       {isVisible && (
         <Container
-          animation={true} // Add position relative to contain absolutely positioned element
+          animation={true}
           className="slide-in"
-          position="fixed" // Position fixed to keep it at the bottom of the viewport
+          position="fixed"
           bottom="0"
           left="0"
           width="100vw"
           flexDirection="column"
           justify="center"
           align="center"
-          minHeight="80svh" // Occupy the full height of the viewport
+          minHeight="80vh"
           radius="2rem 2rem 0 0"
           bg="white"
           index="99"
-          {...handlers}
         >
           <Container height="80vh" width="100vw">
             <Text
