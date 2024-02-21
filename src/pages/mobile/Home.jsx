@@ -1,4 +1,4 @@
-import React, { useState } from 'react'
+import React, { useEffect, useState } from 'react'
 import { Container } from '../../style/Container'
 import Nav from '../../components/mobile/Nav'
 import fondo from '../../assets/fondo-home.png'
@@ -9,11 +9,52 @@ import { Button } from '../../style/Buttons'
 import ChevronRigth2 from '../../assets/ChevronRigth2'
 import frame from '../../assets/sol-mobile.svg'
 import Footer from '../../components/mobile/Footer'
+import Loading from '../../components/Loading'
 
 export default function Home() {
   const [isHovered, setIsHovered] = useState(false)
 
-  return (
+  const [loading, setLoading] = useState(false)
+
+  const saveWithExpiration = (key, value, expirationTimeInHours) => {
+    const now = new Date()
+    const item = {
+      value: value,
+      expiration: now.getTime() + expirationTimeInHours * 60 * 60 * 1000, // Convert hours to milliseconds
+    }
+    localStorage.setItem(key, JSON.stringify(item))
+  }
+
+  const getWithExpiration = (key) => {
+    const item = localStorage.getItem(key)
+    if (!item) {
+      return null
+    }
+    const parsedItem = JSON.parse(item)
+    const now = new Date()
+    if (now.getTime() > parsedItem.expiration) {
+      // The data has expired, remove it and return null
+      localStorage.removeItem(key)
+      return null
+    }
+    return parsedItem.value
+  }
+
+  useEffect(() => {
+    if (getWithExpiration('firstLoading')) {
+      setLoading(false)
+    } else {
+      setLoading(true)
+      setTimeout(() => {
+        setLoading(false)
+        saveWithExpiration('firstLoading', true, 24)
+      }, 3000)
+    }
+  }, [])
+
+  return loading ? (
+    <Loading />
+  ) : (
     <>
       <Container
         minHeight="100lvh"

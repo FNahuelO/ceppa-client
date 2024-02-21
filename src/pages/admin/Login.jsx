@@ -46,7 +46,7 @@ export default function Login() {
       console.log(data)
 
       if (data.success) {
-        localStorage.setItem('user', JSON.stringify(data.data))
+        sessionStorage.setItem('user', JSON.stringify(data.data))
         window.location.href = '/admin'
         handleReset()
       } else {

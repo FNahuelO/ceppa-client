@@ -1,12 +1,10 @@
 import React, { useEffect, useState } from 'react'
 import { Container } from '../../style/Container'
 import fondo from '../../assets/fondo-home.png'
-import { Link } from 'react-router-dom'
-import { Button } from '../../style/Buttons'
-import VectorX from '../../assets/VectorX'
 import { useDispatch, useSelector } from 'react-redux'
-import { getMagazines, getStaff } from '../../redux/actions'
+import { getMagazines } from '../../redux/actions'
 import Slider from '../../components/mobile/Carousel'
+import { useSwipeable } from 'react-swipeable'
 
 export default function Revistas() {
   const [array, setArray] = useState([])
@@ -29,6 +27,14 @@ export default function Revistas() {
     }, 100)
     return () => clearTimeout(timer)
   }, [])
+
+  const handlers = useSwipeable({
+    onSwipedDown: () => handleSwipeUp(), // Add onSwipedUp handler
+  })
+
+  const handleSwipeUp = () => {
+    window.location.href = '/'
+  }
 
   return (
     <Container
@@ -59,20 +65,8 @@ export default function Revistas() {
           radius="2rem 2rem 0 0"
           bg="white"
           index="99"
+          {...handlers}
         >
-          <Link to="/">
-            <Button
-              position="absolute"
-              top="2rem"
-              right="2rem"
-              border="none"
-              bg="none"
-              padding="0"
-              index="15"
-            >
-              <VectorX color="#7A7676" />
-            </Button>
-          </Link>
           <Container height="80vh" width="100vw">
             <Slider cards={array} type="magazine" />
           </Container>

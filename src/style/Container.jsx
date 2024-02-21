@@ -21,6 +21,18 @@ const ScrollbarStyle = css`
   }
 `
 
+const spinAnimation = keyframes`
+  0% {
+    transform: scale(1);
+  }
+  50% {
+    transform: scale(1.2);
+  }
+  100% {
+    transform: scale(1);
+  }
+`
+
 const slideIn = keyframes`
   from {
     transform: translateY(100%);
@@ -125,4 +137,16 @@ export const Container = styled.div`
     }
   
   }`}
+`
+export const ContainerLoading = styled.div`
+  width: 70%;
+  margin: auto;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  height: 50vh;
+  gap: 1.5rem;
+  animation: ${css`
+      ${spinAnimation}`} 2s linear infinite;
 `

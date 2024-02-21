@@ -194,6 +194,7 @@ export default function ManageTeam() {
   const [modal, setModal] = useState({ view: false, payload: null })
   const [ask, setAsk] = useState({ view: false, payload: null })
   const [edit, setEdit] = useState({ view: false, payload: null })
+  const [buttonLabel, setButtonLabel] = useState('Confirmar')
 
   const dispatch = useDispatch()
   const currentStaff = useSelector((state) => state.data.staff)
@@ -291,6 +292,7 @@ export default function ManageTeam() {
           formDataToSend.append(key, values[key])
         }
       }
+      setButtonLabel(<ClipLoader size={20} color="white" />)
 
       let data
 
@@ -305,6 +307,7 @@ export default function ManageTeam() {
         setEdit({ view: false, payload: null })
         setImagen(null)
         setModal({ view: true, payload: data.message })
+        setButtonLabel('Confirmar')
       }
     },
   })
@@ -499,8 +502,9 @@ export default function ManageTeam() {
                 margin="1rem 0"
                 type="submit"
                 color="white"
+                disabled={buttonLabel !== 'Confirmar'}
               >
-                Confirmar
+                {buttonLabel}
               </Button>
             </Formulario>
           ) : (

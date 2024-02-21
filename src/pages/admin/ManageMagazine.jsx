@@ -199,6 +199,7 @@ export default function ManageMagazine() {
   const [ask, setAsk] = useState({ view: false, payload: null })
   const [edit, setEdit] = useState({ view: false, payload: null })
   const [type, setTypes] = useState('loading')
+  const [buttonLabel, setButtonLabel] = useState('Confirmar')
 
   const dispatch = useDispatch()
   const currentArray = useSelector((state) => state.data.revistas)
@@ -292,6 +293,7 @@ export default function ManageMagazine() {
           formDataToSend.append(key, values[key])
         }
       }
+      setButtonLabel(<ClipLoader size={20} color="white" />)
 
       let data
 
@@ -304,6 +306,7 @@ export default function ManageMagazine() {
         handleReset()
         setImagen(null)
         setModal({ view: true, payload: data.message })
+        setButtonLabel('Confirmar')
       }
     },
   })
@@ -449,8 +452,9 @@ export default function ManageMagazine() {
                 radius="2rem"
                 margin="1rem 0"
                 type="submit"
+                disabled={buttonLabel !== 'Confirmar'}
               >
-                Confirmar
+                {buttonLabel}
               </Button>
             </Formulario>
           ) : (

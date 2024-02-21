@@ -16,6 +16,7 @@ function InterfaceUser({ children }) {
       width="100vw"
       flexDirection="column"
       overflowY="auto"
+      id="scroll"
       position="relative"
     >
       <Nav />

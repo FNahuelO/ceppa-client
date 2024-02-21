@@ -12,6 +12,7 @@ import { Button } from '../../style/Buttons'
 import VectorCheck from '../../assets/VectorCheck'
 import VectorX from '../../assets/VectorX'
 import baseUrl from '../../config/axios'
+import { Link } from 'react-router-dom'
 
 const fields = [
   { name: 'nombre', label: 'Nombre', type: 'text' },
@@ -94,6 +95,19 @@ export default function Contact() {
             position="relative"
             responsive={{ padding: '1rem 2rem', gap: '0' }}
           >
+            <Link to="/">
+              <Button
+                position="absolute"
+                top="1rem"
+                right="1.5rem"
+                border="none"
+                bg="none"
+                padding="0"
+                index="15"
+              >
+                <VectorX color="white" />
+              </Button>
+            </Link>
             <Text weight="700" responsive={{ fontSize: '.9rem' }}>
               Contactanos!
             </Text>
@@ -155,7 +169,7 @@ export default function Contact() {
                       <Text
                         color="#2F4A71"
                         size=".8rem"
-                        padding={field.type === 'textarea' ? '1rem' : ''}
+                        padding={field.type === 'textarea' ? '0 1rem ' : ''}
                       >
                         {field.label}
                       </Text>
@@ -176,7 +190,7 @@ export default function Contact() {
                         style={{
                           ...inputStyles,
                           width: '95%',
-                          height: '4rem',
+                          height: '5rem',
                           padding: '0 .5rem',
                           background: 'none',
                           resize: 'none',

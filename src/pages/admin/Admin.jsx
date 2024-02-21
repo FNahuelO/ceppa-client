@@ -24,7 +24,7 @@ export default function Admin({ children }) {
     { title: 'Estadisticas', link: 'stadistics', icon: <VectorEstadisticas /> },
   ]
 
-  const userStorage = localStorage.getItem('user')
+  const userStorage = sessionStorage.getItem('user')
   const user = JSON.parse(userStorage)
 
   return user?.token ? (
@@ -101,7 +101,7 @@ export default function Admin({ children }) {
             color="#213E6E"
             weight="600"
             onClick={() => {
-              localStorage.clear()
+              sessionStorage.clear()
               window.location.href = '/admin'
             }}
           >
