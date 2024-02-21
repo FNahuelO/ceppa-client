@@ -31,12 +31,12 @@ export default function Page2() {
         align="flex-start"
       >
         <Text size="2rem" weight="800" responsive={{ fontSize: '1.5rem' }}>
-          ¿Como te podemos ayudar?
+          ¿Cómo te podemos ayudar?
         </Text>
         <Text size="1.5rem" align="start" responsive={{ fontSize: '1.25rem' }}>
           En CEPPA tenemos una propuesta de acompañamiento de microdosis de
           psilocibina, guiado por profesionales de salud mental, confeccionado
-          con tecnicas de terapias contesxtuales, para ayudar a potenciar tu
+          con técnicas de terapias contextuales, para ayudar a potenciar tu
           proceso.
         </Text>
       </Container>

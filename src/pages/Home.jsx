@@ -32,7 +32,7 @@ export default function Home() {
             align="start"
             responsive={{ fontSize: '1.25rem' }}
           >
-            ¿Estas buscando acompañamiento con micro?
+            ¿Estás buscando acompañamiento con micro?
           </Text>
           <Link to="/contacto">
             <Button
@@ -57,7 +57,7 @@ export default function Home() {
               onMouseEnter={() => setIsHovered(true)}
               onMouseLeave={() => setIsHovered(false)}
             >
-              Contactanos{' '}
+              Contáctanos
               <ChevronRigth2 color={isHovered ? '#213E6E' : 'white'} />
             </Button>
           </Link>

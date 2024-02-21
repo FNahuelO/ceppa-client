@@ -70,7 +70,7 @@ export default function QuienesSomos() {
               responsive={{ fontSize: '1rem' }}
             >
               CEPPA es un centro creado por profesionales de la salud mental,
-              con el objetivo de acercar las psicoterapias con psicodélic0s de
+              con el objetivo de acercar las psicoterapias con psicodélicos de
               una forma responsable, con experiencia y mucha amorosidad. Tenemos
               formación en psicoterapias basadas en la evidencia y de la misma
               forma llevamos a cabo nuestros acompañamientos con psicodélicos.
@@ -244,8 +244,9 @@ export default function QuienesSomos() {
               align="start"
               responsive={{ fontSize: '.8rem' }}
             >
-              Nuestro protocolo de micro consta de 1 sesion de admision/
-              evalucaion y luego de 10 a 12 sesiones más (depende el caso)
+              Nuestro protocolo de microdosis consta de 1 sesión de
+              admisión/evaluación y luego de 10 a 12 sesiones más (dependiendo
+              del caso).
             </Text>
             <Text
               color="#2F4A71"

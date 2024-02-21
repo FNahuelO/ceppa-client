@@ -112,15 +112,18 @@ export default function Nosotros() {
                 <Text weight="600" color="#393636" width="65%">
                   CEPPA es un centro creado por profesionales de la salud
                   mental, con el objetivo de acercar las psicoterapias con
-                  psicodélic0s de una forma responsable, con experiencia y mucha
+                  psicodélicos de una forma responsable, con experiencia y mucha
                   amorosidad. Tenemos formación en psicoterapias basadas en la
                   evidencia y de la misma forma llevamos a cabo nuestros
-                  acompañamientos con psicodélicos.
+                  acompañamientos con psicodélicos. Nuestro objetivo es crear
+                  una comunidad para quienes buscan embarcarse en sus procesos
+                  psicológicos y espirituales acompañados por estas maravillosas
+                  medicinas.
                 </Text>
                 <Text weight="600" color="#393636" width="65%">
-                  Nuestro objetivo es crear una comunidad para quienes buscan
-                  embarcarse en sus procesos psicológicos y espirituales
-                  acompañados por estas maravillosas medicinas.
+                  Nuestro protocolo de microdosis consta de 1 sesión de
+                  admisión/evaluación y luego de 10 a 12 sesiones más
+                  (dependiendo del caso).
                 </Text>
               </Container>
               <Container position="absolute" bottom="1rem">
