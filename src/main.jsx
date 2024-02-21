@@ -14,6 +14,10 @@ const ConditionalApp = () => {
   const [isWideScreen, setIsWideScreen] = useState(window.innerWidth > 600)
 
   useEffect(() => {
+    ReactGA.pageview(window.location.pathname + window.location.search)
+  }, [])
+
+  useEffect(() => {
     const handleResize = () => {
       setIsWideScreen(window.innerWidth > 600)
     }
@@ -35,6 +39,5 @@ const ConditionalApp = () => {
 }
 
 // Enviar datos de página vista a Google Analytics
-ReactGA.pageview(window.location.pathname + window.location.search)
 
 ReactDOM.createRoot(document.getElementById('root')).render(<ConditionalApp />)

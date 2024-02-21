@@ -13,6 +13,7 @@ import VectorX from '../../assets/VectorX'
 import baseUrl from '../../config/axios'
 import { Link } from 'react-router-dom'
 import ReactGA from 'react-ga'
+import { useSwipeable } from 'react-swipeable'
 
 const fields = [
   { name: 'nombre', label: 'Nombre', type: 'text' },
@@ -32,6 +33,8 @@ const inputStyles = {
 }
 export default function Contact() {
   const [modal, setModal] = useState({ form: true, confirm: false })
+  const [isVisible, setIsVisible] = useState(false)
+
   const {
     handleSubmit,
     handleChange,
@@ -64,10 +67,24 @@ export default function Contact() {
   useEffect(() => {
     ReactGA.pageview(window.location.pathname + window.location.search)
   }, [])
+  useEffect(() => {
+    // Show the container after a short delay to allow the page to render first
+    const timer = setTimeout(() => {
+      setIsVisible(true)
+    }, 100)
+    return () => clearTimeout(timer)
+  }, [])
 
   const handleClose = () => {
     setModal({ form: true, confirm: false })
     handleReset()
+  }
+  const handlers = useSwipeable({
+    onSwipedDown: () => handleSwipeUp(), // Add onSwipedUp handler
+  })
+
+  const handleSwipeUp = () => {
+    window.location.href = '/'
   }
   return (
     <Container
@@ -81,152 +98,164 @@ export default function Contact() {
       flexDirection="column"
       gap="1rem"
     >
-      {modal.form && (
+      {isVisible && (
         <Container
-          width="90%"
-          height="80%"
-          radius="1rem"
+          animation={true}
+          position="fixed"
+          bottom="0"
+          left="0"
+          width="100vw"
           flexDirection="column"
+          justify="center"
+          align="center"
+          minHeight="80lvh"
+          radius="2rem 2rem 0 0"
+          bg="white"
+          index="99"
+          {...handlers} // Spread the swipe handlers to the Container component
         >
-          <Container
-            flexDirection="column"
-            bg="#2F4A71"
-            gap=".5rem"
-            color="white"
-            align="flex-start"
-            padding="2rem 4rem"
-            radius="1rem 1rem 0 0"
-            position="relative"
-            responsive={{ padding: '1rem 2rem', gap: '0' }}
-          >
-            <Link to="/">
-              <Button
-                position="absolute"
-                top="1rem"
-                right="1.5rem"
-                border="none"
-                bg="none"
-                padding="0"
-                index="15"
+          <Container height="80vh" width="100vw" position="relative">
+            <Container radius="1rem" flexDirection="column">
+              <Container
+                flexDirection="column"
+                bg="#2F4A71"
+                color="white"
+                align="flex-start"
+                padding="3rem 2.1rem 1rem 2rem"
+                radius="2rem 2rem 0 0"
+                position="relative"
               >
-                <VectorX color="white" />
-              </Button>
-            </Link>
-            <Text weight="700" responsive={{ fontSize: '.9rem' }}>
-              Contactanos!
-            </Text>
-            <Text
-              align="start"
-              size=".8rem"
-              width="90%"
-              responsive={{ fontSize: '.75rem' }}
-            >
-              Nos esforzamos por proporcionarte un espacio seguro para que
-              puedas expresarte libremente. Estamos acá para ayudarte en tu
-              viaje hacia el bienestar emocional. ¡Envíanos tu consulta y
-              daremos respuesta con la mayor prontitud posible!
-            </Text>
-            <Container position="absolute" bottom="0" right="1rem">
-              <Hojas />
-            </Container>
-          </Container>
-          <Container
-            bg="white"
-            height="80%"
-            justify="center"
-            radius="0 0 1rem 1rem"
-            position="relative"
-          >
-            <Container
-              flexDirection="column"
-              width="90%"
-              align="center"
-              justify="center"
-              padding="1rem"
-            >
-              <Form
-                onSubmit={handleSubmit}
-                width="85%"
-                height="100%"
-                display="flex"
-                flex="column"
-                justify="space-around"
-                align="center"
-                gap=".5rem"
-              >
-                {fields.map((field) => (
-                  <Container
-                    key={field.name}
-                    flexDirection="column"
-                    align="flex-start"
-                    gap=".5rem"
-                    width={field.type === 'textarea' ? '100%' : '95%'}
-                    shadow={
-                      field.type === 'textarea' ? '0 4px 4px 0 #00000040 ' : ''
-                    }
-                  >
-                    <Container
-                      width="100%"
-                      align="center"
-                      justify="space-between"
-                    >
-                      <Text
-                        color="#2F4A71"
-                        size=".8rem"
-                        padding={field.type === 'textarea' ? '0 .25rem ' : ''}
-                      >
-                        {field.label}
-                      </Text>
-                      {touched[field.name] && errors[field.name] ? (
-                        <Text color="red" size=".6rem" padding="0 .25rem">
-                          {errors[field.name]}
-                        </Text>
-                      ) : null}
-                    </Container>
-                    {field.type === 'textarea' ? (
-                      <textarea
-                        name={field.name}
-                        onChange={handleChange}
-                        onBlur={handleBlur}
-                        value={values[field.name]}
-                        style={{
-                          ...inputStyles,
-                          width: '95%',
-                          height: '5rem',
-                          padding: '0 .5rem',
-                          background: 'none',
-                          resize: 'none',
-                          fontSize: '.7rem',
-                        }}
-                      />
-                    ) : (
-                      <Input
-                        type={field.type}
-                        name={field.name}
-                        onChange={handleChange}
-                        onBlur={handleBlur}
-                        value={values[field.name]}
-                        {...inputStyles}
-                      />
-                    )}
-                  </Container>
-                ))}
-                <Button
-                  type="submit"
-                  bg="#2F4A71"
-                  width="100%"
-                  weight="700"
-                  radius=".5rem"
-                  color="white"
-                  responsive={{ margin: '1rem 0 0 0' }}
+                <Text
+                  position="absolute"
+                  top="1.5rem"
+                  width="15%"
+                  left="50%"
+                  transform="translateX(-50%)"
+                  border="2px solid white"
+                ></Text>
+                <Text weight="700" responsive={{ fontSize: '.9rem' }}>
+                  Contactanos!
+                </Text>
+                <Text
+                  align="start"
+                  size=".8rem"
+                  width="90%"
+                  responsive={{ fontSize: '.75rem' }}
                 >
-                  Enviar
-                </Button>
-              </Form>
+                  Nos esforzamos por proporcionarte un espacio seguro para que
+                  puedas expresarte libremente. Estamos acá para ayudarte en tu
+                  viaje hacia el bienestar emocional. ¡Envíanos tu consulta y
+                  daremos respuesta con la mayor prontitud posible!
+                </Text>
+                <Container position="absolute" bottom="0" right="1rem">
+                  <Hojas />
+                </Container>
+              </Container>
+              <Container
+                bg="white"
+                height="80%"
+                justify="center"
+                radius="0 0 1rem 1rem"
+                position="relative"
+              >
+                <Container
+                  flexDirection="column"
+                  width="90%"
+                  align="center"
+                  justify="center"
+                  padding="1rem"
+                >
+                  <Form
+                    onSubmit={handleSubmit}
+                    width="85%"
+                    height="100%"
+                    display="flex"
+                    flex="column"
+                    justify="space-around"
+                    align="center"
+                    gap=".5rem"
+                  >
+                    {fields.map((field) => (
+                      <Container
+                        key={field.name}
+                        flexDirection="column"
+                        align="flex-start"
+                        gap=".5rem"
+                        width={field.type === 'textarea' ? '100%' : '95%'}
+                        shadow={
+                          field.type === 'textarea'
+                            ? '0 4px 4px 0 #00000040 '
+                            : ''
+                        }
+                      >
+                        <Container
+                          width="100%"
+                          align="center"
+                          justify="space-between"
+                        >
+                          <Text
+                            color="#2F4A71"
+                            size=".8rem"
+                            padding={
+                              field.type === 'textarea' ? '0 .5rem ' : ''
+                            }
+                          >
+                            {field.label}
+                          </Text>
+                          {touched[field.name] && errors[field.name] ? (
+                            <Text color="red" size=".6rem" padding="0 .25rem">
+                              {errors[field.name]}
+                            </Text>
+                          ) : null}
+                        </Container>
+                        {field.type === 'textarea' ? (
+                          <textarea
+                            name={field.name}
+                            onChange={handleChange}
+                            onBlur={handleBlur}
+                            value={values[field.name]}
+                            style={{
+                              ...inputStyles,
+                              width: '95%',
+                              height: '7rem',
+                              padding: '0 .5rem',
+                              background: 'none',
+                              resize: 'none',
+                              fontSize: '.7rem',
+                            }}
+                          />
+                        ) : (
+                          <Input
+                            type={field.type}
+                            name={field.name}
+                            onChange={handleChange}
+                            onBlur={handleBlur}
+                            value={values[field.name]}
+                            {...inputStyles}
+                          />
+                        )}
+                      </Container>
+                    ))}
+                    <Button
+                      type="submit"
+                      bg="#2F4A71"
+                      width="35%"
+                      weight="700"
+                      radius="3rem"
+                      color="white"
+                      responsive={{ margin: '1rem 0 0 0' }}
+                    >
+                      Enviar
+                    </Button>
+                  </Form>
+                </Container>
+              </Container>
             </Container>
           </Container>
+          <Container minHeight="5lvh" width="100vw" bg="#213E6E"></Container>
         </Container>
       )}
+
       {modal.confirm && (
         <Container width="80%" height="20rem" flexDirection="column">
           <Container
