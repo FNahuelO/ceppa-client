@@ -162,23 +162,21 @@ export default function Contact() {
                     }
                   >
                     <Container
-                      flexDirection="column"
                       width="100%"
                       align="flex-start"
+                      justify="space-between"
                     >
                       <Text
                         color="#2F4A71"
                         size=".8rem"
-                        padding={field.type === 'textarea' ? '0 1rem ' : ''}
+                        padding={field.type === 'textarea' ? '0 .5rem ' : ''}
                       >
                         {field.label}
                       </Text>
                       {touched[field.name] && errors[field.name] ? (
-                        <Container width="100%" justify="flex-end">
-                          <Text color="red" size=".7rem" padding="0 .5rem">
-                            {errors[field.name]}
-                          </Text>
-                        </Container>
+                        <Text color="red" size=".7rem" padding="0 .5rem">
+                          {errors[field.name]}
+                        </Text>
                       ) : null}
                     </Container>
                     {field.type === 'textarea' ? (

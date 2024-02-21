@@ -8,7 +8,7 @@ import {
 import ReactGA from 'react-ga'
 import Home from './pages/Home'
 import Contact from './pages/Contact'
-import QuienesSomos from './pages/QuienesSomos'
+import Nosotros from './pages/Nosotros'
 import Team from './pages/Team'
 import Revistas from './pages/Revistas'
 import Admin from './pages/admin/Admin'
@@ -79,10 +79,10 @@ function AppRoutes() {
             }
           />
           <Route
-            path="/quienes-somos"
+            path="/nosotros"
             element={
               <InterfaceUser>
-                <QuienesSomos />
+                <Nosotros />
               </InterfaceUser>
             }
           />

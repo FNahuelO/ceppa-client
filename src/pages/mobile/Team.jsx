@@ -5,6 +5,7 @@ import { useDispatch, useSelector } from 'react-redux'
 import { getStaff } from '../../redux/actions'
 import Slider from '../../components/mobile/Carousel'
 import { useSwipeable } from 'react-swipeable'
+import { Text } from '../../style/Text'
 
 export default function Team() {
   const [cards, setCards] = useState([])
@@ -59,13 +60,21 @@ export default function Team() {
           flexDirection="column"
           justify="center"
           align="center"
-          minHeight="85lvh"
+          minHeight="80lvh"
           radius="2rem 2rem 0 0"
           bg="white"
           index="99"
           {...handlers} // Spread the swipe handlers to the Container component
         >
-          <Container height="80vh" width="100vw">
+          <Container height="80vh" width="100vw" position="relative">
+            <Text
+              position="absolute"
+              top="1.5rem"
+              width="20%"
+              left="50%"
+              transform="translateX(-50%)"
+              border="2px solid #6D6868"
+            ></Text>
             <Slider cards={cards} type="team" />
           </Container>
           <Container minHeight="5lvh" width="100vw" bg="#213E6E"></Container>

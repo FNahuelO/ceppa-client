@@ -70,6 +70,7 @@ export default function Revistas() {
         transform="translate(0, 5%)"
         overflow="auto"
         scrollStyles={true}
+        responsive={{ width: '80%' }}
       >
         {filledArray.map((item, idx) => (
           <Container
@@ -87,6 +88,7 @@ export default function Revistas() {
                   bgImg={item.img || revista}
                   bgPosition="center"
                   bgRepeat="no-repeat"
+                  bgSize="contain"
                   height="90%"
                 ></Container>
                 <Button

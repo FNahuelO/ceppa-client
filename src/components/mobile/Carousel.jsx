@@ -94,7 +94,7 @@ export default function Slider({ cards, type }) {
           </Container>
         </Container>
       )
-    } else {
+    } else if (type === 'magazine') {
       return (
         <Container
           id={`slide-${idx}`}
@@ -138,6 +138,29 @@ export default function Slider({ cards, type }) {
           </Container>
         </Container>
       )
+    } else {
+      return (
+        <Container
+          id={`slide-${idx}`}
+          minWidth="100%"
+          height="100%"
+          justify="center"
+          align="center"
+          flexDirection="column"
+          gap="1rem"
+          style={{
+            scrollSnapAlign: 'start',
+            display: 'inline-block',
+            width: '100%',
+          }}
+        >
+          <Container justify="center">
+            <Text size="1.5rem" width="50%">
+              {item}
+            </Text>
+          </Container>
+        </Container>
+      )
     }
   }
 
@@ -145,9 +168,15 @@ export default function Slider({ cards, type }) {
     <Container
       position="relative"
       width="100%"
-      minHeight="90%"
+      minHeight={type === 'text' ? '20%' : '90%'}
       flexDirection="column"
-      justify={type === 'team' ? 'space-evenly' : 'center'}
+      justify={
+        type === 'team'
+          ? 'space-evenly'
+          : type === 'text'
+          ? 'space-between'
+          : 'center'
+      }
       gap={type === 'team' ? '' : '.5rem'}
       {...handlers}
     >
@@ -173,7 +202,15 @@ export default function Slider({ cards, type }) {
             <VectorRadio
               width={8}
               height={8}
-              color={currentIndex === idx ? '#0055FF' : '#0055FF42'}
+              color={
+                currentIndex === idx
+                  ? type === 'text'
+                    ? '#F8F9FD'
+                    : '#0055FF'
+                  : type === 'text'
+                  ? '#FFFFFF66'
+                  : '#0055FF42'
+              }
             />
           </Button>
         ))}

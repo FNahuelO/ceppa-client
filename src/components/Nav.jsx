@@ -33,10 +33,10 @@ export default function Nav({ admin }) {
     }
   }, [isPassedNavbar])
   const labels = [
-    { label: 'Quienes somos', link: 'quienes-somos' },
+    { label: 'Nosotros', link: 'nosotros' },
     { label: 'Equipo', link: 'equipo' },
     { label: 'Contacto', link: 'contacto' },
-    { label: 'Nuestra revista', link: 'revistas' },
+    { label: 'Revistas', link: 'revistas' },
   ]
 
   const handleClick = () => {

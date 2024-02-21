@@ -120,8 +120,7 @@ export default function Admin({ children }) {
               align="center"
               width="43.55%"
               height="100%"
-              bgImg={fondo}
-              bgSize="cover"
+              bg="linear-gradient(180.24deg, #213E6E 43.31%, #5A429F 102.99%)"
             >
               <img src={logo} />
             </Container>

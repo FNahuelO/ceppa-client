@@ -1,17 +1,18 @@
 import React, { useRef } from 'react'
 import Logo from '../../assets/Logo'
-import { Link } from 'react-router-dom'
+import { Link, useLocation } from 'react-router-dom'
 import { Container } from '../../style/Container'
 import { Text } from '../../style/Text'
 
 export default function Nav() {
   const navbarRef = useRef()
+  const location = useLocation()
 
   const labels = [
     { label: 'Nosotros', link: 'nosotros' },
     { label: 'Equipo', link: 'equipo' },
     { label: 'Contacto', link: 'contacto' },
-    { label: 'Nuestra revista', link: 'revistas' },
+    { label: 'Revistas', link: 'revistas' },
   ]
 
   const handleClick = () => {
@@ -34,16 +35,19 @@ export default function Nav() {
       index="22"
       top="1rem"
     >
-      {/* <Link to="/" onClick={handleClick}>
-        <Logo />
-      </Link> */}
-      <Container gap="2.5rem">
+      <Container gap="2.5rem" width="90%" justify="center">
         {labels.map((item, idx) => (
           <Link key={idx} to={'/' + item.link} onClick={handleClick}>
             <Text
               weight="500"
               color="white"
+              padding=".5rem 0"
               onClick={handleClick}
+              borderBottom={
+                location.pathname === '/' + item.link
+                  ? '2px solid white'
+                  : 'none'
+              }
               responsive={{ fontSize: '.8rem' }}
             >
               {item.label}

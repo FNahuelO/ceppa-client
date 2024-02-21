@@ -80,6 +80,7 @@ export const Container = styled.div`
   background-size: ${({ bgSize }) => bgSize || null};
   background-position: ${({ bgPosition }) => bgPosition || null};
   background-repeat: ${({ bgRepeat }) => bgRepeat || null};
+  background-color: ${({ bgColor }) => bgColor || null};
   background-image: ${({ bgImg }) => bgImg && `url('${bgImg}')`};
   inset: ${({ inset }) => inset || null};
   transform: ${({ transform }) => transform || null};

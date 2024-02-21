@@ -13,7 +13,7 @@ import RectanguloGris from '../assets/RectanguloGris'
 import Esquina from '../assets/Esquina'
 import Esquina2 from '../assets/Esquina2'
 
-export default function QuienesSomos() {
+export default function Nosotros() {
   const listAsistencial = [
     'Tratamiento individual con micro',
     'Tratamiento grupal con micro',

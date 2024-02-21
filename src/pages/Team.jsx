@@ -36,7 +36,7 @@ export default function Team() {
       flexDirection="column"
       gap="1rem"
     >
-      <Text weight="700" size="1.5rem">
+      <Text weight="700" size="1.5rem" color="white">
         Nuestro terapeutas
       </Text>
       <Container

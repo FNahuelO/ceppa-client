@@ -58,9 +58,9 @@ export default function Nosotros() {
           left="0"
           width="100vw"
           flexDirection="column"
-          justify="center"
+          justify="flex-end"
           align="center"
-          minHeight="80vh"
+          minHeight="85vh"
           radius="2rem 2rem 0 0"
           bg="white"
           index="99"
@@ -80,7 +80,7 @@ export default function Nosotros() {
           </Link>
           <Container
             flexDirection="column"
-            height="calc(80vh - 3rem)" // Ajustar el alto para dejar espacio para el botón y el margen inferior
+            height="calc(80vh - 2rem)" // Ajustar el alto para dejar espacio para el botón y el margen inferior
             width="100vw"
             overflowY="auto" // Habilitar el scroll interno
           >
@@ -88,10 +88,10 @@ export default function Nosotros() {
               radius="2rem 2rem 0 0"
               gap="2rem"
               flexDirection="column"
-              minHeight="80vh"
+              minHeight="100vh"
               align="center"
               position="relative"
-              padding="4rem 0 0 0"
+              padding="0"
               bg="white"
             >
               <Text

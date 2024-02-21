@@ -13,7 +13,7 @@ export default function Footer() {
     { label: 'Nosotros', link: 'nosotros' },
     { label: 'Equipo', link: 'equipo' },
     { label: 'Contacto', link: 'contacto' },
-    { label: 'Nuestra revista', link: 'revistas' },
+    { label: 'Revistas', link: 'revistas' },
   ]
 
   const icons = [

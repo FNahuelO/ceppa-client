@@ -2,8 +2,14 @@ import React from 'react'
 import { Container } from '../style/Container'
 import { Text } from '../style/Text'
 import logo from '../assets/logo-redondo.svg'
+import Slider from './mobile/Carousel'
 
 export default function Page3() {
+  const texts = [
+    'Te ayudamos a explorar en las distitas areas de tu vida, objetivos y valores para potenciar lo que nos trae el honguito',
+    'Te ayudamos a explorar en las distitas areas de tu vida, objetivos y valores para potenciar lo que nos trae el honguito',
+    'Te ayudamos a explorar en las distitas areas de tu vida, objetivos y valores para potenciar lo que nos trae el honguito',
+  ]
   return (
     <Container
       position="relative"
@@ -16,10 +22,7 @@ export default function Page3() {
       gap="2rem"
     >
       <img src={logo} alt="CEPPA-Logo" />
-      <Text size="2rem" width="50%">
-        Te ayudamos a explorar en las distitas areas de tu vida, objetivos y
-        valores para potenciar lo que nos trae el honguito
-      </Text>
+      <Slider cards={texts} type="text" />
     </Container>
   )
 }

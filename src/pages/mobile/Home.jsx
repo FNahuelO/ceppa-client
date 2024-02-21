@@ -110,8 +110,8 @@ export default function Home() {
       >
         <Container
           position="absolute"
-          top="10rem"
-          right="5rem"
+          top="5rem"
+          right="2rem"
           className="animate__animated animate__fadeInUp"
         >
           <img src={frame} />
