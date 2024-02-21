@@ -97,9 +97,11 @@ export default function Admin({ children }) {
             border="none"
             outline="none"
             bottom="1rem"
+            padding="0"
             right="1rem"
             color="#213E6E"
             weight="600"
+            responsive={{ fontSize: '.8rem' }}
             onClick={() => {
               sessionStorage.clear()
               window.location.href = '/admin'

@@ -43,8 +43,6 @@ export default function Login() {
     }),
     onSubmit: async (values) => {
       const data = await login(values)
-      console.log(data)
-
       if (data.success) {
         sessionStorage.setItem('user', JSON.stringify(data.data))
         window.location.href = '/admin'
@@ -85,7 +83,7 @@ export default function Login() {
           gap="2rem"
           position="relative"
         >
-          <Text color="#4B4B4B" weight="600" size="1.75rem">
+          <Text color="#4B4B4B" weight="600" size="1.5rem">
             Iniciar sesión
           </Text>
           <Form
@@ -138,14 +136,15 @@ export default function Login() {
                         type="button"
                         bg="none"
                         position="absolute"
-                        right="2rem"
+                        right="1.5rem"
                         margin="0"
+                        top=".8rem"
                         padding="0"
                         outline="none"
                         border="none"
                         onClick={() => setViewPassword(!viewPassword)}
                       >
-                        <img src={viewPassword ? eyeOff : eye} />
+                        <img src={viewPassword ? eyeOff : eye} width={23} />
                       </Button>
                     )}
                   </Container>
@@ -163,9 +162,15 @@ export default function Login() {
               shadow="0 4px 4px 0 #00000040"
               width="100%"
               radius="2rem"
-              padding="1rem"
+              padding=".5rem 1rem"
+              color="white"
+              weight="800"
               margin="1rem 0"
               type="submit"
+              hover={{
+                color: '#213E6E',
+                background: 'white',
+              }}
             >
               Ingresar
             </Button>
@@ -176,7 +181,7 @@ export default function Login() {
             bottom="3rem"
             responsive={{ right: '1rem', bottom: '1rem' }}
           >
-            <Logo />
+            <Logo width="100" />
           </Container>
         </Container>
       </Container>

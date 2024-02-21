@@ -70,7 +70,7 @@ export default function Team() {
             <Text
               position="absolute"
               top="1.5rem"
-              width="20%"
+              width="15%"
               left="50%"
               transform="translateX(-50%)"
               border="2px solid #6D6868"

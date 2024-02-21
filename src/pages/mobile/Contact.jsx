@@ -80,7 +80,7 @@ export default function Contact() {
       {modal.form && (
         <Container
           width="90%"
-          height="70%"
+          height="80%"
           radius="1rem"
           flexDirection="column"
         >
@@ -169,7 +169,7 @@ export default function Contact() {
                       <Text
                         color="#2F4A71"
                         size=".8rem"
-                        padding={field.type === 'textarea' ? '0 .5rem ' : ''}
+                        padding={field.type === 'textarea' ? '0 .25rem ' : ''}
                       >
                         {field.label}
                       </Text>

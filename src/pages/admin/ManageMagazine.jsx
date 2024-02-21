@@ -45,6 +45,11 @@ const Add = ({ setTypes }) => {
         radius="3rem"
         width="60%"
         onClick={() => setTypes('form')}
+        hover={{
+          color: '#8473B4',
+          background: 'white',
+          borderColor: '#8473B4',
+        }}
       >
         Agregar +
       </Button>
@@ -104,6 +109,7 @@ const List = ({ cards, setTypes, handleClick }) => {
         overflowX="hidden"
         ref={containerRef}
         scrollStyles={true}
+        responsive={{ padding: '1rem 1.5rem' }}
       >
         {cards.map((item, idx) => {
           // eslint-disable-next-line react-hooks/rules-of-hooks
@@ -114,6 +120,7 @@ const List = ({ cards, setTypes, handleClick }) => {
               flexDirection="column"
               position="relative"
               key={idx}
+              responsive={{ width: '45%' }}
             >
               <Text
                 size="1.5rem"
@@ -386,7 +393,13 @@ export default function ManageMagazine() {
           height="80%"
           gap="3rem"
         >
-          <Text weight="600" size="1.75rem" color="#353535" align="start">
+          <Text
+            weight="600"
+            size="1.75rem"
+            color="#353535"
+            align="start"
+            responsive={{ fontSize: '1.5rem' }}
+          >
             Gestionar revistas
           </Text>
           {type === 'form' ? (

@@ -5,6 +5,7 @@ import { useDispatch, useSelector } from 'react-redux'
 import { getMagazines } from '../../redux/actions'
 import Slider from '../../components/mobile/Carousel'
 import { useSwipeable } from 'react-swipeable'
+import { Text } from '../../style/Text'
 
 export default function Revistas() {
   const [array, setArray] = useState([])
@@ -68,6 +69,14 @@ export default function Revistas() {
           {...handlers}
         >
           <Container height="80vh" width="100vw">
+            <Text
+              position="absolute"
+              top="1.5rem"
+              width="15%"
+              left="50%"
+              transform="translateX(-50%)"
+              border="2px solid #6D6868"
+            ></Text>
             <Slider cards={array} type="magazine" />
           </Container>
         </Container>

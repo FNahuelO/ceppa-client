@@ -83,7 +83,7 @@ export default function Revistas() {
           >
             {item && (
               <>
-                <Text>{item.title}</Text>
+                <Text color="white">{item.title}</Text>
                 <Container
                   bgImg={item.img || revista}
                   bgPosition="center"
@@ -100,6 +100,7 @@ export default function Revistas() {
                   display="flex"
                   align="center"
                   gap=".5rem"
+                  color="white"
                   onClick={() => handleDownload(item.archive)}
                 >
                   Descargar <Download />

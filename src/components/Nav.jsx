@@ -53,7 +53,7 @@ export default function Nav({ admin }) {
       bg="white"
       width={admin ? '98%' : '95%'}
       padding="1rem 2.5rem"
-      height="5vh"
+      height="6vh"
       justify="space-between"
       align="center"
       position={admin ? '' : 'absolute'}
@@ -64,7 +64,11 @@ export default function Nav({ admin }) {
         <Logo />
       </Link>
       {!admin && (
-        <Container gap="5rem" responsive={{ gap: '3.5rem' }}>
+        <Container
+          gap="5rem"
+          responsive={{ gap: '3.5rem' }}
+          transform="translateX(-20%)"
+        >
           {labels.map((item, idx) => (
             <Link key={idx} to={'/' + item.link} onClick={handleClick}>
               <Text

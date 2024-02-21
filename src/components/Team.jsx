@@ -44,13 +44,7 @@ export default function Team() {
       ? [cards.length / 2 - 1, cards.length / 2]
       : [Math.floor(cards.length / 2)]
   return (
-    <Container
-      justify="space-evenly"
-      align="center"
-      height="105vh"
-      bg="white"
-      maxHeight="40rem"
-    >
+    <Container justify="space-evenly" align="center" height="105vh" bg="white">
       <Container
         flexDirection="column"
         gap="1rem"
@@ -103,7 +97,7 @@ export default function Team() {
         }}
       >
         <Text color="#213E6E" weight="500" borderBottom=".5px solid #213E6E66">
-          Conoce nuestro equipo de profecionales
+          Conoce nuestro equipo de profesionales
         </Text>
         <Container
           flexDirection="column"

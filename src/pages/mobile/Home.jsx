@@ -76,7 +76,7 @@ export default function Home() {
             width="100%"
             position="relative"
             border="none"
-            padding="1rem 2.5rem"
+            padding="1rem 1.5rem"
             outline="none"
             bg="rgba(47, 74, 113, 1)"
             radius="3rem"
@@ -85,7 +85,7 @@ export default function Home() {
             display="flex"
             align="center"
             justify="space-between"
-            gap="2rem"
+            gap="1rem"
             hover={{
               boxShadow: '0 4px 4px 0 #00000040',
               color: '#213E6E',
@@ -94,7 +94,7 @@ export default function Home() {
             onMouseEnter={() => setIsHovered(true)}
             onMouseLeave={() => setIsHovered(false)}
           >
-            Contactanos{' '}
+            Contactanos
             <ChevronRigth2 color={isHovered ? '#213E6E' : 'white'} />
           </Button>
         </Link>

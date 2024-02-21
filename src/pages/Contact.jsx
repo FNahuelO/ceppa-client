@@ -206,7 +206,7 @@ export default function Contact() {
                   weight="700"
                   radius=".5rem"
                   color="white"
-                  responsive={{ margin: '1rem 0 0 0' }}
+                  responsive={{ margin: '1rem 0 0 0', fontSize: '.8rem' }}
                   hover={{
                     background: 'white',
                     color: '#2F4A71',
@@ -222,9 +222,9 @@ export default function Contact() {
               position="absolute"
               right="4rem"
               bottom="3rem"
-              responsive={{ bottom: '1rem', right: '1rem' }}
+              responsive={{ bottom: '1rem', right: '2rem' }}
             >
-              <Logo />
+              <Logo width="100" />
             </Container>
           </Container>
         </Container>

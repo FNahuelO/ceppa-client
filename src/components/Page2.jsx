@@ -42,11 +42,11 @@ export default function Page2() {
       </Container>
       <Container
         position="absolute"
-        right="10rem"
+        right="8rem"
         bottom="10rem"
-        responsive={{ rigth: '3rem', bottom: '5rem' }}
+        responsive={{ right: '5rem', bottom: '5rem' }}
       >
-        <img src={logo} alt="CEPPA-Logo" />
+        <img src={logo} alt="CEPPA-Logo" width="100" />
       </Container>
     </Container>
   )

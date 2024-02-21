@@ -41,7 +41,7 @@ export default function Nav() {
             <Text
               weight="500"
               color="white"
-              padding=".5rem 0"
+              padding="1rem 0"
               onClick={handleClick}
               borderBottom={
                 location.pathname === '/' + item.link
