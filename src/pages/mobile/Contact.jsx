@@ -163,7 +163,7 @@ export default function Contact() {
                   >
                     <Container
                       width="100%"
-                      align="flex-start"
+                      align="center"
                       justify="space-between"
                     >
                       <Text
@@ -174,7 +174,7 @@ export default function Contact() {
                         {field.label}
                       </Text>
                       {touched[field.name] && errors[field.name] ? (
-                        <Text color="red" size=".7rem" padding="0 .5rem">
+                        <Text color="red" size=".6rem" padding="0 .25rem">
                           {errors[field.name]}
                         </Text>
                       ) : null}
@@ -215,12 +215,6 @@ export default function Contact() {
                   radius=".5rem"
                   color="white"
                   responsive={{ margin: '1rem 0 0 0' }}
-                  hover={{
-                    background: 'white',
-                    color: '#2F4A71',
-                    boxShadow: '0 4px 4px 0 #00000040',
-                    border: 'none',
-                  }}
                 >
                   Enviar
                 </Button>

@@ -131,6 +131,7 @@ export default function Slider({ cards, type }) {
               display="flex"
               align="center"
               gap=".5rem"
+              color="white"
               onClick={() => handleDownload(item.archive)}
             >
               Descargar <Download />
