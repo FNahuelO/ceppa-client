@@ -9,17 +9,9 @@ import Page3 from '../components/Page3'
 import Team from '../components/Team'
 import { Link } from 'react-router-dom'
 import ChevronRigth2 from '../assets/ChevronRigth2'
-import ReactGA from 'react-ga4'
 
 export default function Home() {
   const [isHovered, setIsHovered] = useState(false)
-
-  useEffect(() => {
-    ReactGA.send({
-      hitType: 'pageview',
-      page: window.location.pathname,
-    })
-  }, [])
 
   return (
     <Container width="100vw" flexDirection="column">

@@ -3,12 +3,12 @@ import { Container } from '../style/Container'
 import fondo from '../assets/fondo-home.png'
 import { Text } from '../style/Text'
 import { Button } from '../style/Buttons'
-
 import revista from '../assets/revista.png'
 import Error from '../assets/Error'
 import Download from '../assets/Download'
 import { useDispatch, useSelector } from 'react-redux'
 import { getMagazines } from '../redux/actions'
+import ReactGA from 'react-ga4'
 
 export default function Revistas() {
   const [array, setArray] = useState([])
@@ -23,22 +23,28 @@ export default function Revistas() {
     setArray(currentArray)
   }, [currentArray])
 
-  const handleDownload = (url) => {
-    const newTab = window.open(url, '_blank')
+  const handleDownload = (item) => {
+    const newTab = window.open(item.archive, '_blank')
 
     if (newTab) {
       setTimeout(() => {
-        newTab.location.href = url // Cambia la ubicación de la nueva pestaña al enlace
+        newTab.location.href = item.archive // Cambia la ubicación de la nueva pestaña al enlace
       }, 500)
     } else {
       const link = document.createElement('a')
-      link.href = url
+      link.href = item.archive
       link.setAttribute('download', '')
       link.style.display = 'none'
       document.body.appendChild(link)
       link.click()
       document.body.removeChild(link)
     }
+
+    ReactGA.event({
+      category: 'Archivo Descargado',
+      action: 'Download',
+      label: item.name,
+    })
   }
 
   const extraItemCount = Math.ceil(array.length / 8) * 8 - array.length
@@ -94,7 +100,7 @@ export default function Revistas() {
                   align="center"
                   gap=".5rem"
                   color="white"
-                  onClick={() => handleDownload(item.archive)}
+                  onClick={() => handleDownload(item)}
                 >
                   Descargar <Download />
                 </Button>
