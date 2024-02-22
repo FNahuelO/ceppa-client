@@ -24,20 +24,40 @@ const ConditionalApp = () => {
       window.removeEventListener('resize', handleResize)
     }
   }, [])
-
   useEffect(() => {
-    // Enviar datos de página vista a Google Analytics al cambiar la ruta
-    const unregister = history.listen((location) => {
-      ReactGA.send({ hitType: 'pageview', page: location.pathname })
+    // Envía datos de página vista a Google Analytics al cambiar la ruta
+    ReactGA.send({
+      hitType: 'pageview',
+      page: location.pathname,
+      title: getTitleFromPath(location.pathname), // Título personalizado basado en el path
     })
+  }, [location.pathname])
 
-    return unregister
-  }, [])
+  const getTitleFromPath = (pathname) => {
+    switch (pathname) {
+      case '/':
+        return 'Inicio'
+      case '/nosotros':
+        return 'Nosotros'
+      case '/contacto':
+        return 'Contacto'
+      case '/equipo':
+        return 'Equipo'
+      case '/revistas':
+        return 'Revistas'
+      default:
+        return 'CEPPA'
+    }
+  }
 
   return (
     <Provider store={store}>
       <React.StrictMode>
-        {isWideScreen ? <Desktop /> : <App />}
+        {isWideScreen ? (
+          <Desktop getTitleFromPath={getTitleFromPath} />
+        ) : (
+          <App getTitleFromPath={getTitleFromPath} />
+        )}
       </React.StrictMode>
     </Provider>
   )

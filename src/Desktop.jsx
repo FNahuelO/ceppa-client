@@ -35,15 +35,15 @@ function InterfaceUser({ children }) {
   )
 }
 
-function App() {
+function App({ getTitleFromPath }) {
   return (
     <Router>
-      <AppRoutes />
+      <AppRoutes getTitleFromPath={getTitleFromPath} />
     </Router>
   )
 }
 
-function AppRoutes() {
+function AppRoutes({ getTitleFromPath }) {
   const [isLoading, setIsLoading] = useState(false)
   const location = useLocation()
 
@@ -56,6 +56,11 @@ function AppRoutes() {
     return () => clearTimeout(timer)
   }, [location])
 
+  useEffect(() => {
+    document.title = getTitleFromPath(location.pathname)
+  }, [location.pathname])
+
+  // Función para obtener el título basado en el path actual
   return (
     <>
       {isLoading && <Loading />}

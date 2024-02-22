@@ -1,4 +1,4 @@
-import React from 'react'
+import React, { useEffect } from 'react'
 import { BrowserRouter as Router, Route, Routes } from 'react-router-dom'
 import Home from './pages/mobile/Home'
 import { Container } from './style/Container'
@@ -26,7 +26,10 @@ function InterfaceUser({ children }) {
   )
 }
 
-export default function App() {
+export default function App({ getTitleFromPath }) {
+  useEffect(() => {
+    document.title = getTitleFromPath(location.pathname)
+  }, [location.pathname])
   return (
     <Router>
       <Routes>
