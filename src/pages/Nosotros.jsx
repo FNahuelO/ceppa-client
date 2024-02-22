@@ -197,7 +197,6 @@ export default function Nosotros() {
           position="relative"
           flexDirection="column"
           gap="2rem"
-          beforeLeft={true}
         >
           <Container
             position="absolute"

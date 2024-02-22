@@ -86,6 +86,7 @@ export default function Contact() {
       bgSize="cover"
       bgPosition="center"
       id="#contacto"
+      beforeLeft={true}
     >
       {modal.form && (
         <Container

@@ -116,25 +116,14 @@ export const Container = styled.div`
   ${({ beforeLeft }) =>
     beforeLeft &&
     `
-    &::before,
-    &::after {
-      content: "";
-      position: absolute;
-      background-color: #8473B4; /* Color del borde */
-    }
-  
-    &::before {
-      top: 0;
-      left: 0;
-      width: 100%; /* Borde superior - ajusta según sea necesario */
-      height: 2px; /* Grosor del borde superior */
-    }
-  
-    &::after {
-      bottom: 0;
-      right: 0;
-      width: 100%; /* Ancho del borde inferior - ajusta según sea necesario */
-      height: 2px; /* Grosor del borde inferior */
+    &::before{
+    content: ""; /* Necesario para que el pseudo-elemento se muestre */
+    position: absolute; /* Lo posicionamos sobre el div */
+    top: 0; /* Alineado con la parte superior del div */
+    left: 0; /* Alineado con el borde izquierdo del div */
+    width: 100%; /* Ancho completo */
+    height: 100%; /* Altura completa */
+    background-color: rgba(0, 0, 0, 0.5); 
     }
   
   }`}

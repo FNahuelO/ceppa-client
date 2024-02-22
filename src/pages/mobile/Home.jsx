@@ -73,7 +73,7 @@ export default function Home() {
       >
         <Container gap="1rem" flexDirection="column" align="center">
           <img src={logo} alt="Logo ceppa" style={{ width: '15rem' }} />
-          <Text size=".9rem">¿Estas buscando acompañamiento con micro?</Text>
+          <Text size=".9rem">¿Queres conocer nuestras propuestas?</Text>
         </Container>
         <Link to="/contacto">
           <Button

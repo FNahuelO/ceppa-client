@@ -39,18 +39,20 @@ export default function Team() {
       bgPosition="center"
       flexDirection="column"
       gap="1rem"
+      beforeLeft={true}
     >
-      <Text weight="700" size="1.5rem" color="white">
+      <Text weight="700" size="1.5rem" color="white" index="5">
         Nuestro terapeutas
       </Text>
       <Container
         bg="#F0F1F3"
-        width="50%"
-        height="60%"
-        padding="3rem"
+        width="55%"
+        height="70%"
+        padding="1rem 3rem"
         flexDirection="column"
         align="center"
         radius=".5rem"
+        index="5"
       >
         <Container
           flexDirection="column"

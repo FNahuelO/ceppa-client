@@ -44,7 +44,13 @@ export default function Team() {
       ? [cards.length / 2 - 1, cards.length / 2]
       : [Math.floor(cards.length / 2)]
   return (
-    <Container justify="space-evenly" align="center" height="105vh" bg="white">
+    <Container
+      justify="space-evenly"
+      align="center"
+      height="105vh"
+      bg="white"
+      index="4"
+    >
       <Container
         flexDirection="column"
         gap="1rem"

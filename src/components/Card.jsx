@@ -32,7 +32,12 @@ export default function Card({
       }
       responsive={{ padding: '1rem' }}
     >
-      <Container flexDirection="column" align="center" height="100%">
+      <Container
+        flexDirection="column"
+        align="center"
+        height="100%"
+        gap=".5rem"
+      >
         <Container>
           <Image
             src={image || avatar}
@@ -47,15 +52,15 @@ export default function Card({
           />
         </Container>
         {admin && (
-          <Container flexDirection="column" gap=".5rem">
-            <Text color="black" weight="500" width="max-content">
+          <Container flexDirection="column" gap=".25rem">
+            <Text color="black" weight="500" width="max-content" size=".8rem">
               Tipo de consulta
             </Text>
             <Text
               bg="#8473B4"
               radius="3rem"
               weight="700"
-              size=".8rem"
+              size=".7rem"
               padding=".25rem 0"
               color="white"
             >

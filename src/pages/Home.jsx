@@ -26,16 +26,17 @@ export default function Home() {
         bgPosition="center"
         justify="space-evenly"
         align="center"
+        beforeLeft={true}
       >
         <img src={logo} alt="Logo ceppa" style={{ transform: 'scale(1.1)' }} />
-        <Container flexDirection="column" width="20%" gap="1rem">
+        <Container flexDirection="column" index="5" gap="1rem">
           <Text
             color="white"
             size="1.5rem"
             align="start"
             responsive={{ fontSize: '1.25rem' }}
           >
-            ¿Estás buscando acompañamiento con micro?
+            ¿Queres conocer nuestras propuestas?
           </Text>
           <Link to="/contacto">
             <Button

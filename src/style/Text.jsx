@@ -33,6 +33,7 @@ export const Text = styled.span`
   letter-spacing: ${({ spacing }) => spacing || null};
   word-wrap: ${({ wrap }) => wrap || null};
   opacity: ${({ opacity }) => opacity || null};
+  z-index: ${({ index }) => index || null};
 
   &:hover {
     ${({ hover }) =>

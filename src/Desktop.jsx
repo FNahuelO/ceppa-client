@@ -48,6 +48,8 @@ function AppRoutes() {
   const [isLoading, setIsLoading] = useState(false)
   const location = useLocation()
 
+  ReactGA.initialize('G-2PSRN0KE2P')
+
   useEffect(() => {
     setIsLoading(true)
     const timer = setTimeout(() => {

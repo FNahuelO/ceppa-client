@@ -58,6 +58,7 @@ export default function Revistas() {
       width="100%"
       bgSize="cover"
       bgPosition="center"
+      beforeLeft={true}
     >
       <Container
         width="60%"

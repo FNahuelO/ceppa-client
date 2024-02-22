@@ -76,6 +76,11 @@ export default function Nav({ admin }) {
                 color="rgba(47, 74, 113, 1)"
                 onClick={handleClick}
                 responsive={{ fontSize: '.8rem' }}
+                hover={{
+                  fontWeight: '600',
+                  textShadow: '0 4px 4px #00000040',
+                  transform: 'scale(1.5)',
+                }}
               >
                 {item.label}
               </Text>

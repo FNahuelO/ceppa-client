@@ -46,7 +46,7 @@ export default function Footer() {
     >
       <Container flexDirection="column" gap="1rem">
         <img src={image} alt="ceppa_footer" />
-        <Text color="rgba(47, 74, 113, 1)">ceppa.psicologia.com</Text>
+        <Text color="rgba(47, 74, 113, 1)">ceppa.com.ar</Text>
       </Container>
       <Container flexDirection="column" gap="2rem" align="flex-end">
         {labels.map((item, idx) => (

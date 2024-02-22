@@ -5,9 +5,9 @@ import { Container } from './style/Container'
 import Nav from './components/mobile/Nav'
 import Team from './pages/mobile/Team'
 import Nosotros from './pages/mobile/Nosotros'
-import SimpleSlider from './components/mobile/Carousel'
 import Contact from './pages/mobile/Contact'
 import Revistas from './pages/mobile/Revistas'
+import ReactGA from 'react-ga'
 
 function InterfaceUser({ children }) {
   return (
@@ -28,6 +28,7 @@ function InterfaceUser({ children }) {
 }
 
 export default function App() {
+  ReactGA.initialize('G-2PSRN0KE2P')
   return (
     <Router>
       <Routes>
