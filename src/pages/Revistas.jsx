@@ -25,7 +25,7 @@ export default function Revistas() {
 
   const handleDownload = (item) => {
     ReactGA.event({
-      category: 'Download',
+      category: 'file_dowload',
       action: 'Download',
       label: item.name,
     })

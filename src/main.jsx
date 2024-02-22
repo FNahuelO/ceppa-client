@@ -8,7 +8,7 @@ import Desktop from './Desktop.jsx'
 import './index.css'
 
 // Configurar ReactGA con tu ID de seguimiento de Google Analytics
-ReactGA.initialize('G-2PSRN0KE2P')
+ReactGA.initialize('G-L93VGXVGY4')
 
 const ConditionalApp = () => {
   const [isWideScreen, setIsWideScreen] = useState(window.innerWidth > 600)
