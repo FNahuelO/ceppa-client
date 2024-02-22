@@ -11,7 +11,6 @@ import { Button } from '../../style/Buttons'
 import VectorCheck from '../../assets/VectorCheck'
 import VectorX from '../../assets/VectorX'
 import baseUrl from '../../config/axios'
-import ReactGA from 'react-ga'
 import { useSwipeable } from 'react-swipeable'
 import { MainModal } from '../../style/Main'
 import { ClipLoader } from 'react-spinners'
@@ -70,9 +69,6 @@ export default function Contact() {
     },
   })
 
-  useEffect(() => {
-    ReactGA.pageview(window.location.pathname + window.location.search)
-  }, [])
   useEffect(() => {
     // Show the container after a short delay to allow the page to render first
     const timer = setTimeout(() => {

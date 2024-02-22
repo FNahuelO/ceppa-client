@@ -9,7 +9,6 @@ import Error from '../assets/Error'
 import Download from '../assets/Download'
 import { useDispatch, useSelector } from 'react-redux'
 import { getMagazines } from '../redux/actions'
-import ReactGA from 'react-ga'
 
 export default function Revistas() {
   const [array, setArray] = useState([])
@@ -23,10 +22,6 @@ export default function Revistas() {
   useEffect(() => {
     setArray(currentArray)
   }, [currentArray])
-
-  useEffect(() => {
-    ReactGA.pageview(window.location.pathname + window.location.search)
-  }, [])
 
   const handleDownload = (url) => {
     const newTab = window.open(url, '_blank')

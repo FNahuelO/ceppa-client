@@ -8,14 +8,11 @@ import Page2 from '../components/Page2'
 import Page3 from '../components/Page3'
 import Team from '../components/Team'
 import { Link } from 'react-router-dom'
-import ReactGA from 'react-ga'
 import ChevronRigth2 from '../assets/ChevronRigth2'
 
 export default function Home() {
   const [isHovered, setIsHovered] = useState(false)
-  useEffect(() => {
-    ReactGA.pageview(window.location.pathname + window.location.search)
-  }, [])
+
   return (
     <Container width="100vw" flexDirection="column">
       <Container

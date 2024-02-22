@@ -5,14 +5,9 @@ import logo from '../../assets/logo-color.svg'
 import hojas from '../../assets/hojas-mobile.svg'
 import { Hr, Text, Ul } from '../../style/Text'
 import { Link } from 'react-router-dom'
-import ReactGA from 'react-ga'
 import { useSwipeable } from 'react-swipeable'
 
 export default function Nosotros() {
-  useEffect(() => {
-    ReactGA.pageview(window.location.pathname + window.location.search)
-  }, [])
-
   const listAsistencial = [
     'Tratamiento individual con micro',
     'Tratamiento grupal con micro',

@@ -5,7 +5,6 @@ import VectorRadio from '../../assets/VectorRadio'
 import { useSwipeable } from 'react-swipeable'
 import { Text } from '../../style/Text'
 import Download from '../../assets/Download'
-import ReactGA from 'react-ga'
 
 export default function Slider({ cards, type }) {
   const [currentIndex, setCurrentIndex] = useState(0)
@@ -76,11 +75,11 @@ export default function Slider({ cards, type }) {
       link.click()
       document.body.removeChild(link)
     }
-    ReactGA.event({
+    /*  ReactGA.event({
       category: item.name,
       action: 'Descarga',
       value: item.name,
-    })
+    }) */
   }
 
   const renderCard = (item, idx) => {

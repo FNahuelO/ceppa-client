@@ -11,7 +11,6 @@ import { Input } from '../style/Input'
 import { Button } from '../style/Buttons'
 import VectorCheck from '../assets/VectorCheck'
 import VectorX from '../assets/VectorX'
-import ReactGA from 'react-ga'
 import baseUrl from '../config/axios'
 import { ClipLoader } from 'react-spinners'
 
@@ -67,10 +66,6 @@ export default function Contact() {
       }
     },
   })
-
-  useEffect(() => {
-    ReactGA.pageview(window.location.pathname + window.location.search)
-  }, [])
 
   const handleClose = () => {
     setModal({ form: true, confirm: false })

@@ -5,13 +5,8 @@ import { Image } from '../style/Input'
 import pic from '../assets/pic-1.png'
 import psilocibina from '../assets/psilocibina.png'
 import Esquina2 from '../assets/Esquina2'
-import ReactGA from 'react-ga'
 
 export default function Nosotros() {
-  useEffect(() => {
-    ReactGA.pageview(window.location.pathname + window.location.search)
-  }, [])
-
   const listAsistencial = [
     'Tratamiento individual con micro',
     'Tratamiento grupal con micro',
