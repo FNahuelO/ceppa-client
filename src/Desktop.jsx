@@ -5,7 +5,6 @@ import {
   Route,
   useLocation,
 } from 'react-router-dom'
-import ReactGA from 'react-ga'
 import Home from './pages/Home'
 import Contact from './pages/Contact'
 import Nosotros from './pages/Nosotros'
@@ -47,8 +46,6 @@ function App() {
 function AppRoutes() {
   const [isLoading, setIsLoading] = useState(false)
   const location = useLocation()
-
-  ReactGA.initialize('G-2PSRN0KE2P')
 
   useEffect(() => {
     setIsLoading(true)

@@ -3,7 +3,7 @@ import ReactDOM from 'react-dom'
 import { Provider } from 'react-redux'
 import { store } from './redux/store.js'
 import App from './App.jsx'
-import ReactGA from 'react-ga'
+import ReactGA from 'react-ga4'
 import Desktop from './Desktop.jsx'
 import './index.css'
 
@@ -34,5 +34,6 @@ const ConditionalApp = () => {
 }
 
 // Enviar datos de página vista a Google Analytics
+ReactGA.initialize('G-2PSRN0KE2P')
 
 ReactDOM.createRoot(document.getElementById('root')).render(<ConditionalApp />)
