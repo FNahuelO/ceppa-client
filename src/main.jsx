@@ -8,6 +8,7 @@ import Desktop from './Desktop.jsx'
 import './index.css'
 
 // Configurar ReactGA con tu ID de seguimiento de Google Analytics
+ReactGA.initialize('G-2PSRN0KE2P')
 
 const ConditionalApp = () => {
   const [isWideScreen, setIsWideScreen] = useState(window.innerWidth > 600)
@@ -24,6 +25,15 @@ const ConditionalApp = () => {
     }
   }, [])
 
+  useEffect(() => {
+    // Enviar datos de página vista a Google Analytics al cambiar la ruta
+    const unregister = history.listen((location) => {
+      ReactGA.send({ hitType: 'pageview', page: location.pathname })
+    })
+
+    return unregister
+  }, [])
+
   return (
     <Provider store={store}>
       <React.StrictMode>
@@ -32,8 +42,5 @@ const ConditionalApp = () => {
     </Provider>
   )
 }
-
-// Enviar datos de página vista a Google Analytics
-ReactGA.initialize('G-2PSRN0KE2P')
 
 ReactDOM.createRoot(document.getElementById('root')).render(<ConditionalApp />)

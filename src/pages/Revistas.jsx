@@ -24,12 +24,12 @@ export default function Revistas() {
   }, [currentArray])
 
   const handleDownload = (item) => {
-    const newTab = window.open(item.archive, '_blank')
     ReactGA.event({
       category: 'Download',
       action: 'Download',
       label: item.name,
     })
+    const newTab = window.open(item.archive, '_blank')
 
     if (newTab) {
       setTimeout(() => {
