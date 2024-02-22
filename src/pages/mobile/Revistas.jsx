@@ -51,6 +51,7 @@ export default function Revistas() {
       flexDirection="column"
       gap="1rem"
       position="relative"
+      beforeLeft
       {...handlers}
     >
       {isVisible && (

@@ -62,6 +62,7 @@ export default function Login() {
       bgPosition="center"
       justify="space-evenly"
       align="center"
+      beforeLeft
     >
       <Container
         width="40%"

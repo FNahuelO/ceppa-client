@@ -41,7 +41,6 @@ export default function Nosotros() {
   })
 
   const handleSwipeUp = () => {
-    console.log('entre')
     window.location.href = '/'
   }
 
@@ -56,6 +55,7 @@ export default function Nosotros() {
       align="center"
       flexDirection="column"
       overflowY="auto"
+      beforeLeft
     >
       {/* Use conditional rendering to show the container */}
       {isVisible && (

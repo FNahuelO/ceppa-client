@@ -105,6 +105,7 @@ export default function Contact() {
       align="center"
       flexDirection="column"
       gap="1rem"
+      beforeLeft
     >
       {isVisible && (
         <Container

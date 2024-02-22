@@ -49,6 +49,7 @@ export default function Team() {
       flexDirection="column"
       gap="1rem"
       position="relative"
+      beforeLeft
     >
       {isVisible && (
         <Container

@@ -60,17 +60,14 @@ const List = ({ cards, setTypes, handleClick }) => {
     }))
   }
 
-  // Referencia a un contenedor que abarca toda la pantalla
   const containerRef = useRef(null)
 
-  // Función para cerrar los elementos cuando se hace clic fuera de ellos
   const handleClickOutside = (event) => {
     if (containerRef.current && !containerRef.current.contains(event.target)) {
       setViewStates({})
     }
   }
 
-  // Agregar el controlador de eventos de clic fuera del contenedor
   useEffect(() => {
     document.addEventListener('click', handleClickOutside)
     return () => {
@@ -104,7 +101,6 @@ const List = ({ cards, setTypes, handleClick }) => {
         responsive={{ padding: '.5rem', width: '100%' }}
       >
         {cards.map((item, idx) => {
-          // eslint-disable-next-line react-hooks/rules-of-hooks
           return (
             <Container
               bg="white"
@@ -124,6 +120,12 @@ const List = ({ cards, setTypes, handleClick }) => {
                   src={item.imageUrl || foto}
                   alt=""
                   style={{ width: '80px', height: '80px', borderRadius: '50%' }}
+                  onLoad={(e) => {
+                    if (e.target.width === e.target.height) {
+                      e.target.style.objectFit = 'cover'
+                      e.target.style.objectPosition = 'top'
+                    }
+                  }}
                 />
               </Container>
 
@@ -195,7 +197,7 @@ const List = ({ cards, setTypes, handleClick }) => {
 
 export default function ManageTeam() {
   const [cards, setCards] = useState([])
-  const [imagen, setImagen] = useState(null)
+  const [imagen, setImagen] = useState({ data: null, square: null })
   const [modal, setModal] = useState({ view: false, payload: null })
   const [ask, setAsk] = useState({ view: false, payload: null })
   const [edit, setEdit] = useState({ view: false, payload: null })
@@ -231,7 +233,7 @@ export default function ManageTeam() {
         .then((data) => {
           // Cuando se complete la conversión, establece los valores en el estado
           setValues({ name, description, speciality, image: data, type })
-          setImagen(imageUrl)
+          setImagen({ data: imageUrl, square: null })
         })
         .catch((error) => {
           console.error('Error al convertir la URL en ArrayBuffer:', error)
@@ -258,7 +260,6 @@ export default function ManageTeam() {
     handleBlur,
     values,
     handleReset,
-    setErrors,
     setFieldValue,
     setValues,
     touched,
@@ -310,7 +311,7 @@ export default function ManageTeam() {
       if (data.success) {
         handleReset()
         setEdit({ view: false, payload: null })
-        setImagen(null)
+        setImagen({ data: null, square: null })
         setModal({ view: true, payload: data.message })
         setButtonLabel('Confirmar')
       }
@@ -346,15 +347,12 @@ export default function ManageTeam() {
         const image = new Image()
         image.onload = () => {
           if (image.width !== image.height) {
-            setErrors({
-              ...errors,
-              image:
-                'La imagen no es cuadrada. Por favor, selecciona una imagen cuadrada.',
-            })
+            setImagen({ data: reader.result, square: false })
+            //
           } else {
-            setImagen(reader.result) // Establece la URL de la imagen como base64
-            setFieldValue('image', file) // Establecer el valor del campo solo si la imagen es cuadrada
+            setImagen({ data: reader.result, square: true })
           }
+          setFieldValue('image', file) // Establecer el valor del campo solo si la imagen es cuadrada
         }
         image.src = reader.result
       }
@@ -376,10 +374,6 @@ export default function ManageTeam() {
       setModal({ view: true, payload: data.message })
     }
   }
-
-  /* const handleEdit = async (id) => {
-
-  } */
 
   const handleClose = () => {
     setModal({ view: false, payload: null })

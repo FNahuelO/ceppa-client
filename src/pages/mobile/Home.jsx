@@ -65,8 +65,9 @@ export default function Home() {
         align="center"
         flexDirection="column"
         gap="1rem"
+        beforeLeft
       >
-        <Container gap="1rem" flexDirection="column" align="center">
+        <Container gap="1rem" flexDirection="column" align="center" index="5">
           <img src={logo} alt="Logo ceppa" style={{ width: '15rem' }} />
           <Text size=".9rem">¿Queres conocer nuestras propuestas?</Text>
         </Container>

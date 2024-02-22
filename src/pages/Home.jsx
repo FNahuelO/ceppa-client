@@ -35,7 +35,7 @@ export default function Home() {
           >
             ¿Queres conocer nuestras propuestas?
           </Text>
-          <Link to="/contacto">
+          <Link to="/contacto" style={{ width: '80%' }}>
             <Button
               width="100%"
               position="relative"

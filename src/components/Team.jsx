@@ -94,7 +94,10 @@ export default function Team() {
         flexDirection="column"
         gap="2rem"
         align="center"
+        justify="center"
+        overflow="hidden"
         width="40%"
+        height="85%"
         responsive={{
           width: '50%',
           height: '75%',
@@ -111,6 +114,7 @@ export default function Team() {
           position="relative"
           padding="0 3rem"
           width="80%"
+          height="70%"
           responsive={{ gap: '1rem', height: '100%', padding: '0 2rem' }}
         >
           {cards.map((item, index) => (

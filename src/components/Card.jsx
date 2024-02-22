@@ -40,7 +40,7 @@ export default function Card({
       >
         <Container>
           <Image
-            src={image || avatar}
+            src={image.data || image}
             alt=""
             width="8rem"
             height="8rem"

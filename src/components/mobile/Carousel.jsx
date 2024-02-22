@@ -111,6 +111,12 @@ export default function Slider({ cards, type }) {
                 borderRadius: '50%',
                 border: '3px solid #213E6E',
               }}
+              onLoad={(e) => {
+                if (e.target.width === e.target.height) {
+                  e.target.style.objectFit = 'cover'
+                  e.target.style.objectPosition = 'top'
+                }
+              }}
             />
             <Container flexDirection="column">
               <Text weight="600" size="1.5rem" color="#213E6E">
