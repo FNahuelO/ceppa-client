@@ -13,6 +13,7 @@ import VectorCheck from '../assets/VectorCheck'
 import VectorX from '../assets/VectorX'
 import baseUrl from '../config/axios'
 import { ClipLoader } from 'react-spinners'
+import ReactGA from 'react-ga4'
 
 const fields = [
   { name: 'nombre', label: 'Nombre', type: 'text' },
@@ -33,6 +34,14 @@ const inputStyles = {
 export default function Contact() {
   const [modal, setModal] = useState({ form: true, confirm: false })
   const [buttonLabel, setButtonLabel] = useState('Enviar')
+
+  useEffect(() => {
+    ReactGA.send({
+      hitType: 'pageview',
+      page: window.location.pathname,
+      title: 'Contacto',
+    })
+  }, [])
 
   const {
     handleSubmit,
