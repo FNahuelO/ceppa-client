@@ -36,9 +36,4 @@ const ConditionalApp = () => {
 // Enviar datos de página vista a Google Analytics
 ReactGA.initialize('G-2PSRN0KE2P')
 
-ReactGA.send({
-  hitType: 'pageview',
-  page: window.location.pathname,
-})
-
 ReactDOM.createRoot(document.getElementById('root')).render(<ConditionalApp />)
