@@ -25,6 +25,11 @@ export default function Revistas() {
 
   const handleDownload = (item) => {
     const newTab = window.open(item.archive, '_blank')
+    ReactGA.event({
+      category: 'Download',
+      action: 'Download',
+      label: item.name,
+    })
 
     if (newTab) {
       setTimeout(() => {
@@ -39,12 +44,6 @@ export default function Revistas() {
       link.click()
       document.body.removeChild(link)
     }
-
-    ReactGA.event({
-      category: 'Archivo Descargado',
-      action: 'Download',
-      label: item.name,
-    })
   }
 
   const extraItemCount = Math.ceil(array.length / 8) * 8 - array.length
