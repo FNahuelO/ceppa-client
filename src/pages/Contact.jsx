@@ -13,6 +13,7 @@ import VectorCheck from '../assets/VectorCheck'
 import VectorX from '../assets/VectorX'
 import baseUrl from '../config/axios'
 import { ClipLoader } from 'react-spinners'
+import ReactGA from 'react-ga4'
 
 const fields = [
   { name: 'nombre', label: 'Nombre', type: 'text' },
@@ -61,6 +62,11 @@ export default function Contact() {
       setButtonLabel(<ClipLoader size={20} color="white" />)
       const { data } = await baseUrl.post('send-email', values)
       if (data.success) {
+        ReactGA.event({
+          category: 'send_form',
+          action: 'Contacto',
+          label: 'Formulario de contacto',
+        })
         setModal({ form: false, confirm: true })
         setButtonLabel('Enviar')
       }

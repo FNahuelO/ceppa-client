@@ -14,6 +14,7 @@ import baseUrl from '../../config/axios'
 import { useSwipeable } from 'react-swipeable'
 import { MainModal } from '../../style/Main'
 import { ClipLoader } from 'react-spinners'
+import ReactGA from 'react-ga4'
 
 const fields = [
   { name: 'nombre', label: 'Nombre', type: 'text' },
@@ -63,6 +64,11 @@ export default function Contact() {
       setButtonLabel(<ClipLoader size={18} color="white" />)
       const { data } = await baseUrl.post('send-email', values)
       if (data.success) {
+        ReactGA.event({
+          category: 'send_form',
+          action: 'Contacto',
+          label: 'Formulario de contacto',
+        })
         setModal({ form: false, confirm: true })
         setButtonLabel('Enviar')
       }

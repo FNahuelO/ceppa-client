@@ -21,7 +21,11 @@ export default function Admin({ children }) {
       link: 'manage-magazine',
       icon: <ManageMagazine />,
     },
-    { title: 'Estadisticas', link: 'stadistics', icon: <VectorEstadisticas /> },
+    {
+      title: 'Estadisticas',
+      icon: <VectorEstadisticas />,
+      href: 'https://analytics.google.com/analytics/web/#/p428682491/realtime/overview?params=_u..nav%3Dmaui',
+    },
   ]
 
   const userStorage = sessionStorage.getItem('user')
@@ -66,9 +70,33 @@ export default function Admin({ children }) {
             </Container>
           </Container>
           <Container flexDirection="column" padding="2rem 0" gap=".25rem">
-            {links.map((item, idx) => (
-              <Link key={idx} to={'/admin/' + item.link}>
+            {links.map((item, idx) =>
+              item.link ? (
+                <Link key={idx} to={'/admin/' + item.link}>
+                  <Button
+                    type="button"
+                    bg="white"
+                    position="relative"
+                    width="100%"
+                    height="5vh"
+                    display="flex"
+                    align="center"
+                    gap="1rem"
+                    color="#353535"
+                    weight="500"
+                    border="none"
+                    chevron={true}
+                    hover={{
+                      background: '#8473B430',
+                    }}
+                  >
+                    {item.icon} {item.title}
+                    <ChevronRight width={10} height={10} />
+                  </Button>
+                </Link>
+              ) : (
                 <Button
+                  key={idx}
                   type="button"
                   bg="white"
                   position="relative"
@@ -84,12 +112,13 @@ export default function Admin({ children }) {
                   hover={{
                     background: '#8473B430',
                   }}
+                  onClick={() => window.open(item?.href, '_blank')}
                 >
                   {item.icon} {item.title}
                   <ChevronRight width={10} height={10} />
                 </Button>
-              </Link>
-            ))}
+              ),
+            )}
           </Container>
           <Button
             position="absolute"

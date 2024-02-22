@@ -24,14 +24,6 @@ const ConditionalApp = () => {
       window.removeEventListener('resize', handleResize)
     }
   }, [])
-  useEffect(() => {
-    // Envía datos de página vista a Google Analytics al cambiar la ruta
-    ReactGA.send({
-      hitType: 'pageview',
-      page: location.pathname,
-      title: getTitleFromPath(location.pathname), // Título personalizado basado en el path
-    })
-  }, [location.pathname])
 
   const getTitleFromPath = (pathname) => {
     switch (pathname) {

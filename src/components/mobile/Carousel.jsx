@@ -5,6 +5,7 @@ import VectorRadio from '../../assets/VectorRadio'
 import { useSwipeable } from 'react-swipeable'
 import { Text } from '../../style/Text'
 import Download from '../../assets/Download'
+import ReactGA from 'react-ga4'
 
 export default function Slider({ cards, type }) {
   const [currentIndex, setCurrentIndex] = useState(0)
@@ -61,6 +62,11 @@ export default function Slider({ cards, type }) {
 
   const handleDownload = (item) => {
     const newTab = window.open(item.archive, '_blank')
+    ReactGA.event({
+      category: 'file_dowload',
+      action: 'Download',
+      label: item.name,
+    })
 
     if (newTab) {
       setTimeout(() => {
@@ -75,11 +81,6 @@ export default function Slider({ cards, type }) {
       link.click()
       document.body.removeChild(link)
     }
-    /*  ReactGA.event({
-      category: item.name,
-      action: 'Descarga',
-      value: item.name,
-    }) */
   }
 
   const renderCard = (item, idx) => {
