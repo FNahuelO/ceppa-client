@@ -49,6 +49,12 @@ export default function Card({
               objectFit: 'cover',
             }}
             responsive={{ width: '6rem', height: '6rem' }}
+            onLoad={(e) => {
+              if (e.target.width === e.target.height) {
+                e.target.style.objectFit = 'cover'
+                e.target.style.objectPosition = 'top'
+              }
+            }}
           />
         </Container>
         {admin && (
