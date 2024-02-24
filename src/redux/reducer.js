@@ -3,6 +3,7 @@ import { createSlice } from '@reduxjs/toolkit'
 const initialState = {
   staff: [],
   revistas: [],
+  texts: [],
 }
 
 export const data = createSlice({
@@ -15,7 +16,10 @@ export const data = createSlice({
     revistas: (state, action) => {
       state.revistas = action.payload
     },
+    texts: (state, action) => {
+      state.texts = action.payload
+    },
   },
 })
 
-export const { staff, revistas } = data.actions
+export const { staff, revistas, texts } = data.actions

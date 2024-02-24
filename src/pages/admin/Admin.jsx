@@ -12,6 +12,7 @@ import VectorEstadisticas from '../../assets/VectorEstadisticas'
 import ChevronRight from '../../assets/ChevronRight'
 import Login from './Login'
 import Logout from '../../assets/Logout'
+import ManagaText from '../../assets/ManagaText'
 
 export default function Admin({ children }) {
   const links = [
@@ -20,6 +21,11 @@ export default function Admin({ children }) {
       title: 'Gestionar revistas',
       link: 'manage-magazine',
       icon: <ManageMagazine />,
+    },
+    {
+      title: 'Gestionar Frases',
+      link: 'manage-texts',
+      icon: <ManagaText />,
     },
     {
       title: 'Estadisticas',

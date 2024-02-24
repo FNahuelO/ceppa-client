@@ -18,6 +18,7 @@ import Nav from './components/Nav'
 import { Container } from './style/Container'
 import Footer from './components/Footer'
 import Loading from './components/Loading'
+import ManageTexts from './pages/admin/ManageTexts'
 
 function InterfaceUser({ children }) {
   return (
@@ -124,10 +125,10 @@ function AppRoutes({ getTitleFromPath }) {
             }
           />
           <Route
-            path="/admin/stadistics"
+            path="/admin/manage-texts"
             element={
               <Admin>
-                <Stadistics />
+                <ManageTexts />
               </Admin>
             }
           />

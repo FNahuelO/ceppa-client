@@ -167,7 +167,7 @@ export default function Slider({ cards, type }) {
           <>
             <Container justify="center">
               <Text size="1.5rem" width="50%">
-                {item}
+                {item.label}
               </Text>
             </Container>
           </>

@@ -1,5 +1,5 @@
 import baseUrl from '../config/axios'
-import { staff, revistas } from './reducer'
+import { staff, revistas, texts } from './reducer'
 
 export const login = async (values) => {
   try {
@@ -65,4 +65,25 @@ export const filter = (type) => {
       },
     )
   }
+}
+
+export const getTexts = () => {
+  return async (dispatch) => {
+    const { data } = await baseUrl.get('get-texts')
+    dispatch(texts(data.data))
+  }
+}
+
+export const addText = async (values) => {
+  const { data } = await baseUrl.post('add-text', values)
+  return data
+}
+
+export const editText = async (id, values) => {
+  const { data } = await baseUrl.put(`text/${id}`, values)
+  return data
+}
+export const deleteText = async (id) => {
+  const { data } = await baseUrl.delete(`text/${id}`)
+  return data
 }

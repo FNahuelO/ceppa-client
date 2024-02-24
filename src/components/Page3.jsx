@@ -1,15 +1,17 @@
-import React from 'react'
+import React, { useEffect } from 'react'
 import { Container } from '../style/Container'
-import { Text } from '../style/Text'
 import logo from '../assets/logo-redondo.svg'
 import Slider from './mobile/Carousel'
+import { useDispatch, useSelector } from 'react-redux'
+import { getTexts } from '../redux/actions'
 
 export default function Page3() {
-  const texts = [
-    'Te ayudamos a explorar en las distitas areas de tu vida, objetivos y valores para potenciar lo que nos trae el honguito',
-    'Te ayudamos a explorar en las distitas areas de tu vida, objetivos y valores para potenciar lo que nos trae el honguito',
-    'Te ayudamos a explorar en las distitas areas de tu vida, objetivos y valores para potenciar lo que nos trae el honguito',
-  ]
+  const dispatch = useDispatch()
+  const texts = useSelector((state) => state.data.texts)
+
+  useEffect(() => {
+    dispatch(getTexts())
+  }, [])
   return (
     <Container
       position="relative"
