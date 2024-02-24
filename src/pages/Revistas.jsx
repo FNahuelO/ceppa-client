@@ -26,7 +26,7 @@ export default function Revistas() {
   const handleDownload = (item) => {
     ReactGA.event({
       category: 'file_dowload',
-      action: 'Download',
+      action: item.name,
       label: item.name,
     })
     const newTab = window.open(item.archive, '_blank')

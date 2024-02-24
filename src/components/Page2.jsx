@@ -15,15 +15,6 @@ export default function Page2() {
       bg="linear-gradient(to bottom, #2F4A71, #6F5F9D)"
     >
       <Container
-        position="absolute"
-        top="8rem"
-        right="15rem"
-        className="animate__animated animate__fadeInUp"
-        responsive={{ right: '7rem' }}
-      >
-        <img src={frame} />
-      </Container>
-      <Container
         flexDirection="column"
         gap="1rem"
         color="white !important"
@@ -34,10 +25,10 @@ export default function Page2() {
           ¿Cómo te podemos ayudar?
         </Text>
         <Text size="1.5rem" align="start" responsive={{ fontSize: '1.25rem' }}>
-          En CEPPA tenemos una propuesta de acompañamiento de microdosis de
-          psilocibina, guiado por profesionales de salud mental, confeccionado
-          con técnicas de terapias contextuales, para ayudar a potenciar tu
-          proceso.
+          En CEPPA tenemos distintas propuestas de acompañamientos, guiadas por
+          profesionales de salud mental. Todas se confeccionan con psicoterapias
+          basadas en evidencia, y puede ser asistidas por psilocibina en
+          distintos formatos
         </Text>
       </Container>
       <Container

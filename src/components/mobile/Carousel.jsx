@@ -64,7 +64,7 @@ export default function Slider({ cards, type }) {
     const newTab = window.open(item.archive, '_blank')
     ReactGA.event({
       category: 'file_dowload',
-      action: 'Download',
+      action: item.name,
       label: item.name,
     })
 
