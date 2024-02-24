@@ -36,7 +36,7 @@ export default function Nav({ admin }) {
     { label: 'Nosotros', link: 'nosotros' },
     { label: 'Equipo', link: 'equipo' },
     { label: 'Contacto', link: 'contacto' },
-    { label: 'Revistas', link: 'revistas' },
+    { label: 'Revista DELIA', link: 'revistas' },
   ]
 
   const handleClick = () => {

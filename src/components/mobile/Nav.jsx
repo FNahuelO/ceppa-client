@@ -12,7 +12,7 @@ export default function Nav() {
     { label: 'Nosotros', link: 'nosotros' },
     { label: 'Equipo', link: 'equipo' },
     { label: 'Contacto', link: 'contacto' },
-    { label: 'Revistas', link: 'revistas' },
+    { label: 'Revista DELIA', link: 'revistas' },
   ]
 
   const handleClick = () => {
@@ -35,7 +35,7 @@ export default function Nav() {
       index="22"
       top="1rem"
     >
-      <Container gap="2.5rem" width="90%" justify="center">
+      <Container gap="2.5rem" width="90%" justify="center" align="center">
         {labels.map((item, idx) => (
           <Link key={idx} to={'/' + item.link} onClick={handleClick}>
             <Text
