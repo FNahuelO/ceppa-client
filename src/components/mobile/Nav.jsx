@@ -43,6 +43,7 @@ export default function Nav() {
               color="white"
               padding="1rem 0"
               onClick={handleClick}
+              display={item.link === 'revistas' ? 'inline-block' : ''}
               borderBottom={
                 location.pathname === '/' + item.link
                   ? '2px solid white'
