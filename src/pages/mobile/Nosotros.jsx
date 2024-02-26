@@ -27,6 +27,7 @@ export default function Nosotros() {
   ]
 
   const [isVisible, setIsVisible] = useState(false)
+  const [containerY, setContainerY] = useState(0)
 
   useEffect(() => {
     // Show the container after a short delay to allow the page to render first
@@ -37,13 +38,16 @@ export default function Nosotros() {
   }, [])
 
   const handlers = useSwipeable({
-    onSwipedDown: () => handleSwipeUp(), // Add onSwipedUp handler
+    onSwiping: (eventData) => handleSwipe(eventData), // Use onSwiping instead of onSwipedDown
   })
 
-  const handleSwipeUp = () => {
-    window.location.href = '/'
+  const handleSwipe = (eventData) => {
+    const { deltaY } = eventData
+    if (deltaY > 0) {
+      setContainerY((prevY) => prevY + deltaY)
+      window.location.href = '/'
+    }
   }
-
   return (
     <Container
       minHeight="100lvh"
@@ -73,6 +77,10 @@ export default function Nosotros() {
           bg="white"
           index="99"
           {...handlers}
+          style={{
+            transform: `translateY(${containerY}px)`,
+            transition: 'transform 0.3s ease',
+          }}
         >
           <Link to="/">
             <Text

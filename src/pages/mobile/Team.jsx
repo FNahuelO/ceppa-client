@@ -12,6 +12,7 @@ export default function Team() {
   const dispatch = useDispatch()
   const currentStaff = useSelector((state) => state.data.staff)
   const [isVisible, setIsVisible] = useState(false)
+  const [containerY, setContainerY] = useState(0)
 
   useEffect(() => {
     dispatch(getStaff())
@@ -30,16 +31,20 @@ export default function Team() {
   }, [])
 
   const handlers = useSwipeable({
-    onSwipedDown: () => handleSwipeUp(), // Add onSwipedUp handler
+    onSwiping: (eventData) => handleSwipe(eventData), // Use onSwiping instead of onSwipedUp and onSwipedDown
   })
 
-  const handleSwipeUp = () => {
-    window.location.href = '/'
+  const handleSwipe = (eventData) => {
+    const { deltaY } = eventData
+    if (deltaY > 0) {
+      setContainerY((prevY) => prevY + deltaY)
+      window.location.href = '/'
+    }
   }
 
   return (
     <Container
-      minHeight="100lvh"
+      minHeight="100vh"
       bgImg={fondo}
       bgSize="cover"
       bgRepeat="no-repeat"
@@ -61,10 +66,11 @@ export default function Team() {
           flexDirection="column"
           justify="center"
           align="center"
-          minHeight="80lvh"
+          minHeight="80vh"
           radius="2rem 2rem 0 0"
           bg="white"
           index="99"
+          style={{ transform: `translateY(${containerY}px)` }} // Dynamic container position
           {...handlers} // Spread the swipe handlers to the Container component
         >
           <Container height="80vh" width="100vw" position="relative">
@@ -78,7 +84,7 @@ export default function Team() {
             ></Text>
             <Slider cards={cards} type="team" />
           </Container>
-          <Container minHeight="5lvh" width="100vw" bg="#213E6E"></Container>
+          <Container minHeight="5vh" width="100vw" bg="#213E6E"></Container>
         </Container>
       )}
     </Container>

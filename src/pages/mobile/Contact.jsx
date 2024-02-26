@@ -36,6 +36,7 @@ export default function Contact() {
   const [modal, setModal] = useState({ form: true, confirm: false })
   const [isVisible, setIsVisible] = useState(false)
   const [buttonLabel, setButtonLabel] = useState('Enviar')
+  const [containerY, setContainerY] = useState(0)
 
   const {
     handleSubmit,
@@ -88,11 +89,15 @@ export default function Contact() {
     handleReset()
   }
   const handlers = useSwipeable({
-    onSwipedDown: () => handleSwipeUp(), // Add onSwipedUp handler
+    onSwiping: (eventData) => handleSwipe(eventData), // Use onSwiping instead of onSwipedDown
   })
 
-  const handleSwipeUp = () => {
-    window.location.href = '/'
+  const handleSwipe = (eventData) => {
+    const { deltaY } = eventData
+    if (deltaY > 0) {
+      setContainerY((prevY) => prevY + deltaY)
+      window.location.href = '/'
+    }
   }
   return (
     <Container
@@ -122,6 +127,10 @@ export default function Contact() {
           bg="white"
           index="49"
           {...handlers} // Spread the swipe handlers to the Container component
+          style={{
+            transform: `translateY(${containerY}px)`,
+            transition: 'transform 0.3s ease',
+          }}
         >
           <Container height="80vh" width="100vw" position="relative">
             <Container radius="1rem" flexDirection="column">

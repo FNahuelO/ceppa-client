@@ -9,10 +9,10 @@ import { Text } from '../../style/Text'
 
 export default function Revistas() {
   const [array, setArray] = useState([])
-  const [isVisible, setIsVisible] = useState(false)
-
   const dispatch = useDispatch()
   const currentArray = useSelector((state) => state.data.revistas)
+  const [isVisible, setIsVisible] = useState(false)
+  const [containerY, setContainerY] = useState(0)
 
   useEffect(() => {
     dispatch(getMagazines())
@@ -31,17 +31,20 @@ export default function Revistas() {
   }, [])
 
   const handlers = useSwipeable({
-    onSwipedDown: () => handleSwipeUp(),
-    trackMouse: true, // Add trackMouse option
+    onSwiping: (eventData) => handleSwipe(eventData), // Use onSwiping instead of onSwipedDown
   })
 
-  const handleSwipeUp = () => {
-    window.location.href = '/'
+  const handleSwipe = (eventData) => {
+    const { deltaY } = eventData
+    if (deltaY > 0) {
+      setContainerY((prevY) => prevY + deltaY)
+      window.location.href = '/'
+    }
   }
 
   return (
     <Container
-      minHeight="100vh" // Fix typo in minHeight
+      minHeight="100vh"
       bgImg={fondo}
       bgSize="cover"
       bgRepeat="no-repeat"
@@ -57,7 +60,6 @@ export default function Revistas() {
       {isVisible && (
         <Container
           animation={true}
-          className="slide-in"
           position="fixed"
           bottom="0"
           left="0"
@@ -69,6 +71,10 @@ export default function Revistas() {
           radius="2rem 2rem 0 0"
           bg="white"
           index="99"
+          style={{
+            transform: `translateY(${containerY}px)`,
+            transition: 'transform 0.3s ease',
+          }} // Smooth transition
         >
           <Container height="80vh" width="100vw">
             <Text
