@@ -4,15 +4,15 @@ import fondo from '../../assets/fondo-home.png'
 import { useDispatch, useSelector } from 'react-redux'
 import { getMagazines } from '../../redux/actions'
 import Slider from '../../components/mobile/Carousel'
-import { useSwipeable } from 'react-swipeable'
-import { Text } from '../../style/Text'
+import { Button } from '../../style/Buttons'
+import VectorX from '../../assets/VectorX'
+import { Link } from 'react-router-dom'
 
 export default function Revistas() {
   const [array, setArray] = useState([])
   const dispatch = useDispatch()
   const currentArray = useSelector((state) => state.data.revistas)
   const [isVisible, setIsVisible] = useState(false)
-  const [containerY, setContainerY] = useState(0)
 
   useEffect(() => {
     dispatch(getMagazines())
@@ -30,18 +30,6 @@ export default function Revistas() {
     return () => clearTimeout(timer)
   }, [])
 
-  const handlers = useSwipeable({
-    onSwiping: (eventData) => handleSwipe(eventData), // Use onSwiping instead of onSwipedDown
-  })
-
-  const handleSwipe = (eventData) => {
-    const { deltaY } = eventData
-    if (deltaY > 0) {
-      setContainerY((prevY) => prevY + deltaY)
-      window.location.href = '/'
-    }
-  }
-
   return (
     <Container
       minHeight="100vh"
@@ -55,7 +43,6 @@ export default function Revistas() {
       gap="1rem"
       position="relative"
       beforeLeft
-      {...handlers}
     >
       {isVisible && (
         <Container
@@ -70,21 +57,23 @@ export default function Revistas() {
           minHeight="80vh"
           radius="2rem 2rem 0 0"
           bg="white"
-          index="99"
-          style={{
-            transform: `translateY(${containerY}px)`,
-            transition: 'transform 0.3s ease',
-          }} // Smooth transition
+          index="89"
         >
           <Container height="80vh" width="100vw">
-            <Text
-              position="absolute"
-              top="1.5rem"
-              width="15%"
-              left="50%"
-              transform="translateX(-50%)"
-              border="2px solid #6D6868"
-            ></Text>
+            <Link to="/">
+              <Button
+                position="absolute"
+                top="1.5rem"
+                bg="none"
+                right="1.5rem"
+                padding="0"
+                border="none"
+                outline="none"
+                index="99"
+              >
+                <VectorX color="black" />
+              </Button>
+            </Link>
             <Slider cards={array} type="magazine" />
           </Container>
         </Container>

@@ -11,10 +11,10 @@ import { Button } from '../../style/Buttons'
 import VectorCheck from '../../assets/VectorCheck'
 import VectorX from '../../assets/VectorX'
 import baseUrl from '../../config/axios'
-import { useSwipeable } from 'react-swipeable'
 import { MainModal } from '../../style/Main'
 import { ClipLoader } from 'react-spinners'
 import ReactGA from 'react-ga4'
+import { Link } from 'react-router-dom'
 
 const fields = [
   { name: 'nombre', label: 'Nombre', type: 'text' },
@@ -36,7 +36,6 @@ export default function Contact() {
   const [modal, setModal] = useState({ form: true, confirm: false })
   const [isVisible, setIsVisible] = useState(false)
   const [buttonLabel, setButtonLabel] = useState('Enviar')
-  const [containerY, setContainerY] = useState(0)
 
   const {
     handleSubmit,
@@ -88,17 +87,7 @@ export default function Contact() {
     setModal({ form: true, confirm: false })
     handleReset()
   }
-  const handlers = useSwipeable({
-    onSwiping: (eventData) => handleSwipe(eventData), // Use onSwiping instead of onSwipedDown
-  })
 
-  const handleSwipe = (eventData) => {
-    const { deltaY } = eventData
-    if (deltaY > 0) {
-      setContainerY((prevY) => prevY + deltaY)
-      window.location.href = '/'
-    }
-  }
   return (
     <Container
       minHeight="110lvh"
@@ -126,11 +115,6 @@ export default function Contact() {
           radius="2rem 2rem 0 0"
           bg="white"
           index="49"
-          {...handlers} // Spread the swipe handlers to the Container component
-          style={{
-            transform: `translateY(${containerY}px)`,
-            transition: 'transform 0.3s ease',
-          }}
         >
           <Container height="80vh" width="100vw" position="relative">
             <Container radius="1rem" flexDirection="column">
@@ -143,14 +127,18 @@ export default function Contact() {
                 radius="2rem 2rem 0 0"
                 position="relative"
               >
-                <Text
-                  position="absolute"
-                  top="1.5rem"
-                  width="15%"
-                  left="50%"
-                  transform="translateX(-50%)"
-                  border="2px solid white"
-                ></Text>
+                <Link to="/">
+                  <Button
+                    position="absolute"
+                    top="1rem"
+                    bg="none"
+                    right="1rem"
+                    border="none"
+                    outline="none"
+                  >
+                    <VectorX />
+                  </Button>
+                </Link>
                 <Text weight="700" responsive={{ fontSize: '.9rem' }}>
                   Contactanos!
                 </Text>

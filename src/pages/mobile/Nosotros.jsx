@@ -1,12 +1,13 @@
 import React, { useEffect, useState } from 'react'
 import { Container } from '../../style/Container'
+import { Button } from '../../style/Buttons'
 import fondo from '../../assets/fondo-home.png'
 import logo from '../../assets/logo-color.svg'
 import hojas from '../../assets/hojas-mobile.svg'
-import { Hr, Text, Ul } from '../../style/Text'
+import { Text, Ul } from '../../style/Text'
 import { Link } from 'react-router-dom'
-import { useSwipeable } from 'react-swipeable'
 import Cuadrado from '../../assets/Cuadrado'
+import VectorX from '../../assets/VectorX'
 
 const listAsistencial = [
   'Tratamiento individual con micro',
@@ -27,7 +28,6 @@ const listPsilocibina = [
 
 export default function Nosotros() {
   const [isVisible, setIsVisible] = useState(false)
-  const [containerY, setContainerY] = useState(0)
 
   useEffect(() => {
     // Show the container after a short delay to allow the page to render first
@@ -36,19 +36,6 @@ export default function Nosotros() {
     }, 100)
     return () => clearTimeout(timer)
   }, [])
-  const handlers = useSwipeable({
-    onSwipedDown: (eventData) => handleSwipe(eventData),
-    trackMouse: true,
-  })
-
-  const handleSwipe = (eventData) => {
-    const { deltaY } = eventData
-    const container = document.getElementById('scroll-container')
-    if (container.scrollTop === 0 && deltaY > 0) {
-      setContainerY((prevY) => prevY + deltaY)
-      window.location.href = '/'
-    }
-  }
 
   return (
     <Container
@@ -78,21 +65,18 @@ export default function Nosotros() {
           radius="2rem 2rem 0 0"
           bg="white"
           index="99"
-          {...handlers}
-          style={{
-            transform: `translateY(${containerY}px)`,
-            transition: 'transform 0.3s ease',
-          }}
         >
           <Link to="/">
-            <Text
+            <Button
               position="absolute"
-              top="1.5rem"
-              width="15%"
-              left="50%"
-              transform="translateX(-50%)"
-              border="2px solid #6D6868"
-            ></Text>
+              top="1rem"
+              bg="none"
+              right="1rem"
+              border="none"
+              outline="none"
+            >
+              <VectorX color="black" />
+            </Button>
           </Link>
           <Container
             id="scroll-container"
