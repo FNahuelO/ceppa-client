@@ -8,24 +8,24 @@ import { Link } from 'react-router-dom'
 import { useSwipeable } from 'react-swipeable'
 import Cuadrado from '../../assets/Cuadrado'
 
+const listAsistencial = [
+  'Tratamiento individual con micro',
+  'Tratamiento grupal con micro',
+  'Sesiones de preparación e integración con macro',
+  'Psicoterapia contextual',
+  'Terapia de pareja',
+  'Terapia sexual / sexualidad consciente',
+]
+
+const listFormativa = ['Clases', 'Talleres', 'Supervisiones / asesoramiento']
+
+const listPsilocibina = [
+  'Las sesiones las llevan a cabo psicologos formados en psicodelicos y en terapias contextuales',
+  'Son 1 vez por semana con una duracion de 50 minutos aprox, de forma individual, para que puedas aprovechar al maximo este proceso',
+  'Sesiones de forma online',
+]
+
 export default function Nosotros() {
-  const listAsistencial = [
-    'Tratamiento individual con micro',
-    'Tratamiento grupal con micro',
-    'Sesiones de preparación e integración con macro',
-    'Psicoterapia contextual',
-    'Terapia de pareja',
-    'Terapia sexual / sexualidad consciente',
-  ]
-
-  const listFormativa = ['Clases', 'Talleres', 'Supervisiones / asesoramiento']
-
-  const listPsilocibina = [
-    'Las sesiones las llevan a cabo psicologos formados en psicodelicos y en terapias contextuales',
-    'Son 1 vez por semana con una duracion de 50 minutos aprox, de forma individual, para que puedas aprovechar al maximo este proceso',
-    'Sesiones de forma online',
-  ]
-
   const [isVisible, setIsVisible] = useState(false)
   const [containerY, setContainerY] = useState(0)
 
@@ -36,18 +36,20 @@ export default function Nosotros() {
     }, 100)
     return () => clearTimeout(timer)
   }, [])
-
   const handlers = useSwipeable({
-    onSwiping: (eventData) => handleSwipe(eventData), // Use onSwiping instead of onSwipedDown
+    onSwipedDown: (eventData) => handleSwipe(eventData),
+    trackMouse: true,
   })
 
   const handleSwipe = (eventData) => {
     const { deltaY } = eventData
-    if (deltaY > 0) {
+    const container = document.getElementById('scroll-container')
+    if (container.scrollTop === 0 && deltaY > 0) {
       setContainerY((prevY) => prevY + deltaY)
       window.location.href = '/'
     }
   }
+
   return (
     <Container
       minHeight="100lvh"
@@ -93,6 +95,7 @@ export default function Nosotros() {
             ></Text>
           </Link>
           <Container
+            id="scroll-container"
             flexDirection="column"
             height="calc(80vh - 2rem)" // Ajustar el alto para dejar espacio para el botón y el margen inferior
             width="100vw"
@@ -167,12 +170,7 @@ export default function Nosotros() {
                 >
                   En CEPPA contamos con 2 aréas principales:
                 </Text>
-                <Container
-                  flexDirection="column"
-                  gap="1rem"
-                  padding="1rem 0"
-                  align="flex-start"
-                >
+                <Container flexDirection="column" gap="1rem" padding="1rem 0">
                   <Text
                     borderBottom="1px solid #545151"
                     size="1rem"
@@ -203,12 +201,7 @@ export default function Nosotros() {
                     ))}
                   </Ul>
                 </Container>
-                <Container
-                  flexDirection="column"
-                  gap="1rem"
-                  padding="1rem 0"
-                  align="flex-start"
-                >
+                <Container flexDirection="column" gap="1rem" padding="1rem 0">
                   <Text
                     borderBottom="1px solid #545151"
                     size="1rem"
@@ -474,7 +467,7 @@ export default function Nosotros() {
                 </Container>
               </Container>
               <Container position="absolute" bottom="0" right="0">
-                <img src={hojas} alt="Hojas" width="100" height="125" />
+                <img src={hojas} alt="Hojas" />
               </Container>
             </Container>
           </Container>
