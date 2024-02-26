@@ -17,7 +17,7 @@ export default function Footer() {
   ]
 
   const icons = [
-    { icon: <img src={whatapp} /> },
+    // { icon: <img src={whatapp} /> },
     {
       icon: <Instagram />,
       link: 'https://www.instagram.com/ceppa.comunidad/?hl=es',

@@ -167,7 +167,12 @@ export default function Nosotros() {
                 >
                   En CEPPA contamos con 2 aréas principales:
                 </Text>
-                <Container flexDirection="column" gap="1rem" padding="1rem 0">
+                <Container
+                  flexDirection="column"
+                  gap="1rem"
+                  padding="1rem 0"
+                  align="flex-start"
+                >
                   <Text
                     borderBottom="1px solid #545151"
                     size="1rem"
@@ -198,7 +203,12 @@ export default function Nosotros() {
                     ))}
                   </Ul>
                 </Container>
-                <Container flexDirection="column" gap="1rem" padding="1rem 0">
+                <Container
+                  flexDirection="column"
+                  gap="1rem"
+                  padding="1rem 0"
+                  align="flex-start"
+                >
                   <Text
                     borderBottom="1px solid #545151"
                     size="1rem"
@@ -464,7 +474,7 @@ export default function Nosotros() {
                 </Container>
               </Container>
               <Container position="absolute" bottom="0" right="0">
-                <img src={hojas} alt="Hojas" />
+                <img src={hojas} alt="Hojas" width="100" height="125" />
               </Container>
             </Container>
           </Container>
