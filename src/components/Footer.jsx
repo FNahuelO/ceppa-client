@@ -6,6 +6,7 @@ import { Link } from 'react-router-dom'
 import Instagram from '../assets/Instagram'
 import Facebook from '../assets/Facebook'
 import whatapp from '../assets/whatsapp.svg'
+import desing from '../assets/FPDesing.png'
 import { Button } from '../style/Buttons'
 
 export default function Footer() {
@@ -93,6 +94,12 @@ export default function Footer() {
             </Button>
           ),
         )}
+      </Container>
+      <Container position="absolute" bottom="1rem" left="2rem">
+        <Text color="#B7AFAF" weight="700">
+          Desarrollado por:{' '}
+        </Text>
+        <img src={desing} />
       </Container>
     </Container>
   )

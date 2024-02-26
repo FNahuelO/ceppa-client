@@ -5,7 +5,7 @@ import image from '../../assets/ceppa_footer.png'
 import { Text } from '../../style/Text'
 import Instagram from '../../assets/Instagram'
 import Facebook from '../../assets/Facebook'
-import whatapp from '../../assets/whatsapp.svg'
+import desing from '../../assets/FPDesing.png'
 import { Button } from '../../style/Buttons'
 
 export default function Footer() {
@@ -43,7 +43,7 @@ export default function Footer() {
       align="center"
       bg="white"
       flexDirection="column"
-      minHeight="100lvh"
+      minHeight="105lvh"
     >
       <Container flexDirection="column" gap="1rem">
         <img src={image} alt="ceppa_footer" />
@@ -71,7 +71,7 @@ export default function Footer() {
           </Link>
         ))}
       </Container>
-      <Container position="absolute" bottom="5%" margin="0 auto">
+      <Container position="absolute" bottom="7.5%" margin="0 auto">
         {icons.map((item, idx) =>
           item.link ? (
             <Link
@@ -99,6 +99,12 @@ export default function Footer() {
             </Button>
           ),
         )}
+      </Container>
+      <Container position="absolute" bottom="1rem">
+        <Text color="#B7AFAF" weight="700" size=".9rem">
+          Desarrollado por:{' '}
+        </Text>
+        <img src={desing} />
       </Container>
     </Container>
   )
