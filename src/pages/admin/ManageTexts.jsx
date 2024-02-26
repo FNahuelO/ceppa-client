@@ -103,12 +103,11 @@ const List = ({ cards, setTypes, handleClick }) => {
         Agregar +
       </Button>
       <Container
-        wrap="wrap"
+        flexDirection="column"
         gap="2rem"
         width="90%"
         height="80%"
         padding="1rem 2rem"
-        justify="space-between"
         content="flex-start"
         overflowY="auto"
         overflowX="hidden"
@@ -124,7 +123,6 @@ const List = ({ cards, setTypes, handleClick }) => {
               flexDirection="column"
               position="relative"
               key={idx}
-              responsive={{ width: '45%' }}
             >
               <Text
                 size="1.25rem"
