@@ -41,7 +41,7 @@ export default function Team() {
 
   const middleIndex =
     cards.length % 2 === 0
-      ? [cards.length / 2 - 1, cards.length / 2]
+      ? [cards.length / 3 - 1, cards.length / 2]
       : [Math.floor(cards.length / 2)]
   return (
     <Container
