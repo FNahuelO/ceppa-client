@@ -95,7 +95,7 @@ export default function Card({
           {name || 'Lic. Maximiliano Lofredo'}
         </Text>
         <Text color="black" weight="600" responsive={{ fontSize: '.8rem' }}>
-          {title || 'co-director de CEPPA'}
+          {title}
         </Text>
         <Text
           color="#4E4E4E"
@@ -103,7 +103,7 @@ export default function Card({
           size=".8rem"
           responsive={{ fontSize: '.6rem' }}
         >
-          {description || 'co-director de CEPPA'}
+          {description}
         </Text>
       </Container>
     </Container>

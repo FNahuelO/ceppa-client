@@ -63,7 +63,7 @@ export default function Team() {
             <Card
               key={index}
               name={item.name}
-              title={item.title}
+              title={item.speciality}
               description={item.description}
               image={item.imageUrl}
               index={true}
