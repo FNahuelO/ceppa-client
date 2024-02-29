@@ -122,7 +122,7 @@ export default function Team() {
               key={index}
               name={item.name}
               image={item.imageUrl}
-              title={item.title}
+              title={item.speciality}
               index={middleIndex.includes(index)}
             />
           ))}
