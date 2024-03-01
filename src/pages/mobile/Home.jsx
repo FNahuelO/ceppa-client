@@ -79,7 +79,7 @@ export default function Home() {
           <Button
             width="4rem"
             height="4rem"
-            bg="#213E6E"
+            bg="#26d366"
             radius="50%"
             position="fixed"
             right="1rem"

@@ -66,6 +66,7 @@ export default function Team() {
               title={item.speciality}
               description={item.description}
               image={item.imageUrl}
+              type={item.type}
               index={true}
               hover={true}
               admin={true}
