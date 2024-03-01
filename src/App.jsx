@@ -19,7 +19,7 @@ function InterfaceUser({ children }) {
       position="relative"
     >
       <Nav />
-      <Container flex="1" flexDirection="column">
+      <Container flex="1" flexDirection="column" position="relative">
         {children}
       </Container>
     </Container>

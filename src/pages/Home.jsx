@@ -1,6 +1,7 @@
 import React, { useEffect, useRef, useState } from 'react'
 import { Container } from '../style/Container'
 import fondo from '../assets/fondo-home.png'
+import whatsapp from '../assets/WhatsApp.svg'
 import { Text } from '../style/Text'
 import { Button } from '../style/Buttons'
 import logo from '../assets/logo-home.png'
@@ -12,6 +13,8 @@ import ChevronRigth2 from '../assets/ChevronRigth2'
 
 export default function Home() {
   const [isHovered, setIsHovered] = useState(false)
+  const text =
+    '¡Hola! Gracias por comunicarte con CEPPA. ¿En qué te podemos ayudar?'
 
   return (
     <Container width="100vw" flexDirection="column">
@@ -67,6 +70,25 @@ export default function Home() {
       <Page2 />
       <Team />
       <Page3 />
+      <a
+        href={`https://wa.me/+5491139191013?text=${text}`}
+        target="_blank"
+        rel="noreferrer"
+      >
+        <Button
+          width="4rem"
+          height="4rem"
+          bg="#213E6E"
+          radius="50%"
+          position="absolute"
+          right="6rem"
+          bottom="4rem"
+          index="55"
+          padding="0"
+        >
+          <img src={whatsapp} />
+        </Button>
+      </a>
     </Container>
   )
 }

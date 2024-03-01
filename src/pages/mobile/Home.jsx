@@ -9,11 +9,15 @@ import ChevronRigth2 from '../../assets/ChevronRigth2'
 import frame from '../../assets/sol-mobile.svg'
 import Footer from '../../components/mobile/Footer'
 import Loading from '../../components/Loading'
+import whatsapp from '../../assets/WhatsApp.svg'
 
 export default function Home() {
   const [isHovered, setIsHovered] = useState(false)
 
   const [loading, setLoading] = useState(false)
+
+  const text =
+    '¡Hola! Gracias por comunicarte con CEPPA. ¿En qué te podemos ayudar?'
 
   const saveWithExpiration = (key, value, expirationTimeInHours) => {
     const now = new Date()
@@ -67,6 +71,25 @@ export default function Home() {
         gap="1rem"
         beforeLeft
       >
+        <a
+          href={`https://wa.me/+5491139191013?text=${text}`}
+          target="_blank"
+          rel="noreferrer"
+        >
+          <Button
+            width="4rem"
+            height="4rem"
+            bg="#213E6E"
+            radius="50%"
+            position="fixed"
+            right="1rem"
+            bottom="2rem"
+            index="55"
+            padding="0"
+          >
+            <img src={whatsapp} />
+          </Button>
+        </a>
         <Container gap="1rem" flexDirection="column" align="center" index="5">
           <img src={logo} alt="Logo ceppa" style={{ width: '15rem' }} />
           <Text size=".9rem">¿Queres conocer nuestras propuestas?</Text>
