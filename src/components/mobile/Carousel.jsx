@@ -125,6 +125,9 @@ export default function Slider({ cards, type }) {
               <Text weight="600" size="1.25rem" color="#8473B4">
                 {item.speciality}
               </Text>
+              <Text color="black" width="75%" size=".8rem" margin="0 auto">
+                {item.description}
+              </Text>
             </Container>
           </>
         )}
