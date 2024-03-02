@@ -21,14 +21,15 @@ import {
   getStaff,
 } from '../../redux/actions'
 import VectorX from '../../assets/VectorX'
+import { ClipLoader } from 'react-spinners'
 import { MainModal } from '../../style/Main'
+import { uploadFile } from '../../config/storage'
 import VectorCheckAdmin from '../../assets/VectorCheckAdmin'
 import Download from '../../assets/Download'
 import { useDispatch, useSelector } from 'react-redux'
 import VectorEdit from '../../assets/VectorEdit'
 import VectorTrash from '../../assets/VectorTrash'
 import Trash from '../../assets/Trash'
-import { ClipLoader } from 'react-spinners'
 
 const Add = ({ setTypes }) => {
   return (
@@ -292,32 +293,48 @@ export default function ManageMagazine() {
         ),
     }),
     onSubmit: async (values) => {
-      const formDataToSend = new FormData()
-
-      // Recorremos el objeto formData y añadimos los valores al FormData
-      for (const key in values) {
-        if (values.hasOwnProperty(key)) {
-          formDataToSend.append(key, values[key])
-        }
-      }
       setButtonLabel(<ClipLoader size={20} color="white" />)
+      const formDataToSend = new FormData()
+      const { $metadata } = await uploadFile(values.archive)
 
-      let data
-
-      if (edit.view && edit.payload) {
-        data = await editMagazine(edit.payload, formDataToSend)
-      } else {
-        data = await addMagazine(formDataToSend)
+      if (values.image) {
+        formDataToSend.append('archive', values.archive?.name)
+        formDataToSend.append('image', values.image)
+        formDataToSend.append('title', values.title)
       }
-      if (data.success) {
-        handleReset()
-        setImagen(null)
-        setModal({ view: true, payload: data.message })
-        setButtonLabel('Confirmar')
+
+      if ($metadata.httpStatusCode) {
+        let data
+
+        if (edit.view && edit.payload) {
+          data = await editMagazine(edit.payload, formDataToSend)
+        } else {
+          data = await addMagazine(formDataToSend)
+        }
+        if (data.success) {
+          handleReset()
+          setImagen(null)
+          setModal({ view: true, payload: data.message })
+          setButtonLabel('Confirmar')
+        }
       }
     },
   })
 
+  const handleFileUpload = async (file) => {
+    const config = {
+      bucketName: 'ceppa-storage',
+      region: 'us-east-1',
+      accessKeyId: 'AKIASAZMR7T5YJHD6DN7',
+      secretAccessKey: '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',
+    }
+    try {
+      await uploadFile(file, config)
+      console.log('Archivo subido exitosamente')
+    } catch (error) {
+      console.error('Error al subir archivo:', error)
+    }
+  }
   async function urlToImageFile(url, filename) {
     try {
       const response = await fetch(url)
