@@ -23,7 +23,7 @@ export default function Admin({ children }) {
       icon: <ManageMagazine />,
     },
     {
-      title: 'Gestionar Frases',
+      title: 'Gestionar frases',
       link: 'manage-texts',
       icon: <ManagaText />,
     },

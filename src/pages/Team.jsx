@@ -37,7 +37,7 @@ export default function Team() {
       beforeLeft={true}
     >
       <Text weight="700" size="1.5rem" color="white" index="5">
-        Nuestro terapeutas
+        Nuestros terapeutas
       </Text>
       <Container
         bg="#F0F1F3"

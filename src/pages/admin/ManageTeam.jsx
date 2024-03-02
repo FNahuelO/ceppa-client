@@ -219,7 +219,7 @@ export default function ManageTeam() {
       } else {
         setTypes('add')
       }
-    }, 500)
+    }, 1000)
   }, [currentStaff, cards])
 
   useEffect(() => {
@@ -250,7 +250,7 @@ export default function ManageTeam() {
       name: 'type',
       label: 'Tipo de consulta',
       type: 'radio',
-      options: ['Presencial', 'Online'],
+      options: ['Presencial', 'Online', 'Ambas'],
     },
   ]
 

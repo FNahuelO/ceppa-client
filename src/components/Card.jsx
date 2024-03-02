@@ -72,6 +72,18 @@ export default function Card({
             >
               {type === 'online' ? 'ONLINE' : 'PRESENCIAL'}
             </Text>
+            {type === 'ambas' && (
+              <Text
+                bg="#8473B4"
+                radius="3rem"
+                weight="700"
+                size=".7rem"
+                padding=".25rem 0"
+                color="white"
+              >
+                {'ONLINE'}
+              </Text>
+            )}
           </Container>
         )}
       </Container>
