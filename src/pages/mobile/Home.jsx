@@ -117,7 +117,7 @@ export default function Home() {
             onMouseEnter={() => setIsHovered(true)}
             onMouseLeave={() => setIsHovered(false)}
           >
-            Contactanos
+            Contáctanos
             <ChevronRigth2 color={isHovered ? '#213E6E' : 'white'} />
           </Button>
         </Link>
@@ -153,7 +153,7 @@ export default function Home() {
           <Text size="1rem" align="start">
             En CEPPA tenemos una propuesta de acompañamiento de microdosis de
             psilocibina, guiado por profesionales de salud mental, confeccionado
-            con tecnicas de terapias contesxtuales, para ayudar a potenciar tu
+            con técnicas de terapias contextuales, para ayudar a potenciar tu
             proceso.
           </Text>
         </Container>

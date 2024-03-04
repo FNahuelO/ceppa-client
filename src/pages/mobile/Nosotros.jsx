@@ -21,8 +21,9 @@ const listAsistencial = [
 const listFormativa = ['Clases', 'Talleres', 'Supervisiones / asesoramiento']
 
 const listPsilocibina = [
-  'Las sesiones las llevan a cabo psicologos formados en psicodelicos y en terapias contextuales',
-  'Son 1 vez por semana con una duracion de 50 minutos aprox, de forma individual, para que puedas aprovechar al maximo este proceso',
+  'Las sesiones las llevan a cabo psicólogos formados en psicodélicos y en terapias contextuales',
+  'Son 1 vez por semana con una duración de 50 minutos aprox, de forma individual, para que puedas aprovechar al máximo este proceso',
+
   'Sesiones de forma online',
 ]
 
@@ -235,7 +236,7 @@ export default function Nosotros() {
                 textShadow="0 4px 4px #00000040"
                 style={{ fontStyle: 'italic' }}
               >
-                Psilocibina
+                Microdosis de Psilocibina
               </Text>
               <Container width="75%" flexDirection="column" gap=".5rem">
                 <Text
@@ -245,8 +246,8 @@ export default function Nosotros() {
                   align="start"
                   margin=".5rem 0"
                 >
-                  Nuestro protocolo de micro consta de 1 sesion de admision/
-                  evalucaion y luego de 10 a 12 sesiones más (depende el caso)
+                  Nuestro protocolo de micro consta de 1 sesión de admisión/
+                  evaluación y luego de 10 a 12 sesiones más (depende el caso)
                 </Text>
                 <Text color="#2F4A71" weight="700" size=".8rem" align="start">
                   En las mismas se trabajará tanto la mejor forma posible de la
@@ -283,10 +284,10 @@ export default function Nosotros() {
                 </Ul>
                 <Text color="#2F4A71" weight="500" size=".8rem" align="start">
                   No es necesario tener Microdosis desde la primera sesión, por
-                  lo que podes empezar cuando quieras.
+                  lo que podés empezar cuando quieras.
                 </Text>
                 <Text color="#2F4A71" weight="500" size=".8rem" align="start">
-                  Nosotros no comercializamos la médicina ero tenemos
+                  Nosotros no comercializamos la medicina ero tenemos
                   cultivadores de confianza para recomendarte.
                 </Text>
                 <Text color="#2F4A71" weight="500" size=".8rem" align="start">
@@ -330,13 +331,13 @@ export default function Nosotros() {
                   gap=".5rem"
                 >
                   <Text before color="#2F4A71" size=".9rem" weight="600">
-                    ¿En que consiste?
+                    ¿En qué consiste?
                   </Text>
                   <Text color="#2F4A71" align="start">
                     Son 6 encuentros de 2 hs, online, donde te van a guiar la
-                    mejor forma de realizar la toma como tambien se iran
+                    mejor forma de realizar la toma como también se irán
                     explorando aspectos importantes en tu vida que quieras
-                    trabajar. Guiado por dos coordinadoras, psicologas del
+                    trabajar. Guiado por dos coordinadoras, psicólogas del
                     centro, con experiencia en microdosis, terapias contextuales
                     y grupos.
                   </Text>
@@ -347,16 +348,16 @@ export default function Nosotros() {
                   gap=".5rem"
                 >
                   <Text before color="#2F4A71" size=".9rem" weight="600">
-                    ¿Cuando es?
+                    ¿Cuándo es?
                   </Text>
                   <Container flexDirection="column" gap="1rem">
                     <Text color="#2F4A71" align="start">
-                      1 Encuentro semanal por 6 semanas consecutivas.Consultas
-                      fechas proximas.
+                      1 encuentro semanal por 6 semanas consecutivas. Consultas
+                      fechas próximas.
                     </Text>
                     <Text color="#2F4A71" align="start">
                       No incluye la micro, porque no comercializamos
-                      psicodelicos, pero en el encuentro las coordinadoras te
+                      psicodélicos, pero en el encuentro las coordinadoras te
                       orientan y recomendaran cultivadoras con quienes
                       trabajamos.
                     </Text>
@@ -368,7 +369,7 @@ export default function Nosotros() {
                       confianza, que estimule la confianza e intercambio.
                     </Text>
                     <Text color="#2F4A71" align="start">
-                      Cualquier duda o consulta estamos a disposicion.
+                      Cualquier duda o consulta estamos a disposición.
                     </Text>
                   </Container>
                 </Container>
@@ -404,15 +405,15 @@ export default function Nosotros() {
                     ¿Como se procede?
                   </Text>
                   <Text color="#2F4A71" align="start">
-                    Se realiza una primera session. de admision para evaluar tu
+                    Se realiza una primera sesión de admisión para evaluar tu
                     motivo de consulta. cuadro actual, antecedentes y revelar
-                    informacion importante de tu contexto vital.
+                    información importante de tu contexto vital.
                   </Text>
                   <Text color="#2F4A71" align="start">
-                    Ahi podes consultar tambien, todas las dudas que tengas del
-                    proceso o del tratamiento en si.Es realizada por un
+                    Ahí podés consultar también, todas las dudas que tengas del
+                    proceso o del tratamiento en sí. Es realizada por un
                     profesional de salud mental con experiencia en terapias
-                    contextuales y psicodelicos
+                    contextuales y psicodélicos
                   </Text>
                 </Container>
                 <Container
@@ -429,17 +430,17 @@ export default function Nosotros() {
                       consta de:
                     </Text>
                     <Text color="#2F4A71" align="start">
-                      2 sesiones de preparacion de forma online de una duracion
+                      2 sesiones de preparación de forma online de una duración
                       de 60 minutos, con un profesional del centro destinado
                       para tu tratamiento.
                     </Text>
                     <Text color="#2F4A71" align="start">
-                      2 sesiones de integracion con el mismo profesional que
-                      realizaste la preparacion
+                      2 sesiones de integración con el mismo profesional que
+                      realizaste la preparación
                     </Text>
                     <Text color="#2F4A71" align="start">
                       No incluye la medicina, ya que no comercializamos con
-                      psicodelicos
+                      psicodélicos
                     </Text>
                     <Text color="#2F4A71" align="start" weight="600">
                       Para profundizar sobre esta terapia escribinos.
