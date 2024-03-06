@@ -447,7 +447,11 @@ export default function Nosotros() {
                 </Container>
               </Container>
               <Container position="absolute" bottom="0" right="0">
-                <img src={hojas} alt="Hojas" />
+                <img
+                  src={hojas}
+                  alt="Hojas"
+                  style={{ width: '8rem', height: '8rem' }}
+                />
               </Container>
             </Container>
           </Container>
