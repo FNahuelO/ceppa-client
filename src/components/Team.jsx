@@ -39,10 +39,6 @@ export default function Team() {
     })
   }
 
-  const middleIndex =
-    cards.length % 2 === 0
-      ? [cards.length / 3 - 1, cards.length / 2]
-      : [Math.floor(cards.length / 2)]
   return (
     <Container
       justify="space-evenly"
@@ -123,7 +119,7 @@ export default function Team() {
               name={item.name}
               image={item.imageUrl}
               title={item.speciality}
-              index={middleIndex.includes(index)}
+              index={[1].includes(index)}
             />
           ))}
           <Container

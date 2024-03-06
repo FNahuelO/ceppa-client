@@ -36,7 +36,7 @@ export default function Home() {
             align="start"
             responsive={{ fontSize: '1.25rem' }}
           >
-            ¿Queres conocer nuestras propuestas?
+            ¿Querés conocer nuestras propuestas?
           </Text>
           <Link to="/contacto" style={{ width: '80%' }}>
             <Button

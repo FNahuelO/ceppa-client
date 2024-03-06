@@ -135,18 +135,19 @@ export default function Slider({ cards, type }) {
           <>
             <Container
               flexDirection="column"
-              width="80%"
-              height="90%"
+              width="70%"
+              height="95%"
               shadow="0 4px 4px 0 #00000040"
             >
-              <Text color="#353535" weight="600">
+              <Text color="#353535" weight="600" padding=".5rem 0">
                 {item.title}
               </Text>
               <Container
                 bgImg={item.imageUrl}
                 bgPosition="center"
                 bgRepeat="no-repeat"
-                height="70%"
+                bgSize="contain"
+                height="75%"
               ></Container>
               <Button
                 width="max-content"

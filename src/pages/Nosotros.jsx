@@ -281,16 +281,7 @@ export default function Nosotros() {
           >
             Psilocibina
           </Text>
-          <Text
-            color="#2F4A71"
-            weight="500"
-            size="1rem"
-            align="start"
-            responsive={{ fontSize: '.8rem' }}
-          >
-            Nuestro protocolo de micro consta de 1 sesión de admisión/
-            evaluación y luego de 10 a 12 sesiones más (depende el caso)
-          </Text>
+
           <Text
             color="#2F4A71"
             weight="500"
@@ -330,7 +321,7 @@ export default function Nosotros() {
             podés empezar cuando quieras.
           </Text>
           <Text color="#2F4A71" weight="500" size="1rem" align="start">
-            Nosotros no comercializamos la medicina ero tenemos cultivadores de
+            Nosotros no comercializamos la medicina pero tenemos cultivadores de
             confianza para recomendarte.
           </Text>
           <Text color="#2F4A71" weight="500" size="1rem" align="start">

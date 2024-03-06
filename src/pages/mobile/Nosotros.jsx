@@ -122,11 +122,6 @@ export default function Nosotros() {
                   psicológicos y espirituales acompañados por estas maravillosas
                   medicinas.
                 </Text>
-                <Text weight="600" color="#393636" size=".9rem" width="65%">
-                  Nuestro protocolo de microdosis consta de 1 sesión de
-                  admisión/evaluación y luego de 10 a 12 sesiones más
-                  (dependiendo del caso).
-                </Text>
               </Container>
               <Container position="absolute" bottom="3rem">
                 <img src={logo} alt="Logo" />
@@ -287,7 +282,7 @@ export default function Nosotros() {
                   lo que podés empezar cuando quieras.
                 </Text>
                 <Text color="#2F4A71" weight="500" size=".8rem" align="start">
-                  Nosotros no comercializamos la medicina ero tenemos
+                  Nosotros no comercializamos la medicina pero tenemos
                   cultivadores de confianza para recomendarte.
                 </Text>
                 <Text color="#2F4A71" weight="500" size=".8rem" align="start">
