@@ -151,10 +151,10 @@ export default function Home() {
             ¿Como te podemos ayudar?
           </Text>
           <Text size="1rem" align="start">
-            En CEPPA tenemos una propuesta de acompañamiento de microdosis de
-            psilocibina, guiado por profesionales de salud mental, confeccionado
-            con técnicas de terapias contextuales, para ayudar a potenciar tu
-            proceso.
+            En CEPPA tenemos distintas propuestas de acompañamientos, guiadas
+            por profesionales de salud mental. Todas se confeccionan con
+            psicoterapias basadas en evidencia, y puede ser asistidas por
+            psilocibina en distintos formatos
           </Text>
         </Container>
       </Container>
