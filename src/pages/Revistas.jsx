@@ -49,6 +49,7 @@ export default function Revistas() {
   const extraItemCount = Math.ceil(array.length / 8) * 8 - array.length
   // Creamos un nuevo array con los elementos del array proporcionado más los elementos adicionales necesarios
   const filledArray = [...array, ...Array(extraItemCount).fill(null)]
+  console.log(filledArray)
   return (
     <Container
       justify="center"
@@ -83,7 +84,7 @@ export default function Revistas() {
               <>
                 <Text color="white">{item.title}</Text>
                 <Container
-                  bgImg={item.img || revista}
+                  bgImg={item.imageUrl || revista}
                   bgPosition="center"
                   bgRepeat="no-repeat"
                   bgSize="contain"
