@@ -117,6 +117,7 @@ export default function Slider({ cards, type }) {
                   e.target.style.objectPosition = 'top'
                 }
               }}
+              alt={`slide-${idx}`}
             />
             <Container flexDirection="column">
               <Text weight="600" size="1.5rem" color="#213E6E">

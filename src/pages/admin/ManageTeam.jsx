@@ -118,7 +118,7 @@ const List = ({ cards, setTypes, handleClick }) => {
               <Container flexDirection="column" gap="1rem" align="center">
                 <img
                   src={item.imageUrl || foto}
-                  alt=""
+                  alt={`Foto de perfil`}
                   style={{ width: '80px', height: '80px', borderRadius: '50%' }}
                   onLoad={(e) => {
                     if (e.target.width === e.target.height) {
@@ -537,7 +537,7 @@ export default function ManageTeam() {
             image={imagen}
           />
         ) : (
-          <img src={logo} />
+          <img src={logo} alt="Logo Ceppa"/>
         )}
       </Container>
       {modal?.view && (

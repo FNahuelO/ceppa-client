@@ -68,6 +68,7 @@ export default function Nosotros() {
               borderRadius: '1rem',
               height: '90%',
             }}
+            alt="Fondo"
           />
         </Container>
         <Container flexDirection="column" width="30%" gap="1rem">

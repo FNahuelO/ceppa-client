@@ -86,7 +86,7 @@ export default function Home() {
           index="55"
           padding="0"
         >
-          <img src={whatsapp} />
+          <img src={whatsapp} alt="Whatsapp" />
         </Button>
       </a>
     </Container>

@@ -12,7 +12,7 @@ export default function Loading() {
       index="55"
     >
       <ContainerLoading>
-        <img src={logo} />
+        <img src={logo} alt="Logo"/>
       </ContainerLoading>
     </Container>
   )

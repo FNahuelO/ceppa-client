@@ -530,7 +530,7 @@ export default function ManageMagazine() {
             )}
           </Container>
         ) : (
-          <img src={logo} />
+          <img src={logo} alt="Logo Ceppa"/>
         )}
       </Container>
       {modal.view && (

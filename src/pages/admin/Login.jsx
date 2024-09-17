@@ -145,7 +145,7 @@ export default function Login() {
                         border="none"
                         onClick={() => setViewPassword(!viewPassword)}
                       >
-                        <img src={viewPassword ? eyeOff : eye} width={23} />
+                        <img src={viewPassword ? eyeOff : eye} width={23}  alt="Eye" />
                       </Button>
                     )}
                   </Container>
@@ -210,7 +210,7 @@ export default function Login() {
             >
               <VectorX color={'#0000004D'} />
             </Button>
-            <img src={error} style={{ width: '7rem', height: '7rem' }} />
+            <img src={error} style={{ width: '7rem', height: '7rem' }} alt="Error" />
             <Text color="#514C4C" weight="700" size="1.2rem">
               {modal?.payload}
             </Text>

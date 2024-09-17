@@ -137,7 +137,7 @@ export default function Home() {
           right="2rem"
           className="animate__animated animate__fadeInUp"
         >
-          <img src={frame} />
+          <img src={frame} alt="Sol"/>
         </Container>
         <Container
           flexDirection="column"

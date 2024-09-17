@@ -401,7 +401,7 @@ export default function ManageTexts() {
         bgSize="cover"
         responsive={{ width: '50%' }}
       >
-        <img src={logo} />
+        <img src={logo} alt="Logo Ceppa" />
       </Container>
       {modal.view && (
         <MainModal>

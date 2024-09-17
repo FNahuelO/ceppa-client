@@ -104,7 +104,7 @@ export default function Footer() {
         <Text color="#B7AFAF" weight="700" size=".9rem">
           Desarrollado por:{' '}
         </Text>
-        <img src={desing} />
+        <img src={desing} alt="Logo Desarrolladores"/>
       </Container>
     </Container>
   )

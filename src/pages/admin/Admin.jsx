@@ -64,7 +64,7 @@ export default function Admin({ children }) {
             justify="flex-end"
           >
             <Container gap="1rem" align="center">
-              <img src={logo} style={{ width: '40px', height: '40px' }} />
+              <img src={logo} style={{ width: '40px', height: '40px' }} alt="Logo Ceppa-redondo" />
               <Container
                 flexDirection="column"
                 align="flex-start"
@@ -159,7 +159,7 @@ export default function Admin({ children }) {
               height="100%"
               bg="linear-gradient(180.24deg, #213E6E 43.31%, #5A429F 102.99%)"
             >
-              <img src={logo} />
+              <img src={logo} alt="Logo Ceppa" />
             </Container>
           )}
         </Container>

@@ -99,7 +99,7 @@ export default function Footer() {
         <Text color="#B7AFAF" weight="700">
           Desarrollado por:{' '}
         </Text>
-        <img src={desing} />
+        <img src={desing} alt="Logo desarrolladores"/>
       </Container>
     </Container>
   )
