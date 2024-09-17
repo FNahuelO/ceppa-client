@@ -1,0 +1,11 @@
+User-agent: *
+Allow: /
+
+Disallow: /admin
+Disallow: /private
+
+Allow: /public
+
+Disallow: /*.pdf$
+
+Sitemap: https://ceppa.com.ar/sitemap.xml
