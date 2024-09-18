@@ -41,7 +41,8 @@ export default function Card({
         <Container>
           <Image
             src={image.data || image}
-            alt=""
+            alt={name}
+            loading='lazy'
             width="8rem"
             height="8rem"
             style={{

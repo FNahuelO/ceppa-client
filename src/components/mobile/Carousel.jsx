@@ -118,6 +118,7 @@ export default function Slider({ cards, type }) {
                 }
               }}
               alt={`slide-${idx}`}
+              loading='lazy'
             />
             <Container flexDirection="column">
               <Text weight="600" size="1.5rem" color="#213E6E">
