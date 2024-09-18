@@ -92,6 +92,7 @@ export default function Admin({ children }) {
                     weight="500"
                     border="none"
                     chevron={true}
+                    alt={item?.title}
                     hover={{
                       background: '#8473B430',
                     }}
@@ -119,6 +120,7 @@ export default function Admin({ children }) {
                     background: '#8473B430',
                   }}
                   onClick={() => window.open(item?.href, '_blank')}
+                  alt={item?.title}
                 >
                   {item.icon} {item.title}
                   <ChevronRight width={10} height={10} />
@@ -137,6 +139,7 @@ export default function Admin({ children }) {
             color="#213E6E"
             weight="600"
             responsive={{ fontSize: '.8rem' }}
+            alt="Cerrar sesion"
             onClick={() => {
               sessionStorage.clear()
               window.location.href = '/admin'

@@ -1,5 +1,4 @@
 import { Container } from '../style/Container'
-import frame from '../assets/sol.svg'
 import logo from '../assets/ceppa.svg'
 import { Text } from '../style/Text'
 import 'animate.css/animate.min.css'

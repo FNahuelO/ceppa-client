@@ -219,6 +219,7 @@ export default function Contact() {
                   color="white"
                   responsive={{ margin: '1rem 0 0 0', fontSize: '.8rem' }}
                   disabled={buttonLabel !== 'Enviar'}
+                  alt="Enviar"
                   hover={{
                     background: 'white',
                     color: '#2F4A71',
@@ -250,7 +251,7 @@ export default function Contact() {
             radius="1rem 1rem 0 0"
             position="relative"
           >
-            <Button border="none" bg="none" padding="0" onClick={handleClose}>
+            <Button border="none" bg="none" padding="0" onClick={handleClose} alt="Cerrar">
               <VectorX />
             </Button>
           </Container>

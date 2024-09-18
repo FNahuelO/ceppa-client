@@ -53,6 +53,7 @@ export default function Home() {
               align="center"
               justify="space-between"
               gap="2rem"
+              alt="Contacto"
               hover={{
                 boxShadow: '0 4px 4px 0 #00000040',
                 color: '#213E6E',
@@ -64,7 +65,7 @@ export default function Home() {
               Contáctanos
               <ChevronRigth2 color={isHovered ? '#213E6E' : 'white'} />
             </Button>
-          </Link>
+          </Link>www.ceppa.com.ar
         </Container>
       </Container>
       <Page2 />
@@ -85,6 +86,7 @@ export default function Home() {
           bottom="4rem"
           index="55"
           padding="0"
+          alt="Whatsapp"
         >
           <img src={whatsapp} alt="Whatsapp" />
         </Button>

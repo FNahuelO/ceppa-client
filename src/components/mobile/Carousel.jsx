@@ -162,6 +162,7 @@ export default function Slider({ cards, type }) {
                 align="center"
                 gap=".5rem"
                 color="white"
+                alt="Descargar"
                 onClick={() => handleDownload(item)}
               >
                 Descargar <Download />
@@ -216,6 +217,7 @@ export default function Slider({ cards, type }) {
             bg="transparent"
             cursor="pointer"
             padding="0"
+            alt={idx}
           >
             <VectorRadio
               width={8}

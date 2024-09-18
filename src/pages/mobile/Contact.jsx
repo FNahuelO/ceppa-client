@@ -135,6 +135,7 @@ export default function Contact() {
                     right="1rem"
                     border="none"
                     outline="none"
+                    alt="Cerrar"
                   >
                     <VectorX />
                   </Button>
@@ -249,6 +250,7 @@ export default function Contact() {
                       weight="700"
                       radius="3rem"
                       color="white"
+                      alt="Enviar"
                       disabled={buttonLabel !== 'Enviar'}
                       responsive={{ margin: '1rem 0 0 0' }}
                     >
@@ -278,7 +280,7 @@ export default function Contact() {
               radius="1rem 1rem 0 0"
               position="relative"
             >
-              <Button border="none" bg="none" padding="0" onClick={handleClose}>
+              <Button border="none" bg="none" padding="0" onClick={handleClose} alt="Cerrar" > 
                 <VectorX />
               </Button>
             </Container>

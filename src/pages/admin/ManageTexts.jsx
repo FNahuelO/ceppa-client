@@ -49,6 +49,7 @@ const Add = ({ setTypes }) => {
         radius="3rem"
         width="60%"
         onClick={() => setTypes('form')}
+        alt="Agregar"
         hover={{
           color: '#8473B4',
           background: 'white',
@@ -98,6 +99,7 @@ const List = ({ cards, setTypes, handleClick }) => {
         width="max-content"
         padding=".5rem 1rem"
         weight="700"
+        alt="Agregar"
         onClick={() => setTypes('form')}
       >
         Agregar +
@@ -138,6 +140,7 @@ const List = ({ cards, setTypes, handleClick }) => {
                   bg="none"
                   border="none"
                   padding="0"
+                  alt="Mas"
                   onClick={() => toggleView(item.id)}
                 >
                   <More />
@@ -382,6 +385,7 @@ export default function ManageTexts() {
                 radius="2rem"
                 margin="1rem 0"
                 type="submit"
+                alt="Confirmar"
                 disabled={buttonLabel !== 'Confirmar'}
               >
                 {buttonLabel}
@@ -423,6 +427,7 @@ export default function ManageTexts() {
               padding="0"
               top="1.5rem"
               right="2rem"
+              alt="Cerrar"
               onClick={handleClose}
             >
               <VectorX color={'#0000004D'} />
@@ -454,6 +459,7 @@ export default function ManageTexts() {
               padding="0"
               top="1.5rem"
               right="2rem"
+              alt="Cerrar"
               onClick={() => setAsk({ view: false, payload: null })}
             >
               <VectorX color={'#0000004D'} />
@@ -470,6 +476,7 @@ export default function ManageTexts() {
                 padding="1rem 3rem"
                 bg="white"
                 outline="none"
+                alt="Cancelar"
                 onClick={() => setAsk({ view: false, payload: null })}
               >
                 Cancelar
@@ -480,6 +487,7 @@ export default function ManageTexts() {
                 padding="1rem 3rem"
                 border="none"
                 outline="none"
+                alt="Aceptar"
                 onClick={() => handleDelete(ask.payload)}
               >
                 Aceptar

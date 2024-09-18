@@ -70,6 +70,7 @@ export default function Revistas() {
                 border="none"
                 outline="none"
                 index="99"
+                alt="Cerrar"
               >
                 <VectorX color="black" />
               </Button>

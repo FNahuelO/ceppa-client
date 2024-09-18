@@ -86,6 +86,7 @@ export default function Home() {
             bottom="2rem"
             index="55"
             padding="0"
+            alt="Whatsapp"
           >
             <img src={whatsapp} alt="Whatsapp" />
           </Button>
@@ -116,6 +117,7 @@ export default function Home() {
             }}
             onMouseEnter={() => setIsHovered(true)}
             onMouseLeave={() => setIsHovered(false)}
+            alt="Contactanos"
           >
             Contáctanos
             <ChevronRigth2 color={isHovered ? '#213E6E' : 'white'} />

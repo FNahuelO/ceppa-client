@@ -1,4 +1,3 @@
-import React from 'react'
 import { Link } from 'react-router-dom'
 import { Container } from '../../style/Container'
 import image from '../../assets/ceppa_footer.png'
@@ -20,10 +19,12 @@ export default function Footer() {
     //{ icon: <img src={whatapp} /> },
     {
       icon: <Instagram />,
+      name: 'Instagram',
       link: 'https://www.instagram.com/ceppa.comunidad/?hl=es',
     },
     {
       icon: <Facebook />,
+      name: 'Facebook',
       link: 'https://www.facebook.com/profile.php?id=61551746807277',
     },
   ]
@@ -83,6 +84,7 @@ export default function Footer() {
               <Button
                 bg="none"
                 border="none"
+                alt={item.name}
                 hover={{ transform: 'scale(1.2)' }}
               >
                 {item.icon}
@@ -93,6 +95,7 @@ export default function Footer() {
               key={idx}
               bg="none"
               border="none"
+              alt={item.name}
               hover={{ transform: 'scale(1.2)' }}
             >
               {item.icon}

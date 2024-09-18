@@ -100,6 +100,7 @@ export default function Revistas() {
                   align="center"
                   gap=".5rem"
                   color="white"
+                  alt="Descargar"
                   onClick={() => handleDownload(item)}
                 >
                   Descargar <Download />

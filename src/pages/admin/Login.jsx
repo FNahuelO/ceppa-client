@@ -144,8 +144,9 @@ export default function Login() {
                         outline="none"
                         border="none"
                         onClick={() => setViewPassword(!viewPassword)}
+                        alt="Ver Contraseña"
                       >
-                        <img src={viewPassword ? eyeOff : eye} width={23}  alt="Eye" />
+                        <img src={viewPassword ? eyeOff : eye} width={23}  alt="Ojo" />
                       </Button>
                     )}
                   </Container>
@@ -172,6 +173,7 @@ export default function Login() {
                 color: '#213E6E',
                 background: 'white',
               }}
+              alt="Ingresar"
             >
               Ingresar
             </Button>
@@ -207,6 +209,7 @@ export default function Login() {
               top="1.5rem"
               right="2rem"
               onClick={() => setModal({ ...modal, view: false })}
+              alt="Cerrar"
             >
               <VectorX color={'#0000004D'} />
             </Button>

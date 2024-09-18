@@ -21,10 +21,12 @@ export default function Footer() {
     // { icon: <img src={whatapp} /> },
     {
       icon: <Instagram />,
+      name: 'instagram',
       link: 'https://www.instagram.com/ceppa.comunidad/?hl=es',
     },
     {
       icon: <Facebook />,
+      name: 'facebook',
       link: 'https://www.facebook.com/profile.php?id=61551746807277',
     },
   ]
@@ -78,6 +80,7 @@ export default function Footer() {
               <Button
                 bg="none"
                 border="none"
+                alt={item.name}
                 hover={{ transform: 'scale(1.2)' }}
               >
                 {item.icon}
@@ -88,6 +91,7 @@ export default function Footer() {
               key={idx}
               bg="none"
               border="none"
+              alt={item.name}
               hover={{ transform: 'scale(1.2)' }}
             >
               {item.icon}

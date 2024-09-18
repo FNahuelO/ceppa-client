@@ -135,6 +135,7 @@ export default function Team() {
               outline="none"
               bg="none"
               padding="0"
+              alt="Bajar"
               onClick={() => handleArrowClick('down')}
             >
               <Arrow />
@@ -144,6 +145,7 @@ export default function Team() {
               outline="none"
               bg="none"
               padding="0"
+              alt="Subir"
               onClick={() => handleArrowClick('up')}
             >
               <Arrow direction={'bottom'} />

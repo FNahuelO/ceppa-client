@@ -75,6 +75,7 @@ export default function Nosotros() {
               right="1rem"
               border="none"
               outline="none"
+              alt="Cerrar"
             >
               <VectorX color="black" />
             </Button>
