@@ -28,7 +28,7 @@ const ConditionalApp = () => {
   const getTitleFromPath = (pathname) => {
     switch (pathname) {
       case '/':
-        return 'Inicio'
+        return 'CEPPA: Centro de Psicoterapias con Psicodélicos de Argentina'
       case '/nosotros':
         return 'Nosotros'
       case '/contacto':
